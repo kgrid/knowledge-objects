@@ -1,0 +1,139 @@
+<html lang="en">
+<head>
+    <title> Classifying Candidate for Tight Control of Blood Glucose </title>
+  <script>
+   if (!window.jQuery) {
+      document.write('<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"><\/script>');
+   }
+</script>
+</head>
+<script>
+$(document).ready(function(){
+    $('#tightControlBtn').click(function(){
+      var formArray = $("#tightControl").serializeArray();
+      var obj= {};
+      for(var i=0; i<formArray.length; i++){
+        var name = formArray[i].name;
+        var value = formArray[i].value;
+        if(name) {
+          obj[name]=value;
+        }
+      }
+      var formData = JSON.stringify(obj);
+      console.log(formData);
+      var serverUrl = "http://dlhs-fedora-dev-a.umms.med.umich.edu:8080/ExecutionStack/knowledgeObject/ark:/99999/fk4hq46j3g/result";
+  $.ajax({
+    type: "POST",
+    url: serverUrl,
+    data: formData,
+    success: function(response){
+      console.log(response);
+      if(response.success==1){
+        var result = response.result;
+      }else {
+        result=response.errorMessage;
+      }
+      console.log(result);
+      $('#tightControlResult').text(result);
+    },
+    error: function(response){
+        console.log(response);
+      var result = response.errorMessage;
+      console.log(result);
+      $('#tightControlResult').text(result);
+    },
+    dataType: "json",
+    contentType : "application/json"
+  });
+}
+);
+})
+
+</script>
+<body>
+    <div class='surveyform'>
+
+    <form id='tightControl' methopd='post' action = "http://dlhs-fedora-dev-a.umms.med.umich.edu:8080/ExecutionStack/knowledgeObject/ark:/99999/fk4d22641k/result">
+      <td><h3> Classifying Candidate for Tight Control of Blood Glucose </h3></td><br/>
+      <td><b> Comorbidities (e.g., end-stage cancer, severe heart failure) </b></td><br/>
+
+        <td>
+          <input type="radio" value="1" name="comorbidities">Yes<br/>
+          <input type="radio" value="0" name="comorbidities">No<br/><br/>
+        </td>
+
+      <td><b> Advanced diabetes complications (e.g., proliferative retinopathy, renal failure) </b></td><br/>
+
+        <td>
+          <input type="radio" value="1" name="advanced-complications">Yes<br/>
+          <input type="radio" value="0" name="advanced-complications">No<br/><br/>
+        </td>
+
+      <td><b> Inability to safely carry out treatment </b></td><br/>
+
+        <td>
+          <input type="radio" value="1" name="treatment-safety">Yes<br/>
+          <input type="radio" value="0" name="treatment-safety">No<br/><br/>
+        </td>
+
+      <td><b> Limited life expectancy </b></td><br/>
+
+        <td>
+          <input type="radio" value="1" name="life-expectancy">Yes<br/>
+          <input type="radio" value="0" name="life-expectancy">No<br/><br/>
+        </td>
+
+
+      <td><b> History of severe hypoglycemia (inability to treat without assistance) </b></td><br/>
+
+        <td>
+          <input type="radio" value="1" name="hypoglycemia-history">Yes<br/>
+          <input type="radio" value="0" name="hypoglycemia-history">No<br/><br/>
+        </td>
+
+      <td><b> Hypoglycemia unawareness </b></td><br/>
+
+        <td>
+          <input type="radio" value="1" name="hypoglycemia-unawareness">Yes<br/>
+          <input type="radio" value="0" name="hypoglycemia-unawareness">No<br/><br/>
+        </td>
+
+      <td><b> Advanced cardiovascular or cerebrovascular disease </b></td><br/>
+
+        <td>
+          <input type="radio" value="1" name="vascular-disease">Yes<br/>
+          <input type="radio" value="0" name="vascular-disease">No<br/><br/>
+        </td>
+
+      <td><b> Autonomic neuropathy (especially cardiac) </b></td><br/>
+
+        <td>
+          <input type="radio" value="1" name="autonomic-neuropathy">Yes<br/>
+          <input type="radio" value="0" name="autonomic-neuropathy">No<br/><br/>
+        </td>
+
+      <td><b> Comorbidities that impair the detection of hypoglycemia (e.g, alteration in mental status, alcoholism, etc.) </b></td><br/>
+
+        <td>
+          <input type="radio" value="1" name="hypoglycemia-comorbidities">Yes<br/>
+          <input type="radio" value="0" name="hypoglycemia-comorbidities">No<br/><br/>
+        </td>
+
+      <td><b> Poor social support </b></td><br/>
+
+        <td>
+          <input type="radio" value="1" name="poor-support">Yes<br/>
+          <input type="radio" value="0" name="poor-support">No<br/><br/>
+        </td>
+
+
+        <td><input type="reset" /></td?
+          <td><button id='tightControlBtn' type='button'>Send Info</button>
+    </form>
+  </div>
+  <div class='surveyresult'>
+    <span class='resultTitle'> Candidate: </span>
+    <p id='tightControlResult'></p>
+  </div>
+</body>
+</html>
