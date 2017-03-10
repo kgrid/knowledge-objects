@@ -27,8 +27,8 @@ The script can be run by calling agentRenalDoseAdjustment({"agent":""}). We have
 ### Getting started
 To run program from terminal, go to terminal and cd into the directory where the python file is located. Enter the following:
 1. python
-2. import agent-renal-dose-adjustment
-3. agent-renal-dose-adjustment.agentRenalDoseAdjustment({"agent":""})
+2. import ardas
+3. arda.agentRenalDoseAdjustment({"agent":""})
 
 ### Running through SHELF REST API...
 To run through SHELF REST API, the knowledge object needs to be added to ObjectTeller and to the REST API SHELF before its executable.
