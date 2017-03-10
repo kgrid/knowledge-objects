@@ -1,4 +1,7 @@
-Survey instruments
+# Diabetes Mellitus Type II Knowledge Objects
+Based off the following practice guidelines: https://www.med.umich.edu/1info/FHP/practiceguides/diabetes/dm.pdf
+
+### Survey instruments
 
 Classifying Candidates [html survey instrument](./classifying-candidate-for-tight-control/resource/classifying-candidate-for-tight-control-of-blood-glucose.html)
 
