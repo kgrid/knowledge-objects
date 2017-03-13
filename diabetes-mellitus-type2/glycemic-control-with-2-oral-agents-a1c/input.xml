@@ -5,14 +5,14 @@
         <ot:params>
             <rdf:Seq>
                 <rdf:li>a1c</rdf:li>
-                <rdf:li>individual_target</rdf:li>
+                <rdf:li>individualTarget</rdf:li>
             </rdf:Seq>
         </ot:params>
     </rdf:Description>
     <rdf:Description rdf:about="http://uofm.org/objectteller/a1c/">
         <ot:datatype>FLOAT</ot:datatype>
     </rdf:Description>
-    <rdf:Description rdf:about="http://uofm.org/objectteller/individual_target/">
+    <rdf:Description rdf:about="http://uofm.org/objectteller/individualTarget/">
         <ot:datatype>FLOAT</ot:datatype>
     </rdf:Description>
 </rdf:RDF>

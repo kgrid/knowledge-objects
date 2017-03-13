@@ -7,7 +7,7 @@ Created January 9, 2016
 # percentage input
 def glycemicControl(input):
     a1c_percentage = input["a1c"]
-    individual_target = input["individual_target"]
+    individual_target = input["individualTarget"]
 
     if individual_target != 0:
         if a1c_percentage < individual_target:
@@ -30,25 +30,14 @@ def glycemicControl(input):
 
 
 def test():
-    if glycemicControl({"a1c":8.2,"individual_target":0}) != "add a second agent or insulin customized to patient. re-measure A1c in 6-12 weeks after initiation or dose change of medication":
-        print "error."
+    if glycemicControl({"a1c":8.2,"individualTarget":0}) != "add a second agent or insulin customized to patient. re-measure A1c in 6-12 weeks after initiation or dose change of medication":
         return "error."
-
-    if glycemicControl({"a1c":0,"individual_target":0}) != "no a1c provided. unable to calculate":
-        print "error."
+    if glycemicControl({"a1c":0,"individualTarget":0}) != "no a1c provided. unable to calculate":
         return "error."
-
-    if glycemicControl({"a1c":9.8,"individual_target":0}) != "consider insulin":
-        print "error."
+    if glycemicControl({"a1c":9.8,"individualTarget":0}) != "consider insulin":
         return "error."
-
-    if glycemicControl({"a1c":4.5,"individual_target":0}) != "no additional agents":
-        print "error."
+    if glycemicControl({"a1c":4.5,"individualTarget":0}) != "no additional agents":
         return "error."
-
-    if glycemicControl({"a1c":4.5,"individual_target":5}) != "below individualized target, no additional agents":
-        print "error."
+    if glycemicControl({"a1c":4.5,"individualTarget":5}) != "below individualized target, no additional agents":
         return "error."
-
-    print "ok."
     return "ok."
