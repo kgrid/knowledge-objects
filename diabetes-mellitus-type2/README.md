@@ -43,13 +43,25 @@ The completed knowledge objects are as follows (also on ObjectTeller):
       - Output:
       - ArkID: ark:/99999/fk4rf6114q
 
-   8. Steps in Pharmacologic Treatment of Hypertension in Patients with Diabetes Mellitus: Step 4 (ark:/99999/fk4mp5968n)
+   8. Steps in Pharmacologic Treatment of Hypertension in Patients with Diabetes Mellitus: Step 4 
+      - Input:
+      - Ouput:
+      - ArkID: ark:/99999/fk4mp5968n
 
-   9. Classifying Candidate Patients that would Benefit from Tight Control: Result (ark:/99999/fk4hq46j3g)
+   9. Classifying Candidate Patients that would Benefit from Tight Control: Result
+      - Input: 
+      - Output:
+      - ArkID: ark:/99999/fk4hq46j3g
 
-   10. Agent Weight Change Informative (ark:/99999/fk4d50wh15)
+   10. Agent Weight Change Informative 
+      - Input:
+      - Output:
+      - ArkID: ark:/99999/fk4d50wh15
 
-   11. Agent Renal Dose Adjustment (ark:/99999/fk48d05q0d)
+   11. Agent Renal Dose Adjustment 
+      - Input:
+      - Output:
+      - ArkID: ark:/99999/fk48d05q0d
 
 
 ### Survey/Checklist instruments
