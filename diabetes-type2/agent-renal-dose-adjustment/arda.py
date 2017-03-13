@@ -1,5 +1,5 @@
 # input is an agent (generic or brand name), and output is a renal dose adjustment based on that agent
-def agentRenalDoseAdjustment(inputs):
+def execute(inputs):
     agent = inputs["agent"].lower()
 
     result = "cannot calculate"
@@ -55,30 +55,28 @@ def agentRenalDoseAdjustment(inputs):
 
 # test function
 def test():
-    if agentRenalDoseAdjustment({"agent":"glucophage xr"}) != "Contraindicated in patients with an eGRF between 30-45 mL/minute/1.73 m^2 is not recommended":
+    if execute({"agent":"glucophage xr"}) != "Contraindicated in patients with an eGRF between 30-45 mL/minute/1.73 m^2 is not recommended":
         return "error."
-    if agentRenalDoseAdjustment({"agent":"GLYBURIDE, MICRONIZED"}) != "Dose adjust for renal patients":
+    if execute({"agent":"GLYBURIDE, MICRONIZED"}) != "Dose adjust for renal patients":
         return "error."
-    if agentRenalDoseAdjustment({"agent":"glucotrol"}) != "Preferred in class for renal patients given greater hepatic metabolism":
+    if execute({"agent":"glucotrol"}) != "Preferred in class for renal patients given greater hepatic metabolism":
         return "error."
-    if agentRenalDoseAdjustment({"agent":"pioglitazone"}) != "None":
+    if execute({"agent":"pioglitazone"}) != "None":
         return "error."
-    if agentRenalDoseAdjustment({"agent":"miglitol"}) != "Contraindicated for CrCl <25 ml/min":
+    if execute({"agent":"miglitol"}) != "Contraindicated for CrCl <25 ml/min":
         return "error."
-    if agentRenalDoseAdjustment({"agent":"starlix"}) != "None":
+    if execute({"agent":"starlix"}) != "None":
         return "error."
-    if agentRenalDoseAdjustment({"agent":"Repaglinide"}) != "Dose adjustment for CrCl <40 ml/min":
+    if execute({"agent":"Repaglinide"}) != "Dose adjustment for CrCl <40 ml/min":
         return "error."
-    if agentRenalDoseAdjustment({"agent":"ALOGLIPTIN"}) != "Dose adjustment for CrCl <60 ml/min":
+    if execute({"agent":"ALOGLIPTIN"}) != "Dose adjustment for CrCl <60 ml/min":
         return "error."
-    if agentRenalDoseAdjustment({"agent":"Dapagliflozin"}) != "Not recommended for eGFR <45 mL/minute/1.73 m2":
+    if execute({"agent":"Dapagliflozin"}) != "Not recommended for eGFR <45 mL/minute/1.73 m2":
         return "error."
-    if agentRenalDoseAdjustment({"agent":"bydureon"}) != "Contraindicated for CrCl <30 ml/min":
+    if execute({"agent":"bydureon"}) != "Contraindicated for CrCl <30 ml/min":
         return "error."
-    if agentRenalDoseAdjustment({"agent":""}) != "cannot calculate":
+    if execute({"agent":""}) != "cannot calculate":
         return "error."
-    if agentRenalDoseAdjustment({"agent":"levemir"}) != "None":
+    if execute({"agent":"levemir"}) != "None":
         return "error."
     return "ok."
-
-print test()

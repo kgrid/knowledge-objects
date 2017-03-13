@@ -3,14 +3,13 @@ Risk Module of Type II Diabetes
 Created: December 20, 2016
 This KO is derived from table 1: Diagnosis of Diabetes: Diagnostic tests and Glucose Levels.
 '''
-#diabetesDiagnosis({"diagnosticTest":"hemoglobin A1c","glucoseLevel":6})
+#execute({"diagnosticTest":"hemoglobin A1c","glucoseLevel":6})
 
-def diabetesDiagnosis(inputs):
+def execute(inputs):
     diagnosticTest = inputs["diagnosticTest"]
     glucoseLevel = inputs["glucoseLevel"]
 
     if glucoseLevel == 0:
-        #print ("glucoseLevel = 0, No glucose level provided")
         return ("glucoseLevel = 0, No glucose level provided")
 
     diagnosis = ""
@@ -47,44 +46,23 @@ def diabetesDiagnosis(inputs):
             diagnosis = "diabetes"
 
     else:
-        #print ("Incorrect diagnostic test. Diagnostic test can be: " + "\n" + "* hemoglobin A1c" + "\n" + "* fasting plasma glucose (mg/dL)" + "\n" + "* random plasma glucose (mg/dL)" + "\n" + "* oral glucose tolerance test (OGTT)(mg/dL)")
         return ("Incorrect diagnostic test. Diagnostic test can be: " + "\n" + "* hemoglobin A1c" + "\n" + "* fasting plasma glucose (mg/dL)" + "\n" + "* random plasma glucose (mg/dL)" + "\n" + "* oral glucose tolerance test (OGTT)(mg/dL)")
 
-    #print diagnosis
     return diagnosis
 
 
 
 def test():
-    if diabetesDiagnosis({"diagnosticTest":"hemoglobin A1c","glucoseLevel":6}) == "pre-diabetes":
-        print "ok"
-    else:
-        print "error"
-
-    if diabetesDiagnosis({"diagnosticTest":"fasting plasma glucose (mg/dL)","glucoseLevel":180}) == "diabetes":
-        print "ok"
-    else:
-        print "error"
-
-    if diabetesDiagnosis({"diagnosticTest":"random plasma glucose (mg/dL)","glucoseLevel":120}) == "normal":
-        print "ok"
-    else:
-        print "error"
-
-    if diabetesDiagnosis({"diagnosticTest":"oral glucose tolerance test (OGTT)(mg/dL)","glucoseLevel":190}) == "pre-diabetes":
-        print "ok"
-    else:
-        print "error"
-
-    if diabetesDiagnosis({"diagnosticTest":"","glucoseLevel":190}) == "Incorrect diagnostic test. Diagnostic test can be: " + "\n" + "* hemoglobin A1c" + "\n" + "* fasting plasma glucose (mg/dL)" + "\n" + "* random plasma glucose (mg/dL)" + "\n" + "* oral glucose tolerance test (OGTT)(mg/dL)":
-        print "ok"
-    else:
-        print "error"
-
-    if diabetesDiagnosis({"diagnosticTest":"","glucoseLevel":0}) == "glucoseLevel = 0, No glucose level provided":
-        print "ok"
-    else:
-        print "error"
-
-
-test()
+    if execute({"diagnosticTest":"hemoglobin A1c","glucoseLevel":6}) != "pre-diabetes":
+        return "error."
+    if execute({"diagnosticTest":"fasting plasma glucose (mg/dL)","glucoseLevel":180}) != "diabetes":
+        return "error."
+    if execute({"diagnosticTest":"random plasma glucose (mg/dL)","glucoseLevel":120}) != "normal":
+        return "error."
+    if execute({"diagnosticTest":"oral glucose tolerance test (OGTT)(mg/dL)","glucoseLevel":190}) != "pre-diabetes":
+        return "error."
+    if execute({"diagnosticTest":"","glucoseLevel":190}) != "Incorrect diagnostic test. Diagnostic test can be: " + "\n" + "* hemoglobin A1c" + "\n" + "* fasting plasma glucose (mg/dL)" + "\n" + "* random plasma glucose (mg/dL)" + "\n" + "* oral glucose tolerance test (OGTT)(mg/dL)":
+        return "error."
+    if execute({"diagnosticTest":"","glucoseLevel":0}) != "glucoseLevel = 0, No glucose level provided":
+        return "error."
+    return "ok."

@@ -18,16 +18,14 @@ The resource (survey) is an HTML version of the questionnaire. When the survey i
 The result knowledge object takes in the JSON-formatted responses, and outputs whether the patient would or would not be a good candidate.
 
 If wanting to run the result function separately, the input needs to be formatted like this:
-surveyResults({"comorbidities":"0","advanced-complications":"0","treatment-safety":"0","life-expectancy":"0","hypoglycemia-history":"0","hypoglycemia-unawareness":"0","vascular-disease":"0","autonomic-neuropathy":"0","hypoglycemia-comorbidities":"0","poor-support":"0"})
+execute({"comorbidities":"0","advComplications":"0","treatmentSafety":"0","lifeExpectancy":"0","hypoglycemiaHistory":"0","hypoglycemiaUnawareness":"0","vascularDisease":"0","autonomicNeuropathy":"0","hypoglycemiaComorbidities":"0","poorSupport":"0"})
 
 ### Object Teller information
-Classifying Candidates for Tight Control of Blood Glucose: Survey - **ark:/99999/fk4d22641k**
-
 Classifying Candidates for Tight Control of Blood Glucose: Result - **ark:/99999/fk4hq46j3g**
 
 
 ### Related Objects/Future Development
-These KO were created with other diabetes KO in hopes to create a collection of KO helpful for the diabetes community.
+These KO were created with other diabetes KO in hopes to create a collection of KO helpful for the diabetes community. This form of knowledge object interaction is still being finalized, and may not be usable with the execution stack at this point.
 
 ### Literature
 The documentation can be found at: https://www.med.umich.edu/1info/FHP/practiceguides/diabetes/dm.pdf

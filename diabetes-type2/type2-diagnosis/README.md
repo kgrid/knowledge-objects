@@ -16,7 +16,7 @@ This KO is derived from Table 1: Diagnosis of Diabetes: Diagnostic tests and Glu
 ### Description
 The inputs for this KO are diagnosticTest and glucoseLevel and must be formatted as follows, with diagnosticTest and glucoseLevel representing keys that should not be changed:
 
-diabetesDiagnosis(
+execute(
   {"diagnosticTest":"",
   "glucoseLevel":0)
 
@@ -46,14 +46,14 @@ If the glucoseLevel was not entered (glucoseLevel = 0), the following string wil
 "glucoseLevel = 0, No glucose level provided"
 
 ### Running
-The script can be run by calling diabetesDiagnosis("diagnosticTest":"","glucoseLevel":0). We have also included a test() function that we suggest running before running your data through.
+The script can be run by calling execute("diagnosticTest":"","glucoseLevel":0). We have also included a test() function that we suggest running before running your data through.
 
 
 ### Getting started
 To run program from terminal, go to terminal and cd into the directory where the python file is located. Enter the following:
 1. python
-2. import diabetes_type2_diagnosis
-3. diabetes_type2_diagnosis.diabetesDiagnosis({"diagnosticTest":"","glucoseLevel":0))
+2. import dd
+3. dd.execute({"diagnosticTest":"","glucoseLevel":0))
 
 ### Running through SHELF REST API...
 To run through SHELF REST API, the knowledge object needs to be added to ObjectTeller and to the REST API SHELF before its executable.
@@ -65,7 +65,7 @@ The ark ID for this object is: **ark:/99999/fk4gm8g63d**
   - Add the following headers:
     - Content-Type:application/json
     - Accept:application/json
-  - Enter input into "body"
+  - Enter input into "body" (i.e. {"diagnosticTest":"hemoglobin A1c","glucoseLevel":6})
   - Run the POST command. http://dlhs-fedora-dev-a.umms.med.umich.edu:8080/ExecutionStack/knowledgeObject/ark:/99999/fk4gm8g63d/result
 
 ### Related Objects/Future Development

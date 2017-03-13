@@ -1,5 +1,5 @@
 # Input drug name (generic name and brand name), output weight change information
-def weightChangeInformative(inputs):
+def execute(inputs):
     agent = inputs["agent"]
     agent = agent.lower()
     result = "cannot calculate"
@@ -41,32 +41,32 @@ def weightChangeInformative(inputs):
 
 # test function to make sure code is working properly
 def test():
-    if weightChangeInformative({"agent":"Glucophage XR"}) != "likelihood of weight loss":
+    if execute({"agent":"Glucophage XR"}) != "likelihood of weight loss":
         return "error."
-    if weightChangeInformative({"agent":"GLYNASE"})!= "likelihood of weight gain":
+    if execute({"agent":"GLYNASE"})!= "likelihood of weight gain":
         return "error."
-    if weightChangeInformative({"agent":"Pioglitazone"})!= "high likelihood of weight gain":
+    if execute({"agent":"Pioglitazone"})!= "high likelihood of weight gain":
         return "error."
-    if weightChangeInformative({"agent":"glyset"}) != "likelihood of no weight change":
+    if execute({"agent":"glyset"}) != "likelihood of no weight change":
         return "error."
-    if weightChangeInformative({"agent":"nateglinide"}) != "likelihood of weight gain":
+    if execute({"agent":"nateglinide"}) != "likelihood of weight gain":
         return "error."
-    if weightChangeInformative({"agent":"saxaglipton"}) != "likelihood of no weight change":
+    if execute({"agent":"saxaglipton"}) != "likelihood of no weight change":
         return "error."
-    if weightChangeInformative({"agent":"farxiga"}) != "likelihood of weight loss":
+    if execute({"agent":"farxiga"}) != "likelihood of weight loss":
         return "error."
-    if weightChangeInformative({"agent":"exenatide extended-release"}) != "high likelihood of weight loss":
+    if execute({"agent":"exenatide extended-release"}) != "high likelihood of weight loss":
         return "error."
-    if weightChangeInformative({"agent":"pramlintide"}) != "high likelihood of weight loss":
+    if execute({"agent":"pramlintide"}) != "high likelihood of weight loss":
         return "error."
-    if weightChangeInformative({"agent":"novolog"}) != "likelihood of weight gain":
+    if execute({"agent":"novolog"}) != "likelihood of weight gain":
         return "error."
-    if weightChangeInformative({"agent":"nph"}) != "likelihood of weight gain":
+    if execute({"agent":"nph"}) != "likelihood of weight gain":
         return "error."
-    if weightChangeInformative({"agent":"determir"}) != "likelihood of weight gain":
+    if execute({"agent":"determir"}) != "likelihood of weight gain":
         return "error."
-    if weightChangeInformative({"agent":"GLARGINE"}) != "likelihood of weight gain":
+    if execute({"agent":"GLARGINE"}) != "likelihood of weight gain":
         return "error."
-    if weightChangeInformative({"agent":""}) != "cannot calculate":
+    if execute({"agent":""}) != "cannot calculate":
         return "error."
     return "ok."
