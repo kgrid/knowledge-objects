@@ -39,28 +39,28 @@ The completed knowledge objects are as follows (also on ObjectTeller):
       - ArkID: ark:/99999/fk4w66qt8k
 
    7. Steps in Pharmacologic Treatment of Hypertension in Patients with Diabetes Mellitus: Step 3
-      - Input:
-      - Output:
+      - Input: systolic, diastolic (i.e. {"systolic":150,"diastolic":90})
+      - Output: pharmacoogical treatment recommendation (i.e. "If above agents are contraindicated or dose is optimized and patient BP remains >= 140/90-, Add a Dihydropyridine Calcium Channel Blocker - initiate therapy, Amlodipine (Norvasc) 2.5-2mg daily. Titrate by doubling dose in 2-4 weeks if BP goal is NOT met (max dose: 10mg)"
       - ArkID: ark:/99999/fk4rf6114q
 
    8. Steps in Pharmacologic Treatment of Hypertension in Patients with Diabetes Mellitus: Step 4 
-      - Input:
-      - Ouput:
+      - Input: systolic, daistolic (i.e. {"systolic":10,"diastolic":0})
+      - Ouput: pharmacologic treatment recommendation (i.e. "Not applicable, patient doesn't have high blood pressure.")
       - ArkID: ark:/99999/fk4mp5968n
 
    9. Classifying Candidate Patients that would Benefit from Tight Control: Result
-      - Input: 
-      - Output:
+       - Input: comorbidities, advanced-complications, treatment-safety, life-expectancy, hypoglycemia-hisory, hypoglyocemia-unawareness, vascular-disease, autonomic-neuropathy, hypoglycemia-comorbidities, poort-support (i.e. {"comorbidities":"1","advanced-complications":"1","treatment-safety":"1","life-expectancy":"1","hypoglycemia-history":"1","hypoglycemia-unawareness":"1","vascular-disease":"1","autonomic-neuropathy":"1","hypoglycemia-comorbidities":"1","poor-support":"1"})
+      - Output: candidiate for tight control (i.e.  "no")
       - ArkID: ark:/99999/fk4hq46j3g
 
    10. Agent Weight Change Informative 
-      - Input:
-      - Output:
+      - Input: agent (i.e. {"agent":"Glucophage XR"})
+      - Output: weight change information (i.e. "likelihood of weight loss")
       - ArkID: ark:/99999/fk4d50wh15
 
    11. Agent Renal Dose Adjustment 
-      - Input:
-      - Output:
+      - Input: agent (i.e. {"agent":"miglitol"})
+      - Output:recommended renal dose adjustment (i.e. "Contraindicated for CrCl <25 ml/min")
       - ArkID: ark:/99999/fk48d05q0d
 
 
