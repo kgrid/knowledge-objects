@@ -8,19 +8,40 @@ We have created a collection of these knowledge objects that can be found in the
 
 The completed knowledge objects are as follows (also on ObjectTeller):
 
-   1. Type II Diabetes Diagnosis (ark:/99999/fk4gm8g63d)
+   1. Type II Diabetes Diagnosis
+      - Input: diagnosticTest, glucoseLevel (i.e. {"diagnosticTest":"hemoglobin A1c","glucoseLevel":6})
+      - Output: diabetic diagnosis (i.e. "pre-diabetes")
+      - ArkID: ark:/99999/fk4gm8g63d
  
-   2. Meal Planning For Glycemic Management based on Medication (ark:/99999/fk4vm4hg3v)
+   2. Meal Planning For Glycemic Management based on Medication
+      - Input: medication, weightloss (i.e. {"medication":"secretagogues","weightloss":0})
+      - Output: meal planning recommendation (i.e. "carbohydrate at each meal")
+      - ArkID: ark:/99999/fk4vm4hg3v
 
-   3. Steps in Glycemic Control with oral agents: 1 Agent (ark:/99999/fk4fn1fb10)
+   3. Steps in Glycemic Control with oral agents: 1 Agent 
+      - Input: a1c, individualTarget (i.e. {"a1c":8.2,"individualTarget":0})
+      - Output: glycemic control recomendation (i.e. "add a second agent or insulin customized to patient. re-measure A1c in 6-12 weeks after initiation or dose change of medication")
+      - ArkID: ark:/99999/fk4fn1fb10
 
-   4. Steps in Glycemic Control with oral agents: Addition of 2nd Agent (ark:/99999/fk41g0zd0q)
+   4. Steps in Glycemic Control with 2 oral agents in Patients with Type 2 Diabetes Based on A1c
+      - Input: a1c, individualTarget (i.e. {"a1c":7.5,"individual_target":8.0})
+      - Output: glycemic control recommendation (i.e. "below individual target, no additional agents")
+      - ArkID: ark:/99999/fk41g0zd0q
 
-   5. Steps in Pharmacologic Treatment of Hypertension in Patients with Diabetes Mellitus: Step 1 (ark:/99999/fk49c76k8x)
+   5. Steps in Pharmacologic Treatment of Hypertension in Patients with Diabetes Mellitus: Step 1 
+      - Input: systolic, diastolic, albuminLevel (i.e. {"systolic":300,"diastolic":0,"albuminLevel":400})
+      - Output: pharmacological treatment recommendation (i.e. "Albumin levels indicate macroalbuminuria.")
+      - ArkID: ark:/99999/fk49c76k8x
 
-   6. Steps in Pharmacologic Treatment of Hypertension in Patients with Diabetes Mellitus: Step 2 (ark:/99999/fk4w66qt8k)
+   6. Steps in Pharmacologic Treatment of Hypertension in Patients with Diabetes Mellitus: Step 2 
+      - Input: systolic, diastolic (i.e. {"systolic":10,"diastolic":0})
+      - Output: pharmacological treatment recommendation (i.e. "Not applicable, patient doesn't have high blood pressure.")
+      - ArkID: ark:/99999/fk4w66qt8k
 
-   7. Steps in Pharmacologic Treatment of Hypertension in Patients with Diabetes Mellitus: Step 3 (ark:/99999/fk4rf6114q)
+   7. Steps in Pharmacologic Treatment of Hypertension in Patients with Diabetes Mellitus: Step 3
+      - Input:
+      - Output:
+      - ArkID: ark:/99999/fk4rf6114q
 
    8. Steps in Pharmacologic Treatment of Hypertension in Patients with Diabetes Mellitus: Step 4 (ark:/99999/fk4mp5968n)
 
