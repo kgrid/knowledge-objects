@@ -1,6 +1,6 @@
 # Step 2. If dose is optimized on agent from Step 1 and patient BP remains >= 140/90
 
-def therapyRecommendation2(inputs):
+def execute(inputs):
     systolic = inputs["systolic"]
     diastolic = inputs["diastolic"]
     high_bp = bloodPressureCheck(systolic,diastolic)
@@ -30,12 +30,12 @@ def bloodPressureCheck(systolic,diastolic):
 
 # Test function. Run before use.
 def test():
-    if therapyRecommendation2({"systolic":0,"diastolic":0}) != "No systolic or diastolic information provided. Cannot calculate.":
+    if execute({"systolic":0,"diastolic":0}) != "No systolic or diastolic information provided. Cannot calculate.":
         return "error."
-    if therapyRecommendation2({"systolic":10,"diastolic":0}) != "Not applicable, patient doesn't have high blood pressure.":
+    if execute({"systolic":10,"diastolic":0}) != "Not applicable, patient doesn't have high blood pressure.":
         return "error."
-    if therapyRecommendation2({"systolic":150,"diastolic":90}) !=("If dose is optimized on agent from Step 1 and patient BP remains >= 140/90-" + "\n" + "Add a Thiazide diuretic or ACE/ARB to the first agent." + "\n" + "Consider combination therapy to reduce cost (e.g., lisinopril/HCTZ, losartan/HCTZ, atenolol/chlorthalidone)" + "\n" + "Do not use ACE inhibitor in combination with ARB as combination may increase risk of renal failure."):
+    if execute({"systolic":150,"diastolic":90}) !=("If dose is optimized on agent from Step 1 and patient BP remains >= 140/90-" + "\n" + "Add a Thiazide diuretic or ACE/ARB to the first agent." + "\n" + "Consider combination therapy to reduce cost (e.g., lisinopril/HCTZ, losartan/HCTZ, atenolol/chlorthalidone)" + "\n" + "Do not use ACE inhibitor in combination with ARB as combination may increase risk of renal failure."):
         return "error."
-    if therapyRecommendation2({"systolic":0,"diastolic":110}) != ("If dose is optimized on agent from Step 1 and patient BP remains >= 140/90-" + "\n" + "Add a Thiazide diuretic or ACE/ARB to the first agent." + "\n" + "Consider combination therapy to reduce cost (e.g., lisinopril/HCTZ, losartan/HCTZ, atenolol/chlorthalidone)" + "\n" + "Do not use ACE inhibitor in combination with ARB as combination may increase risk of renal failure."):
+    if execute({"systolic":0,"diastolic":110}) != ("If dose is optimized on agent from Step 1 and patient BP remains >= 140/90-" + "\n" + "Add a Thiazide diuretic or ACE/ARB to the first agent." + "\n" + "Consider combination therapy to reduce cost (e.g., lisinopril/HCTZ, losartan/HCTZ, atenolol/chlorthalidone)" + "\n" + "Do not use ACE inhibitor in combination with ARB as combination may increase risk of renal failure."):
         return "error."
     return "ok."

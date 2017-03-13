@@ -27,12 +27,12 @@ def bloodPressureCheck(systolic,diastolic):
 
 # Test function. Run before use.
 def test():
-    if therapyRecommendation3({"systolic":0,"diastolic":0}) != "No systolic or diastolic information provided. Cannot calculate.":
+    if execute({"systolic":0,"diastolic":0}) != "No systolic or diastolic information provided. Cannot calculate.":
         return "error."
-    if therapyRecommendation3({"systolic":10,"diastolic":0}) != "Not applicable, patient doesn't have high blood pressure.":
+    if execute({"systolic":10,"diastolic":0}) != "Not applicable, patient doesn't have high blood pressure.":
         return "error."
-    if therapyRecommendation3({"systolic":150,"diastolic":90}) != ("If above agents are contraindicated or dose is optimized and patient BP remains >= 140/90-" + "\n" + "Add a Dihydropyridine Calcium Channel Blocker - initiate therapy" + "\n" + "Amlodipine (Norvasc) 2.5-2mg daily. Titrate by doubling dose in 2-4 weeks if BP goal is NOT met (max dose: 10mg)"):
+    if execute({"systolic":150,"diastolic":90}) != ("If above agents are contraindicated or dose is optimized and patient BP remains >= 140/90-" + "\n" + "Add a Dihydropyridine Calcium Channel Blocker - initiate therapy" + "\n" + "Amlodipine (Norvasc) 2.5-2mg daily. Titrate by doubling dose in 2-4 weeks if BP goal is NOT met (max dose: 10mg)"):
         return "error."
-    if therapyRecommendation3({"systolic":0,"diastolic":110}) != ("If above agents are contraindicated or dose is optimized and patient BP remains >= 140/90-" + "\n" + "Add a Dihydropyridine Calcium Channel Blocker - initiate therapy" + "\n" + "Amlodipine (Norvasc) 2.5-2mg daily. Titrate by doubling dose in 2-4 weeks if BP goal is NOT met (max dose: 10mg)"):
+    if execute({"systolic":0,"diastolic":110}) != ("If above agents are contraindicated or dose is optimized and patient BP remains >= 140/90-" + "\n" + "Add a Dihydropyridine Calcium Channel Blocker - initiate therapy" + "\n" + "Amlodipine (Norvasc) 2.5-2mg daily. Titrate by doubling dose in 2-4 weeks if BP goal is NOT met (max dose: 10mg)"):
         return "error."
     return "ok."

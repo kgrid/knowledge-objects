@@ -58,16 +58,16 @@ def albuminDiagnosis(albuminLevel):
 
 # Test function. Run before use.
 def test():
-    if therapyRecommendation({"systolic":0,"diastolic":0,"albuminLevel":20}) != "No systolic or diastolic information provided. Cannot calculate.":
+    if execute({"systolic":0,"diastolic":0,"albuminLevel":20}) != "No systolic or diastolic information provided. Cannot calculate.":
         return "error."
-    if therapyRecommendation({"systolic":10,"diastolic":0,"albuminLevel":230}) != "Not applicable, patient doesn't have high blood pressure.":
+    if execute({"systolic":10,"diastolic":0,"albuminLevel":230}) != "Not applicable, patient doesn't have high blood pressure.":
         return "error."
-    if therapyRecommendation({"systolic":150,"diastolic":90,"albuminLevel":230}) != ("With microalbiminuria-" + "\n" + "(1) ACE Inhibitor- initiate therapy unless contraindication (hypersensitivity reaction, angioedema) or documented persistent cough." + "\n" + "(a) Lisinopril 10mg daily. Titrate by doubling dose every 2-4 weeks until the BP goal is met (max dose: 40mg)" + "\n" + "(2) If ACE inhibitor contraindicated: Angiotensin II Receptor BLOCKER (ARB)" + "\n" + "(a) Losartan 25-50mg daily. Titrate by doubling dose in 2-4 weeks if BP goal NOT met (max dose: 100mg)"):
+    if execute({"systolic":150,"diastolic":90,"albuminLevel":230}) != ("With microalbiminuria-" + "\n" + "(1) ACE Inhibitor- initiate therapy unless contraindication (hypersensitivity reaction, angioedema) or documented persistent cough." + "\n" + "(a) Lisinopril 10mg daily. Titrate by doubling dose every 2-4 weeks until the BP goal is met (max dose: 40mg)" + "\n" + "(2) If ACE inhibitor contraindicated: Angiotensin II Receptor BLOCKER (ARB)" + "\n" + "(a) Losartan 25-50mg daily. Titrate by doubling dose in 2-4 weeks if BP goal NOT met (max dose: 100mg)"):
         return "error."
-    if therapyRecommendation({"systolic":0,"diastolic":110,"albuminLevel":20}) != ("Without microalbuminuria-" + "\n" + "initiate therapy with either: " + "\n" + "(1) Thiazide diuretic - initiate therapy. " + "\n" + "(a) Chlorthalidone 25mg/day. Titrate by doubling dose in 2-4 weeks if BP goal NOT met. (max dose: 50mg daily)" + "\n" + "(b) Hydrochlorothiazide 12.5mg daily. Titrate by doubling dose in 2-4 weeks if BP goal NOT met. (max dose: 25mg daily)."+ "\n" + "(2) ACE inhibitor (Angiotensin-Converting Enzyme) Inhibitor- initiate therapy unless contraindication (hypersensitivity reaction, angioedema) or documented persistent cought."+ "\n" +"(a) Lisinopril 10mg daily. Titrate by doubling dose every 2-4 weeks until the BP goal is met (max dose: 40mg)."+ "\n" + "(3) If ACE inhibitory contraindicated: Angiotensin II Receptor Blocker (ARB)."+ "\n" +"(a) Losartan 24-50mg daily. Titrate by doubling dose in 2-4 weeks if BP goal NOT med (max dose: 100mg)"):
+    if execute({"systolic":0,"diastolic":110,"albuminLevel":20}) != ("Without microalbuminuria-" + "\n" + "initiate therapy with either: " + "\n" + "(1) Thiazide diuretic - initiate therapy. " + "\n" + "(a) Chlorthalidone 25mg/day. Titrate by doubling dose in 2-4 weeks if BP goal NOT met. (max dose: 50mg daily)" + "\n" + "(b) Hydrochlorothiazide 12.5mg daily. Titrate by doubling dose in 2-4 weeks if BP goal NOT met. (max dose: 25mg daily)."+ "\n" + "(2) ACE inhibitor (Angiotensin-Converting Enzyme) Inhibitor- initiate therapy unless contraindication (hypersensitivity reaction, angioedema) or documented persistent cought."+ "\n" +"(a) Lisinopril 10mg daily. Titrate by doubling dose every 2-4 weeks until the BP goal is met (max dose: 40mg)."+ "\n" + "(3) If ACE inhibitory contraindicated: Angiotensin II Receptor Blocker (ARB)."+ "\n" +"(a) Losartan 24-50mg daily. Titrate by doubling dose in 2-4 weeks if BP goal NOT med (max dose: 100mg)"):
         return "error."
-    if therapyRecommendation({"systolic":300,"diastolic":0,"albuminLevel":400}) != "Albumin levels indicate macroalbuminuria.":
+    if execute({"systolic":300,"diastolic":0,"albuminLevel":400}) != "Albumin levels indicate macroalbuminuria.":
         return "error."
-    if therapyRecommendation({"systolic":300,"diastolic":0,"albuminLevel":0}) != "No albumin level information provided. Cannot calculate.":
+    if execute({"systolic":300,"diastolic":0,"albuminLevel":0}) != "No albumin level information provided. Cannot calculate.":
         return "error."
     return "ok."

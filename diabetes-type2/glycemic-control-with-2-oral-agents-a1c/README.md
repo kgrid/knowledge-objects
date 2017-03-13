@@ -16,19 +16,19 @@ This KO is derived from Table 6: Steps in Glycemic Control with Oral Agents in P
 ### Description
 The inputs for this KO are a1c (type float) and individual_target (type float) and must be formatted as follows, with a1c representing a key that should not be changed:
 
-glycemicControl({"a1c":0.0, "individual_target":0.0})
+execute({"a1c":0.0, "individual_target":0.0})
 
 If no a1c is provided, the function will output "no a1c provided. unable to calculate". If individual_target is left at 0, the script will assume that there is on defined individualized target, and will calculate based on the averaged values.
 
 ### Running
-The script can be run by calling glycemicControl({"a1c":0.0,"individual_target":0.0}). We have also included a test() function that we suggest running before running your data through.
+The script can be run by calling execute({"a1c":0.0,"individual_target":0.0}). We have also included a test() function that we suggest running before running your data through.
 
 
 ### Getting started
 To run program from terminal, go to terminal and cd into the directory where the python file is located. Enter the following:
 1. python
-2. import glycemic-control-2agents
-3. glycemic-control-2agents.glycemicControl({"a1c":0.0,"individual_target":0.0})
+2. import gc
+3. gc.execute({"a1c":0.0,"individual_target":0.0})
 
 ### Running through SHELF REST API...
 To run through SHELF REST API, the knowledge object needs to be added to ObjectTeller and to the REST API SHELF before its executable.
@@ -40,7 +40,7 @@ The ark ID for this object is: **ark:/99999/fk41g0zd0q**
   - Add the following headers:
     - Content-Type:application/json
     - Accept:application/json
-  - Enter input into "body"
+  - Enter input into "body" (i.e. {"a1c":7.0,"individualTarget":0.0})
   - Run the POST command. http://dlhs-fedora-dev-a.umms.med.umich.edu:8080/ExecutionStack/knowledgeObject/ark:/99999/fk41g0zd0q/result
 
 

@@ -16,7 +16,7 @@ The knowledge is derived from Table 11: Steps in Pharmacologic Treatment of Hype
 ### Description
 The inputs are systolic and diastolic, type float. The inputs must be formatted as follows, with systolic and diastolic representing keys that should not be changed:
 
-therapyRecommendation2({"systolic":0.0,
+execute({"systolic":0.0,
                       "diastolic":0.0})
 
 
@@ -32,7 +32,7 @@ The output is the recommended therapy, or an "unable to calculate" message if va
   To run program from terminal, go to terminal and cd into the directory where the python file is located. Enter the following:
   1. python2
   2. import step-2
-  3. step-1.therapyRecommendation2({"systolic":0.0,"diastolic":0.0})
+  3. step-1.execute({"systolic":0.0,"diastolic":0.0})
 
 ### Running through SHELF REST API...
 To run through SHELF REST API, the knowledge object needs to be added to ObjectTeller and to the REST API SHELF before its executable.
@@ -44,7 +44,7 @@ The ark ID for this object is: **ark:/99999/fk4w66qt8k**
   - Add the following headers:
     - Content-Type:application/json
     - Accept:application/json
-  - Enter input into "body"
+  - Enter input into "body" (i.e. {"systolic":150,"diastolic":90})
   - Run the POST command. http://dlhs-fedora-dev-a.umms.med.umich.edu:8080/ExecutionStack/knowledgeObject/ark:/99999/fk4w66qt8k/result
 
 ### Related Objects/Future Development
