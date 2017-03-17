@@ -24,7 +24,7 @@ The completed knowledge objects are as follows (also on ObjectTeller):
       - ArkID: ark:/99999/fk4fn1fb10
 
    4. Steps in Glycemic Control with 2 oral agents in Patients with Type 2 Diabetes Based on A1c
-      - Input: a1c, individualTarget (i.e. {"a1c":7.5,"individual_target":8.0})
+      - Input: a1c, individualTarget (i.e. {"a1c":7.5,"individualTarget":8.0})
       - Output: glycemic control recommendation (i.e. "below individual target, no additional agents")
       - ArkID: ark:/99999/fk41g0zd0q
 
@@ -44,12 +44,12 @@ The completed knowledge objects are as follows (also on ObjectTeller):
       - ArkID: ark:/99999/fk4rf6114q
 
    8. Steps in Pharmacologic Treatment of Hypertension in Patients with Diabetes Mellitus: Step 4 
-      - Input: systolic, daistolic (i.e. {"systolic":10,"diastolic":0})
+      - Input: systolic, diastolic (i.e. {"systolic":10,"diastolic":0})
       - Ouput: pharmacologic treatment recommendation (i.e. "Not applicable, patient doesn't have high blood pressure.")
       - ArkID: ark:/99999/fk4mp5968n
 
    9. Classifying Candidate Patients that would Benefit from Tight Control: Result
-       - Input: comorbidities, advanced-complications, treatment-safety, life-expectancy, hypoglycemia-hisory, hypoglyocemia-unawareness, vascular-disease, autonomic-neuropathy, hypoglycemia-comorbidities, poort-support (i.e. {"comorbidities":"1","advanced-complications":"1","treatment-safety":"1","life-expectancy":"1","hypoglycemia-history":"1","hypoglycemia-unawareness":"1","vascular-disease":"1","autonomic-neuropathy":"1","hypoglycemia-comorbidities":"1","poor-support":"1"})
+       - Input: comorbidities, advanced complications, treatment safety, life expectancy, hypoglycemia hisory, hypoglyocemia unawareness, vascular disease, autonomic neuropathy, hypoglycemia comorbidities, poor support (i.e. {"comorbidities":"1","advComplications":"1","treatmentSafety":"1","lifeExpectancy":"1","hypoglycemiaHistory":"1","hypoglycemiaUnawareness":"1","vascularDisease":"1","autonomicNeuropathy":"1","hypoglycemiaComorbidities":"1","poorSupport":"1"})
       - Output: candidiate for tight control (i.e.  "no")
       - ArkID: ark:/99999/fk4hq46j3g
 
