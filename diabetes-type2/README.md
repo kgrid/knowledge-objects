@@ -49,7 +49,7 @@ The completed knowledge objects are as follows (also on ObjectTeller):
       - ArkID: ark:/99999/fk4mp5968n
 
    9. Classifying Candidate Patients that would Benefit from Tight Control: Result
-       - Input: comorbidities, advanced complications, treatment safety, life expectancy, hypoglycemia hisory, hypoglyocemia unawareness, vascular disease, autonomic neuropathy, hypoglycemia comorbidities, poor support (i.e. {"comorbidities":"1","advComplications":"1","treatmentSafety":"1","lifeExpectancy":"1","hypoglycemiaHistory":"1","hypoglycemiaUnawareness":"1","vascularDisease":"1","autonomicNeuropathy":"1","hypoglycemiaComorbidities":"1","poorSupport":"1"})
+       - Input: comorbidities, advanced complications, treatment safety, life expectancy, hypoglycemia hisory, hypoglyocemia unawareness, vascular disease, autonomic neuropathy, hypoglycemia comorbidities, poor support (i.e {"comorbidities":"1","advComplications":"1","treatmentSafety":"1","lifeExpectancy":"1","hypoglycemiaHistory":"1","hypoglycemiaUnawareness":"1","vascularDisease":"1","autonomicNeuropathy":"1","hypoglycemiaComorbidities":"1","poorSupport":"1"})
       - Output: candidiate for tight control (i.e.  "no")
       - ArkID: ark:/99999/fk4hq46j3g
 
