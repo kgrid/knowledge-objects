@@ -1,7 +1,7 @@
 # Step 1. Elevated BP (systolic BP >= 140 and/or diastolic BP>= 90) uncontrolled by prior lifestyle.
 # https://www.kidney.org/atoz/content/albuminuria < 30mg/24hrs normal, 30-300mg/24hrs microalbuminuria, >300mgs/24hrs macroalbuminuria
 
-def therapyRecommendation(inputs):
+def execute(inputs):
     systolic = inputs["systolic"]
     diastolic = inputs["diastolic"]
     albuminLevel = inputs["albuminLevel"]

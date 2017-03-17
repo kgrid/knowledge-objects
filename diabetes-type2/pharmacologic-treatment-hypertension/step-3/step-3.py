@@ -1,5 +1,5 @@
 # Step 3. If above agents are contraindicated or dose is optimized and patients BP remains >= 140/90
-def therapyRecommendation3(inputs):
+def execute(inputs):
     systolic = inputs["systolic"]
     diastolic = inputs["diastolic"]
     high_bp = bloodPressureCheck(systolic,diastolic)
