@@ -57,16 +57,16 @@ To run program from terminal, go to terminal and cd into the directory where the
 
 ### Running through SHELF REST API...
 To run through SHELF REST API, the knowledge object needs to be added to ObjectTeller and to the REST API SHELF before its executable.
-The ark ID for this object is: **ark:/99999/fk4gm8g63d**
+The ark ID for this object is: **ark:/99999/fk4w09b99w**
 
-1. To add to shelf: http://dlhs-fedora-dev-a.umms.med.umich.edu:8080/ExecutionStack/shelf/ark:/99999/fk4gm8g63d
+1. To add to shelf: http://dlhs-fedora-dev-a.umms.med.umich.edu:8080/ExecutionStack/shelf/ark:/99999/fk4w09b99w
 2. To check shelf: http://dlhs-fedora-dev-a.umms.med.umich.edu:8080/ExecutionStack/shelf
 3. To execute:
   - Add the following headers:
     - Content-Type:application/json
     - Accept:application/json
   - Enter input into "body" (i.e. {"diagnosticTest":"hemoglobin A1c","glucoseLevel":6})
-  - Run the POST command. http://dlhs-fedora-dev-a.umms.med.umich.edu:8080/ExecutionStack/knowledgeObject/ark:/99999/fk4gm8g63d/result
+  - Run the POST command. http://dlhs-fedora-dev-a.umms.med.umich.edu:8080/ExecutionStack/knowledgeObject/ark:/99999/fk4w09b99w/result
 
 ### Related Objects/Future Development
 This KO was created with other diabetes KO in hopes to create a collection of KO helpful for the diabetes community.
