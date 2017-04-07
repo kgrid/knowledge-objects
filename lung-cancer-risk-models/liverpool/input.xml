@@ -1,0 +1,38 @@
+<rdf:RDF xmlns:ot="http://uofm.org/objectteller/#"
+ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <rdf:Description rdf:about="http://uofm.org/objectteller/inputMessage">
+    <ot:noofparams>7</ot:noofparams>
+    <ot:params>
+      <rdf:Seq>
+        <rdf:li>age</rdf:li>
+        <rdf:li>gender</rdf:li>
+        <rdf:li>smoking_duration</rdf:li>
+        <rdf:li>copd</rdf:li>
+        <rdf:li>prior_diag</rdf:li>
+        <rdf:li>early_onset</rdf:li>
+        <rdf:li>late_onset</rdf:li>
+      </rdf:Seq>
+    </ot:params>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://uofm.org/objectteller/age/">
+    <ot:datatype>INT</ot:datatype>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://uofm.org/objectteller/gender/">
+    <ot:datatype>INT</ot:datatype>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://uofm.org/objectteller/smoking_duration/">
+      <ot:datatype>INT</ot:datatype>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://uofm.org/objectteller/copd/">
+      <ot:datatype>INT</ot:datatype>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://uofm.org/objectteller/prior_diag/">
+      <ot:datatype>INT</ot:datatype>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://uofm.org/objectteller/early_onset/">
+      <ot:datatype>INT</ot:datatype>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://uofm.org/objectteller/late_onset/">
+      <ot:datatype>INT</ot:datatype>
+    </rdf:Description>
+</rdf:RDF>
