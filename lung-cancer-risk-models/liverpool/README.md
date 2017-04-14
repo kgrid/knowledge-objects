@@ -8,13 +8,13 @@ This knowledge object (KO) estimates the lung cancer incidence through the Liver
 
 
 ### Description
-The input is as follows: {"age":0,"gender":0,"smoking_duration":0,"copd":0,"prior_diag":0,"early_onset":0,"late_onset":0}
-    gender: 0-female, 1-male
-    smoking_duration: # of years smoking_duration
-    copd: 0-no, 1-yes
-    prior_diag: Prior diagnosis for malignant tumour, 0-no, 1-yes
-    early_onset: early onset (<60 years), 0-no, 1-yes
-    late_onset: late onset (>= 60 years), 0-no, 1-yes
+The input is as follows: {"age":0,"gender":0,"smoking_duration":0,"copd":0,"prior_diag":0,"early_onset":0,"late_onset":0}  
+- gender: 0-female, 1-male  
+- smoking_duration: # of years smoking_duration  
+- copd: 0-no, 1-yes  
+- prior_diag: Prior diagnosis for malignant tumour, 0-no, 1-yes  
+- early_onset: early onset (<60 years), 0-no, 1-yes  
+- late_onset: late onset (>= 60 years), 0-no, 1-yes  
 
 
 ### Running
