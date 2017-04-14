@@ -1,4 +1,4 @@
-# LLPi: Liverpool Lung Project Risk Prediction Model for Lung Cancer Incidence dicence
+# LLPi: Liverpool Lung Project Risk Prediction Model for Lung Cancer Incidence 
 from math import exp
 
 def execute(inputs):

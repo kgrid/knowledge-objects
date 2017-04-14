@@ -4,17 +4,18 @@ def execute(inputs):
     smokingDuration = inputs["smokingDuration"]
     age = inputs["age"]
 
-    b = beta_1 * x
-    a = (1-exp(exp(b*c)))
-    # i.e. calcC("current","cancer",20)
-    c = calcC(smokerStatus,survivorStatus,smokingDuration,age)
+    b = (calcHt("former","death",40,48))
+
+    print b
 
 def calcB():
     # sex: female = 1, male =0
-    covariates = ["sex","BMI","education level","hay fever","asthma","family history of cancer","chr15q25","chr5p15","silica","pah","metal","asbestos"]
+    covariates_current = {"sex":1.35,"BMI":0.963,"education level":0.944,"hay fever":0.593,"asthma":0.85,"family history of cancer":1.27,"chr15q25":1.13,"chr5p15":0.954,"silica":0.893,"pah":0.988,"metal":0.961,"asbestos":0.943}
+    covariates_former = {"sex":1.2,"BMI":0.96,"education level":0.436,"hay fever":0.901,"asthma":1.58,"family history of cancer":1.22,"chr15q25":1.14,"chr5p15":1.06,"silica":0.851,"pah":0.869,"metal":1.23,"asbestos":1.05}
+
     print "temp"
 
-def calcC(smokerStatus,survivorStatus,smokingDuration,age):
+def calcHt(smokerStatus,survivorStatus,smokingDuration,age):
     s = smokingDuration
     lam = 0
     gamma = 0
@@ -169,16 +170,18 @@ def calcC(smokerStatus,survivorStatus,smokingDuration,age):
                 lam = 4.041
                 gamma = 2.490
 
-    print lam
-    print gamma
+    #print lam
+    #print gamma
 
-    c = (((age/lam)**gamma) - (((age+1)/lam)**gamma))
+    c = (lam/gamma)*((age/lam)**(lam-1))
     return c
 
 
 def test():
-    if str(calcC("former","death",40,48)) != "-17.5759666625":
+    if str(calcHt("former","death",40,48)) != "-17.5759666625":
         return "error."
     return "ok."
 
-execute({"smokerStatus":"former","smokingDuration":40,"age":48})
+
+#execute({"smokerStatus":"former","smokingDuration":40,"age":48})
+print (calcC("former","death",40,48))
