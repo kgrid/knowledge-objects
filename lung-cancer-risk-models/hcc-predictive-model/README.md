@@ -2,6 +2,9 @@
 
 Local (umich) documentation link: https://umich.app.box.com/v/dlhsnhrione
 
+EXAMPLE INPUT DATA
+{"age": "60", "gender": "M","ALT": "47","HBeAg": "1","HBVDNAlevel": "99999", "HepB":"1"}
+
 METADATA 
 TITLE
 
