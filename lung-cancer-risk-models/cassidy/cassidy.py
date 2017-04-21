@@ -101,7 +101,6 @@ def execute(inputs):
 
 
 
-
 def test():
     if str(getAlpha("male",68)) != "-5.385":
         return "error."

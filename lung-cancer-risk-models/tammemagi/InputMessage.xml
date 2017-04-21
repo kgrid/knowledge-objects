@@ -1,0 +1,65 @@
+<rdf:RDF xmlns:ot="http://uofm.org/objectteller/#"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <rdf:Description rdf:about="http://uofm.org/objectteller/inputMessage">
+        <ot:noofparams>10</ot:noofparams>
+        <ot:params>
+            <rdf:Seq>
+                <rdf:li>age</rdf:li>
+                <rdf:li>edLevel</rdf:li>
+                <rdf:li>bmi</rdf:li>
+                <rdf:li>hxNonLungCancerDz</rdf:li>
+                <rdf:li>hxLungCancer</rdf:li>
+                <rdf:li>hxLungCancerFam</rdf:li>
+                <rdf:li>ethnicity</rdf:li>
+                <rdf:li>yrsQuit</rdf:li>
+                <rdf:li>cigsPerDay</rdf:li>
+                <rdf:li>yrsSmoker</rdf:li>
+            </rdf:Seq>
+        </ot:params>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://uofm.org/objectteller/age/">
+        <ot:datatype>FLOAT</ot:datatype>
+        <ot:min>0</ot:min>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://uofm.org/objectteller/edLevel/">
+        <ot:datatype>INT</ot:datatype>
+        <ot:min>1</ot:min>
+        <ot:max>6</ot:max>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://uofm.org/objectteller/bmi/">
+        <ot:datatype>FLOAT</ot:datatype>
+        <ot:min>0</ot:min>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://uofm.org/objectteller/hxNonLungCancerDz/">
+        <ot:datatype>INT</ot:datatype>
+        <ot:min>0</ot:min>
+        <ot:max>1</ot:max>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://uofm.org/objectteller/hxLungCancer/">
+        <ot:datatype>INT</ot:datatype>
+        <ot:min>0</ot:min>
+        <ot:max>1</ot:max>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://uofm.org/objectteller/hxLungCancerFam/">
+        <ot:datatype>INT</ot:datatype>
+        <ot:min>0</ot:min>
+        <ot:max>1</ot:max>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://uofm.org/objectteller/ethnicity/">
+        <ot:datatype>INT</ot:datatype>
+        <ot:min>1</ot:min>
+        <ot:max>6</ot:max>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://uofm.org/objectteller/yrsQuit/">
+        <ot:datatype>INT</ot:datatype>
+        <ot:min>0</ot:min>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://uofm.org/objectteller/cigsPerDay/">
+        <ot:datatype>INT</ot:datatype>
+        <ot:min>0</ot:min>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://uofm.org/objectteller/yrsSmoker/">
+        <ot:datatype>INT</ot:datatype>
+        <ot:min>0</ot:min>
+    </rdf:Description>
+</rdf:RDF>
