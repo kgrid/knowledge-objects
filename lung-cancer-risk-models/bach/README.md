@@ -33,11 +33,11 @@ The ark ID for this object is: **ark:/99999/fk4057tv7z**
 1. To add to shelf: {{baseUrl}}/shelf/ark:/99999/fk4057tv7z
 2. To check shelf: {{baseUrl}}/shelf
 3. To execute:
-  - Add the following headers:
-    - Content-Type:application/json
-    - Accept:application/json
-  - Enter input into "body" (i.e. {"age":55, "cpd":20, "yrssmok":30, "yrsquit":0, "asbhx":0, "sexn":1, "quit":1})
-  - Run the POST command. {{baseUrl}}/knowledgeObject/ark:/99999/fk4057tv7z/result
+   - Add the following headers:
+     - Content-Type:application/json
+     - Accept:application/json
+   - Enter input into "body" (i.e. {"age":55, "cpd":20, "yrssmok":30, "yrsquit":0, "asbhx":0, "sexn":1, "quit":1})
+   - Run the POST command. {{baseUrl}}/knowledgeObject/ark:/99999/fk4057tv7z/result
 
 
 ### Literature
