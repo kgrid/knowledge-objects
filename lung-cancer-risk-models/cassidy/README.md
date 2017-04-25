@@ -40,11 +40,11 @@ The ark ID for this object is: **ark:/99999/fk4571pp25**
 1. To add to shelf: PUT {{baseUrl}}/shelf/ark:/99999/fk4571pp25
 2. To check shelf: GET {{baseUrl}}/shelf
 3. To execute:
-  - Add the following headers:
-    - Content-Type:application/json
-    - Accept:application/json
-  - Enter input into "body" (i.e. {"gender":"male","age":51,"riskFactors":["smoking duration, 21-40 years"]})
-  - Run the POST command. {{baseUrl}}/knowledgeObject/ark:/99999/fk4571pp25/result
+   - Add the following headers:
+     - Content-Type:application/json
+     - Accept:application/json
+   - Enter input into "body" (i.e. {"gender":"male","age":51,"riskFactors":["smoking duration, 21-40 years"]})
+   - Run the POST command. {{baseUrl}}/knowledgeObject/ark:/99999/fk4571pp25/result
 
 ### Literature
 The documentation can be found at: https://www.ncbi.nlm.nih.gov/pubmed/18087271

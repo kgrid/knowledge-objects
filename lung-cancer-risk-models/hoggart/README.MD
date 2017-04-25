@@ -61,11 +61,11 @@ The ark ID for this object is: **ark:/99999/fk45430b5m**
 1. To add to shelf: {{baseUrl}}/shelf/ark:/99999/fk45430b5m
 2. To check shelf: {{baseUrl}}/shelf
 3. To execute:
-  - Add the following headers:
-    - Content-Type:application/json
-    - Accept:application/json
-  - Enter input into "body" (i.e. {"smokerStatus":"former","smokingDuration":10,"t":24,"covariates":{"sex":"female","BMI":28,"hay fever": 1}})
-  - Run the POST command. {{baseUrl}}/knowledgeObject/ark:/99999/fk45430b5m/result
+   - Add the following headers:
+     - Content-Type:application/json
+     - Accept:application/json
+   - Enter input into "body" (i.e. {"smokerStatus":"former","smokingDuration":10,"t":24,"covariates":{"sex":"female","BMI":28,"hay fever": 1}})
+   - Run the POST command. {{baseUrl}}/knowledgeObject/ark:/99999/fk45430b5m/result
 
 
 ### Literature

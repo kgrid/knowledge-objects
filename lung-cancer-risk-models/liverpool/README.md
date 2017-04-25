@@ -34,11 +34,11 @@ The ark ID for this object is: **ark:/99999/fk4x92gk0r**
 1. To add to shelf: {{baseUrl}}/shelf/ark:/99999/fk4x92gk0r
 2. To check shelf: {{baseUrl}}/shelf
 3. To execute:
-  - Add the following headers:
-    - Content-Type:application/json
-    - Accept:application/json
-  - Enter input into "body" (i.e. {"age":50,"gender":1,"smoking_duration":30,"copd":1,"prior_diag":0,"early_onset":0,"late_onset":0})
-  - Run the POST command. {{baseUrl}}/knowledgeObject/ark:/99999/fk4x92gk0r/result
+   - Add the following headers:
+     - Content-Type:application/json
+     - Accept:application/json
+   - Enter input into "body" (i.e. {"age":50,"gender":1,"smoking_duration":30,"copd":1,"prior_diag":0,"early_onset":0,"late_onset":0})
+   - Run the POST command. {{baseUrl}}/knowledgeObject/ark:/99999/fk4x92gk0r/result
 
 ### Literature
 The documentation can be found at: https://www.ncbi.nlm.nih.gov/pubmed/25873368
