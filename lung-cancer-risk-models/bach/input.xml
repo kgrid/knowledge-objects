@@ -1,0 +1,38 @@
+<rdf:RDF xmlns:ot="http://uofm.org/objectteller/#"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <rdf:Description rdf:about="http://uofm.org/objectteller/inputMessage">
+        <ot:noofparams>7</ot:noofparams>
+        <ot:params>
+            <rdf:Seq>
+                <rdf:li>age</rdf:li>
+                <rdf:li>cpd</rdf:li>
+                <rdf:li>yrssmok</rdf:li>
+                <rdf:li>yrsquit</rdf:li>
+                <rdf:li>asbhx</rdf:li>
+                <rdf:li>sexn</rdf:li>
+                <rdf:li>quit</rdf:li>
+            </rdf:Seq>
+        </ot:params>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://uofm.org/objectteller/age/">
+        <ot:datatype>INT</ot:datatype>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://uofm.org/objectteller/cpd/">
+        <ot:datatype>INT</ot:datatype>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://uofm.org/objectteller/yrssmok/">
+        <ot:datatype>INT</ot:datatype>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://uofm.org/objectteller/yrsquit/">
+        <ot:datatype>INT</ot:datatype>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://uofm.org/objectteller/asbhx/">
+        <ot:datatype>INT</ot:datatype>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://uofm.org/objectteller/sexn/">
+        <ot:datatype>INT</ot:datatype>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://uofm.org/objectteller/quit/">
+        <ot:datatype>INT</ot:datatype>
+    </rdf:Description>
+</rdf:RDF>
