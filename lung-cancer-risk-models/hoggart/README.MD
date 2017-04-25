@@ -1,5 +1,5 @@
 # Hoggart, A Risk Model for Lung Cancer Incidence (Hoggart, et.al., 2012)
-Author: Kristen McGarry
+Code by: Kristen McGarry
 Organization: KGrid, University of Michigan, Michigan Medicine
 April 20th, 2017
 

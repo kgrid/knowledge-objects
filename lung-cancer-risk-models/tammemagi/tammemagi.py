@@ -4,8 +4,8 @@ import math
 # PLCOm2012 model (Tammemagi,NEJM,2013)
 # Author          Kevin ten Haaf
 # Organization    Erasmus Medical Center Rotterdam
-#Last adjusted: June 19 2014
-def getSixyearprobability(info):
+#Last adjusted: April 25, 2017
+def execute(info):
 
     #currentage,education,bmi,copd,personalhistory,familyhistory,race,currentsmokingstatus,averageCPD,currentsmokingduration,currentyearsquit)
     currentage = int(info['age'])
@@ -79,4 +79,5 @@ def getSixyearprobability(info):
 
     Sixyearprobabilitypercentage = 100 * exp(Sumvalues)/(1+exp(Sumvalues))
 
-    return float(Sixyearprobabilitypercentage)
+    #return float(Sixyearprobabilitypercentage)
+    return "This individual's six year probability of developing lung cancer is " + str(float(Sixyearprobabilitypercentage)) + "%."
