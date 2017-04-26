@@ -14,18 +14,18 @@ The following variables are the covariates with each respective value:
 	1)	sex
   	-	female 1
   	-	male 0
-	2)	BMI
+	2)	bmi
 	 -	actual value
-	3)	education Level (measured by level completed)
+	3)	edLevel (measured by level completed)
   	-	other 1
   	-	university degree 0
-	4)	hay fever
+	4)	hayFever
 	  - yes 1
 	  -	no 0
 	5)	asthma
 	  - yes 1
 	  - no 0
-	6)	family history of cancer
+	6)	famHxCanc
   	-	yes 1
   	-	no 0
 	7)	chr15q25 (presence of SNP)
@@ -43,17 +43,17 @@ The following variables are the covariates with each respective value:
 	11)	metal
   	-	yes 1
   	-	no 0
-	12)	asbestos
+	12)	asb (asbestos)
   	-	yes 1
   	-	no 0
 
 ### Running
-The script can be run by calling execute({"smokerStatus":"","smokingDuration":0,"t":0,"covariates":{}}. We have also included a test() function that we suggest running before running your data through.
+The script can be run by calling execute({"smokerStatus":"","smokDurat":0,"t":0,"covariates":{}). We have also included a test() function that we suggest running before running your data through.
 
 To run program from terminal, go to terminal and cd into the directory where the python file is located. Enter the following:
 1. python
 2. import hoggart
-3. hoggart.execute({"smokerStatus":"former","smokingDuration":10,"t":24,"covariates":{"sex":"female","BMI":28,"hay fever": 1}})
+3. hoggart.execute({"smokerStatus":"former","smokDurat":10,"t":24,"covariates":{"sex":"female","bmi":28,"hayFever": 1}})
 
 ### Running through SHELF REST API...
 The ark ID for this object is: **ark:/99999/fk45430b5m**
@@ -64,7 +64,7 @@ The ark ID for this object is: **ark:/99999/fk45430b5m**
    - Add the following headers:
      - Content-Type:application/json
      - Accept:application/json
-   - Enter input into "body" (i.e. {"smokerStatus":"former","smokingDuration":10,"t":24,"covariates":{"sex":"female","BMI":28,"hay fever": 1}})
+   - Enter input into "body" (i.e. {"smokerStatus":"former","smokDurat":10,"t":24,"covariates":{"sex":"female","bmi":28,"hayFever": 1}})
    - Run the POST command. {{baseUrl}}/knowledgeObject/ark:/99999/fk45430b5m/result
 
 

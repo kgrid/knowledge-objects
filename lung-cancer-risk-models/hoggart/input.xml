@@ -5,7 +5,7 @@
         <ot:params>
             <rdf:Seq>
                 <rdf:li>smokerStatus</rdf:li>
-                <rdf:li>smokingDuration</rdf:li>
+                <rdf:li>smokDurat</rdf:li>
                 <rdf:li>t</rdf:li>
                 <rdf:li>covariates</rdf:li>
             </rdf:Seq>
@@ -14,7 +14,7 @@
     <rdf:Description rdf:about="http://uofm.org/objectteller/smokerStatus/">
         <ot:datatype>STRING</ot:datatype>
     </rdf:Description>
-    <rdf:Description rdf:about="http://uofm.org/objectteller/smokingDuration/">
+    <rdf:Description rdf:about="http://uofm.org/objectteller/smokDurat/">
         <ot:datatype>FLOAT</ot:datatype>
     </rdf:Description>
     <rdf:Description rdf:about="http://uofm.org/objectteller/t/">

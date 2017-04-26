@@ -6,10 +6,10 @@
             <rdf:Seq>
                 <rdf:li>age</rdf:li>
                 <rdf:li>cpd</rdf:li>
-                <rdf:li>yrssmok</rdf:li>
-                <rdf:li>yrsquit</rdf:li>
-                <rdf:li>asbhx</rdf:li>
-                <rdf:li>sexn</rdf:li>
+                <rdf:li>yrsSmok</rdf:li>
+                <rdf:li>yrsQuit</rdf:li>
+                <rdf:li>asb</rdf:li>
+                <rdf:li>sex</rdf:li>
                 <rdf:li>quit</rdf:li>
             </rdf:Seq>
         </ot:params>
@@ -20,16 +20,16 @@
     <rdf:Description rdf:about="http://uofm.org/objectteller/cpd/">
         <ot:datatype>INT</ot:datatype>
     </rdf:Description>
-    <rdf:Description rdf:about="http://uofm.org/objectteller/yrssmok/">
+    <rdf:Description rdf:about="http://uofm.org/objectteller/yrsSmok/">
         <ot:datatype>INT</ot:datatype>
     </rdf:Description>
-    <rdf:Description rdf:about="http://uofm.org/objectteller/yrsquit/">
+    <rdf:Description rdf:about="http://uofm.org/objectteller/yrsQuit/">
         <ot:datatype>INT</ot:datatype>
     </rdf:Description>
-    <rdf:Description rdf:about="http://uofm.org/objectteller/asbhx/">
+    <rdf:Description rdf:about="http://uofm.org/objectteller/asb/">
         <ot:datatype>INT</ot:datatype>
     </rdf:Description>
-    <rdf:Description rdf:about="http://uofm.org/objectteller/sexn/">
+    <rdf:Description rdf:about="http://uofm.org/objectteller/sex/">
         <ot:datatype>INT</ot:datatype>
     </rdf:Description>
     <rdf:Description rdf:about="http://uofm.org/objectteller/quit/">

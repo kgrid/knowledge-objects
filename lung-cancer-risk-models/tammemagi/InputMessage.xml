@@ -7,13 +7,13 @@
                 <rdf:li>age</rdf:li>
                 <rdf:li>edLevel</rdf:li>
                 <rdf:li>bmi</rdf:li>
-                <rdf:li>hxNonLungCancerDz</rdf:li>
+                <rdf:li>copd</rdf:li>
                 <rdf:li>hxLungCancer</rdf:li>
-                <rdf:li>hxLungCancerFam</rdf:li>
-                <rdf:li>ethnicity</rdf:li>
+                <rdf:li>famHxCanc</rdf:li>
+                <rdf:li>race</rdf:li>
                 <rdf:li>yrsQuit</rdf:li>
                 <rdf:li>cigsPerDay</rdf:li>
-                <rdf:li>yrsSmoker</rdf:li>
+                <rdf:li>smokDurat</rdf:li>
             </rdf:Seq>
         </ot:params>
     </rdf:Description>
@@ -45,7 +45,7 @@
         <ot:min>0</ot:min>
         <ot:max>1</ot:max>
     </rdf:Description>
-    <rdf:Description rdf:about="http://uofm.org/objectteller/ethnicity/">
+    <rdf:Description rdf:about="http://uofm.org/objectteller/race/">
         <ot:datatype>INT</ot:datatype>
         <ot:min>1</ot:min>
         <ot:max>6</ot:max>
@@ -58,7 +58,7 @@
         <ot:datatype>INT</ot:datatype>
         <ot:min>0</ot:min>
     </rdf:Description>
-    <rdf:Description rdf:about="http://uofm.org/objectteller/yrsSmoker/">
+    <rdf:Description rdf:about="http://uofm.org/objectteller/smokDurat/">
         <ot:datatype>INT</ot:datatype>
         <ot:min>0</ot:min>
     </rdf:Description>

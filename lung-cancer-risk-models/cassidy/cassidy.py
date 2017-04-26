@@ -1,12 +1,12 @@
 from math import exp
-def getAlpha(gender,age):
-    gender = gender.lower()
-    if gender == "male":
+def getAlpha(sex,age):
+    sex = sex.lower()
+    if sex == "male":
         alpha_ref = {"40-44":-9.06,"45-49":-8.16,"50-54":-7.31,"55-59":-6.63,"60-64":-5.97,"65-69":-5.56,"70-74":-5.31,"75-79":-4.83,"80-84":-4.68}
-    elif gender == "female":
+    elif sex == "female":
         alpha_ref = {"40-44":-9.90,"45-49":-8.06,"50-54":-7.46,"55-59":-6.50,"60-64":-6.22,"65-69":-5.99,"70-74":-5.49, "75-79":-5.23,"80-84":-5.42}
     else:
-        return "invalid gender"
+        return "invalid sex"
 
     # take midpoint of every age
     age = age + 0.5
@@ -73,7 +73,7 @@ def getAlpha(gender,age):
 def getBeta(listOfRiskFactors):
     total = 0
     # Model Coefficients
-    logOddsRatio = {"prior pneumonia":0.602,"asbestos exposure":0.634,"prior cancer":0.675,"family history, early onset":0.703,"family history, late onset":0.168,"smoking duration, 1-20 years":0.769,"smoking duration, 21-40 years":1.452,"smoking duration, 41-60 years":2.507,"smoking duration, >= 60 years":2.724}
+    logOddsRatio = {"pneum":0.602,"asb":0.634,"cancHx":0.675,"famHxCanc, early onset":0.703,"famHxCanc, late onset":0.168,"smoking duration, 1-20 years":0.769,"smoking duration, 21-40 years":1.452,"smoking duration, 41-60 years":2.507,"smoking duration, >= 60 years":2.724}
     for riskFactor in listOfRiskFactors:
         if riskFactor not in logOddsRatio.keys():
             return "invalid risk factor"
@@ -83,11 +83,11 @@ def getBeta(listOfRiskFactors):
 
 
 def execute(inputs):
-    gender = inputs["gender"]
+    sex = inputs["sex"]
     age = inputs["age"]
     listOfRiskFactors = inputs["riskFactors"]
 
-    alpha = getAlpha(gender,age)
+    alpha = getAlpha(sex,age)
     if type(alpha) != float:
         return alpha
     beta = getBeta(listOfRiskFactors)
@@ -112,20 +112,20 @@ def test():
         return "error."
     if str(getBeta({"smoking duration, 21-40 years":1})) != "1.452":
         return "error."
-    if execute({"gender":"male","age":77,"riskFactors":["family history, early onset","asbestos exposure"]}) != "This individual has a 3.17% probability of developing lung cancer in the next 5 years.":
+    if execute({"sex":"male","age":77,"riskFactors":["famHxCanc, early onset","asb"]}) != "This individual has a 3.17% probability of developing lung cancer in the next 5 years.":
         return "error."
-    if execute({"gender":"male","age":51,"riskFactors":["smoking duration, 21-40 years"]}) !=  "This individual has a 0.35% probability of developing lung cancer in the next 5 years.":
+    if execute({"sex":"male","age":51,"riskFactors":["smoking duration, 21-40 years"]}) !=  "This individual has a 0.35% probability of developing lung cancer in the next 5 years.":
         return "error."
-    if execute({"gender":"female","age":65,"riskFactors":["smoking duration, 21-40 years","family history, late onset","prior pneumonia"]}) != "This individual has a 2.37% probability of developing lung cancer in the next 5 years.":
+    if execute({"sex":"female","age":65,"riskFactors":["smoking duration, 21-40 years","famHxCanc, late onset","pneum"]}) != "This individual has a 2.37% probability of developing lung cancer in the next 5 years.":
         return "error."
-    if execute({"gender":"female","age":68,"riskFactors":["smoking duration, 21-40 years"]})!= "This individual has a 1.49% probability of developing lung cancer in the next 5 years.":
+    if execute({"sex":"female","age":68,"riskFactors":["smoking duration, 21-40 years"]})!= "This individual has a 1.49% probability of developing lung cancer in the next 5 years.":
         return  "error."
-    if execute({"gender":"male","age":66,"riskFactors":["smoking duration, 41-60 years","asbestos exposure"]}) != "This individual has a 8.75% probability of developing lung cancer in the next 5 years.":
+    if execute({"sex":"male","age":66,"riskFactors":["smoking duration, 41-60 years","asb"]}) != "This individual has a 8.75% probability of developing lung cancer in the next 5 years.":
         return "error."
-    if execute({"gender":"male","age":90,"riskFactors":[]}) != "invalid age or age outside of 40-84 range":
+    if execute({"sex":"male","age":90,"riskFactors":[]}) != "invalid age or age outside of 40-84 range":
         return "error."
-    if execute({"gender":"child","age":10,"riskFactors":[]}) != "invalid gender":
+    if execute({"sex":"child","age":10,"riskFactors":[]}) != "invalid sex":
         return "error."
-    if execute({"gender":"FEMALE","age":47,"riskFactors":["diabetic"]}) != "invalid risk factor":
+    if execute({"sex":"FEMALE","age":47,"riskFactors":["diabetic"]}) != "invalid risk factor":
         return "error."
     return "ok."

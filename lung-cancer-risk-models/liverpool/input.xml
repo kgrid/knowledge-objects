@@ -5,34 +5,34 @@
     <ot:params>
       <rdf:Seq>
         <rdf:li>age</rdf:li>
-        <rdf:li>gender</rdf:li>
-        <rdf:li>smoking_duration</rdf:li>
+        <rdf:li>sex</rdf:li>
+        <rdf:li>smokDurat</rdf:li>
         <rdf:li>copd</rdf:li>
-        <rdf:li>prior_diag</rdf:li>
-        <rdf:li>early_onset</rdf:li>
-        <rdf:li>late_onset</rdf:li>
+        <rdf:li>priorDiag</rdf:li>
+        <rdf:li>earlyOnset</rdf:li>
+        <rdf:li>lateOnset</rdf:li>
       </rdf:Seq>
     </ot:params>
   </rdf:Description>
   <rdf:Description rdf:about="http://uofm.org/objectteller/age/">
     <ot:datatype>INT</ot:datatype>
   </rdf:Description>
-  <rdf:Description rdf:about="http://uofm.org/objectteller/gender/">
+  <rdf:Description rdf:about="http://uofm.org/objectteller/sex/">
     <ot:datatype>INT</ot:datatype>
   </rdf:Description>
-  <rdf:Description rdf:about="http://uofm.org/objectteller/smoking_duration/">
+  <rdf:Description rdf:about="http://uofm.org/objectteller/smokDurat/">
       <ot:datatype>INT</ot:datatype>
     </rdf:Description>
     <rdf:Description rdf:about="http://uofm.org/objectteller/copd/">
       <ot:datatype>INT</ot:datatype>
     </rdf:Description>
-    <rdf:Description rdf:about="http://uofm.org/objectteller/prior_diag/">
+    <rdf:Description rdf:about="http://uofm.org/objectteller/priorDiag/">
       <ot:datatype>INT</ot:datatype>
     </rdf:Description>
-    <rdf:Description rdf:about="http://uofm.org/objectteller/early_onset/">
+    <rdf:Description rdf:about="http://uofm.org/objectteller/earlyOnset/">
       <ot:datatype>INT</ot:datatype>
     </rdf:Description>
-    <rdf:Description rdf:about="http://uofm.org/objectteller/late_onset/">
+    <rdf:Description rdf:about="http://uofm.org/objectteller/lateOnset/">
       <ot:datatype>INT</ot:datatype>
     </rdf:Description>
 </rdf:RDF>
