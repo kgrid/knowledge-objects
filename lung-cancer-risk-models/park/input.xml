@@ -1,0 +1,45 @@
+<rdf:RDF xmlns:ot="http://uofm.org/objectteller/#"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <rdf:Description rdf:about="http://uofm.org/objectteller/inputMessage">
+        <ot:noofparams>6</ot:noofparams>
+        <ot:params>
+            <rdf:Seq>
+                <rdf:li>age</rdf:li>
+                <rdf:li>smokerStatus</rdf:li>
+                <rdf:li>asi</rdf:li>
+                <rdf:li>bmi</rdf:li>
+                <rdf:li>physActiv</rdf:li>
+                <rdf:li>fastingGluc</rdf:li>
+            </rdf:Seq>
+        </ot:params>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://uofm.org/objectteller/age/">
+        <ot:datatype>INT</ot:datatype>
+        <ot:min>0</ot:min>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://uofm.org/objectteller/smokerStatus/">
+        <ot:datatype>INT</ot:datatype>
+        <ot:min>0</ot:min>
+        <ot:max>3</ot:max>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://uofm.org/objectteller/asi/">
+        <ot:datatype>INT</ot:datatype>
+        <ot:min>0</ot:min>
+        <ot:max>3</ot:max>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://uofm.org/objectteller/bmi/">
+        <ot:datatype>INT</ot:datatype>
+        <ot:min>0</ot:min>
+        <ot:max>2</ot:max>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://uofm.org/objectteller/physActiv/">
+        <ot:datatype>INT</ot:datatype>
+        <ot:min>0</ot:min>
+        <ot:max>2</ot:max>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://uofm.org/objectteller/fastingGluc/">
+        <ot:datatype>INT</ot:datatype>
+        <ot:min>0</ot:min>
+        <ot:max>1</ot:max>
+    </rdf:Description>
+</rdf:RDF>
