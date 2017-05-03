@@ -1,0 +1,26 @@
+<rdf:RDF xmlns:ot="http://uofm.org/objectteller/#"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <rdf:Description rdf:about="http://uofm.org/objectteller/inputMessage">
+        <ot:noofparams>4</ot:noofparams>
+        <ot:params>
+            <rdf:Seq>
+                <rdf:li>sex</rdf:li>
+                <rdf:li>smokerStatus</rdf:li>
+                <rdf:li>age</rdf:li>
+                <rdf:li>riskFactors</rdf:li>
+            </rdf:Seq>
+        </ot:params>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://uofm.org/objectteller/sex/">
+        <ot:datatype>STRING</ot:datatype>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://uofm.org/objectteller/smokerStatus/">
+        <ot:datatype>STRING</ot:datatype>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://uofm.org/objectteller/age/">
+        <ot:datatype>INT</ot:datatype>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://uofm.org/objectteller/riskFactors/">
+        <ot:datatype>MAP</ot:datatype>
+    </rdf:Description>
+</rdf:RDF>
