@@ -80,15 +80,17 @@ def execute(info):
     Sixyearprobabilitypercentage = 100 * exp(Sumvalues)/(1+exp(Sumvalues))
     Sixyearprobabilitypercentage = round(Sixyearprobabilitypercentage,2)
     #return float(Sixyearprobabilitypercentage)
-    return "This individual's six year probability of developing lung cancer is " + str(float(Sixyearprobabilitypercentage)) + "%."
+
+    interpretation = "This individual's six year probability of developing lung cancer is " + str(float(Sixyearprobabilitypercentage)) + "%."
+    return {"result":Sixyearprobabilitypercentage,"interpretation":interpretation}
 
 
 
 def test():
-    if execute({"age":0,"edLevel":0,"bmi":0,"copd":0,"hxLungCancer":0,"famHxCanc":0,"race":0,"cigsPerDay":0,"smokDurat":0,"yrsQuit":0}) != "This individual's six year probability of developing lung cancer is 0.01%.":
+    if execute({"age":0,"edLevel":0,"bmi":0,"copd":0,"hxLungCancer":0,"famHxCanc":0,"race":0,"cigsPerDay":0,"smokDurat":0,"yrsQuit":0}) != {'interpretation': "This individual's six year probability of developing lung cancer is 0.01%.", 'result': 0.01}:
         return "error."
-    if execute({"age":70,"edLevel":0,"bmi":0,"copd":0,"hxLungCancer":1,"famHxCanc":1,"race":0,"cigsPerDay":0,"smokDurat":0,"yrsQuit":0}) != "This individual's six year probability of developing lung cancer is 8.68%.":
+    if execute({"age":70,"edLevel":0,"bmi":0,"copd":0,"hxLungCancer":1,"famHxCanc":1,"race":0,"cigsPerDay":0,"smokDurat":0,"yrsQuit":0}) != {'interpretation': "This individual's six year probability of developing lung cancer is 8.68%.", 'result': 8.68}:
         return "error."
-    if execute({"age":80,"edLevel":2,"bmi":0,"copd":1,"hxLungCancer":1,"famHxCanc":1,"race":0,"cigsPerDay":15,"smokDurat":0,"yrsQuit":0}) != "This individual's six year probability of developing lung cancer is 6.93%.":
+    if execute({"age":80,"edLevel":2,"bmi":0,"copd":1,"hxLungCancer":1,"famHxCanc":1,"race":0,"cigsPerDay":15,"smokDurat":0,"yrsQuit":0}) != {'interpretation': "This individual's six year probability of developing lung cancer is 6.93%.", 'result': 6.93}:
         return "error."
     return "ok."

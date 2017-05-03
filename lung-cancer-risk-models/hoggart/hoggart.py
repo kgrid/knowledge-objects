@@ -15,9 +15,10 @@ def execute(inputs):
     exp_betaXDea = betaX(smokerStatus,covariates)
     P_Death = (exp(exp_betaXCan*survFuncCan))
 
-    P_diagnosis = (P_Cancer * P_Death)
+    P_diagnosis = round((P_Cancer * P_Death)*100,2)
 
-    return "This individual has a " + str(round(P_diagnosis *100,2)) + "% probability of being diagnosed with lung cancer in 1 year from age t."
+    interpretation = "This individual has a " + str(P_diagnosis) + "% probability of being diagnosed with lung cancer in 1 year from age t."
+    return {"result":P_diagnosis,"interpretation":interpretation}
 
 
 def betaX(smokerStatus,covariates):
@@ -132,12 +133,12 @@ def calcSurvFunc(smokerStatus,survivorStatus,smokDurat,t):
 def test():
     if str(calcSurvFunc("former","death",40,48)) != "-17.5759666625":
         return "error."
-    if execute({"smokerStatus":"former","smokDurat":10,"t":24,"covariates":{"sex":"female","bmi":28,"hayFever": 1}}) != "This individual has a 13.93% probability of being diagnosed with lung cancer in 1 year from age t.":
+    if execute({"smokerStatus":"former","smokDurat":10,"t":24,"covariates":{"sex":"female","bmi":28,"hayFever": 1}}) != {'interpretation': 'This individual has a 13.93% probability of being diagnosed with lung cancer in 1 year from age t.', 'result': 13.93}:
         return "error."
-    if execute({"smokerStatus":"current","smokDurat":10,"t":10,"covariates":{"sex":"male","bmi":34,"asb": 1}}) != "This individual has a 11.74% probability of being diagnosed with lung cancer in 1 year from age t.":
+    if execute({"smokerStatus":"current","smokDurat":10,"t":10,"covariates":{"sex":"male","bmi":34,"asb": 1}}) != {'interpretation': 'This individual has a 11.74% probability of being diagnosed with lung cancer in 1 year from age t.', 'result': 11.74}:
         return "error."
-    if execute({"smokerStatus":"current","smokDurat":15,"t":30,"covariates":{"sex":"male","bmi":38,"asb": 0,"famHxCanc": 1,"asthma":0}}) != "This individual has a 25.0% probability of being diagnosed with lung cancer in 1 year from age t.":
+    if execute({"smokerStatus":"current","smokDurat":15,"t":30,"covariates":{"sex":"male","bmi":38,"asb": 0,"famHxCanc": 1,"asthma":0}}) != {'interpretation': 'This individual has a 25.0% probability of being diagnosed with lung cancer in 1 year from age t.', 'result': 25.0}:
         return "error."
-    if execute({"smokerStatus":"current","smokDurat":15,"t":30,"covariates":{"sex":"male","bmi":38,"asb": 1,"famHxCanc": 1,"asthma":0}}) != "This individual has a 24.99% probability of being diagnosed with lung cancer in 1 year from age t.":
+    if execute({"smokerStatus":"current","smokDurat":15,"t":30,"covariates":{"sex":"male","bmi":38,"asb": 1,"famHxCanc": 1,"asthma":0}}) != {'interpretation': 'This individual has a 24.99% probability of being diagnosed with lung cancer in 1 year from age t.', 'result': 24.99}:
         return "error."
     return "ok."

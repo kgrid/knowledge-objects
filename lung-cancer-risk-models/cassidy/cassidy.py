@@ -97,7 +97,8 @@ def execute(inputs):
     prob = 1/(1+exp(-(alpha+beta)))
     prob = (prob *100)
     prob = round(prob,2)
-    return "This individual has a " + str(prob) + "% probability of developing lung cancer in the next 5 years."
+    interpretation = "This individual has a " + str(prob) + "% probability of developing lung cancer in the next 5 years."
+    return {"result":prob,"interpretation":interpretation}
 
 
 
@@ -112,15 +113,15 @@ def test():
         return "error."
     if str(getBeta({"smoking duration, 21-40 years":1})) != "1.452":
         return "error."
-    if execute({"sex":"male","age":77,"riskFactors":["famHxCanc, early onset","asb"]}) != "This individual has a 3.17% probability of developing lung cancer in the next 5 years.":
+    if execute({"sex":"male","age":77,"riskFactors":["famHxCanc, early onset","asb"]}) != {'interpretation': 'This individual has a 3.17% probability of developing lung cancer in the next 5 years.', 'result': 3.17}:
         return "error."
-    if execute({"sex":"male","age":51,"riskFactors":["smoking duration, 21-40 years"]}) !=  "This individual has a 0.35% probability of developing lung cancer in the next 5 years.":
+    if execute({"sex":"male","age":51,"riskFactors":["smoking duration, 21-40 years"]}) != {'interpretation': 'This individual has a 0.35% probability of developing lung cancer in the next 5 years.', 'result': 0.35}:
         return "error."
-    if execute({"sex":"female","age":65,"riskFactors":["smoking duration, 21-40 years","famHxCanc, late onset","pneum"]}) != "This individual has a 2.37% probability of developing lung cancer in the next 5 years.":
+    if execute({"sex":"female","age":65,"riskFactors":["smoking duration, 21-40 years","famHxCanc, late onset","pneum"]}) != {'interpretation': 'This individual has a 2.37% probability of developing lung cancer in the next 5 years.', 'result': 2.37}:
         return "error."
-    if execute({"sex":"female","age":68,"riskFactors":["smoking duration, 21-40 years"]})!= "This individual has a 1.49% probability of developing lung cancer in the next 5 years.":
+    if execute({"sex":"female","age":68,"riskFactors":["smoking duration, 21-40 years"]})!= {'interpretation': 'This individual has a 1.49% probability of developing lung cancer in the next 5 years.', 'result': 1.49}:
         return  "error."
-    if execute({"sex":"male","age":66,"riskFactors":["smoking duration, 41-60 years","asb"]}) != "This individual has a 8.75% probability of developing lung cancer in the next 5 years.":
+    if execute({"sex":"male","age":66,"riskFactors":["smoking duration, 41-60 years","asb"]}) != {'interpretation': 'This individual has a 8.75% probability of developing lung cancer in the next 5 years.', 'result': 8.75}:
         return "error."
     if execute({"sex":"male","age":90,"riskFactors":[]}) != "invalid age or age outside of 40-84 range":
         return "error."

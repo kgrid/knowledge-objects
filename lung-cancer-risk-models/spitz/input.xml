@@ -1,0 +1,117 @@
+<rdf:RDF xmlns:ot="http://uofm.org/objectteller/#"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <rdf:Description rdf:about="http://uofm.org/objectteller/inputMessage">
+        <ot:noofparams>20</ot:noofparams>
+        <ot:params>
+            <rdf:Seq>
+                <rdf:li>sex</rdf:li>
+                <rdf:li>age</rdf:li>
+                <rdf:li>smokerStatus</rdf:li>
+                <rdf:li>ets</rdf:li>
+                <rdf:li>emphysema</rdf:li>
+                <rdf:li>hayFever</rdf:li>
+                <rdf:li>dust</rdf:li>
+                <rdf:li>fumes</rdf:li>
+                <rdf:li>chemicals</rdf:li>
+                <rdf:li>asbestos</rdf:li>
+                <rdf:li>pesticides</rdf:li>
+                <rdf:li>woodDust</rdf:li>
+                <rdf:li>asthma</rdf:li>
+                <rdf:li>famHxCanc</rdf:li>
+                <rdf:li>famHxSmokeCanc</rdf:li>
+                <rdf:li>asi</rdf:li>
+                <rdf:li>ageQuit</rdf:li>
+                <rdf:li>asc</rdf:li>
+                <rdf:li>yrsCess</rdf:li>
+                <rdf:li>packYrs</rdf:li>
+            </rdf:Seq>
+        </ot:params>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://uofm.org/objectteller/sex/">
+        <ot:datatype>STRING</ot:datatype>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://uofm.org/objectteller/age/">
+        <ot:datatype>INT</ot:datatype>
+        <ot:min>0</ot:min>
+        <ot:max>9</ot:max>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://uofm.org/objectteller/smokerStatus/">
+        <ot:datatype>STRING</ot:datatype>
+        <ot:min>0</ot:min>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://uofm.org/objectteller/ets/">
+        <ot:datatype>INT</ot:datatype>
+        <ot:min>0</ot:min>
+        <ot:max>1</ot:max>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://uofm.org/objectteller/emphysema/">
+        <ot:datatype>INT</ot:datatype>
+        <ot:min>0</ot:min>
+        <ot:max>1</ot:max>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://uofm.org/objectteller/hayFever/">
+        <ot:datatype>INT</ot:datatype>
+        <ot:min>0</ot:min>
+        <ot:max>1</ot:max>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://uofm.org/objectteller/dust/">
+        <ot:datatype>INT</ot:datatype>
+        <ot:min>0</ot:min>
+        <ot:max>1</ot:max>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://uofm.org/objectteller/fumes/">
+        <ot:datatype>INT</ot:datatype>
+        <ot:min>0</ot:min>
+        <ot:max>1</ot:max>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://uofm.org/objectteller/chemicals/">
+        <ot:datatype>INT</ot:datatype>
+        <ot:min>0</ot:min>
+        <ot:max>1</ot:max>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://uofm.org/objectteller/asbestos/">
+        <ot:datatype>INT</ot:datatype>
+        <ot:min>0</ot:min>
+        <ot:max>1</ot:max>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://uofm.org/objectteller/pesticides/">
+        <ot:datatype>INT</ot:datatype>
+        <ot:min>0</ot:min>
+        <ot:max>1</ot:max>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://uofm.org/objectteller/woodDust/">
+        <ot:datatype>INT</ot:datatype>
+        <ot:min>0</ot:min>
+        <ot:max>1</ot:max>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://uofm.org/objectteller/asthma/">
+        <ot:datatype>INT</ot:datatype>
+        <ot:min>0</ot:min>
+        <ot:max>1</ot:max>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://uofm.org/objectteller/famHxCanc/">
+        <ot:datatype>INT</ot:datatype>
+        <ot:min>0</ot:min>
+        <ot:max>2</ot:max>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://uofm.org/objectteller/famHxSmokeCanc/">
+        <ot:datatype>INT</ot:datatype>
+        <ot:min>0</ot:min>
+        <ot:max>1</ot:max>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://uofm.org/objectteller/asi/">
+        <ot:datatype>INT</ot:datatype>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://uofm.org/objectteller/ageQuit/">
+        <ot:datatype>INT</ot:datatype>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://uofm.org/objectteller/asc/">
+        <ot:datatype>INT</ot:datatype>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://uofm.org/objectteller/yrsCess/">
+        <ot:datatype>INT</ot:datatype>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://uofm.org/objectteller/packYrs/">
+        <ot:datatype>INT</ot:datatype>
+    </rdf:Description>
+</rdf:RDF>

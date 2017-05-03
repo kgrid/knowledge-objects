@@ -20,17 +20,17 @@ def execute(inputs):
     #print type(percent)
     #print percent
 
-    return "This individual has a " + str(percent) + "% probability of developing lung cancer."
+    interpretation = "This individual has a " + str(percent) + "% probability of developing lung cancer."
+    return {"result":percent,"interpretation":interpretation}
 
 
-# having issues with test function
 def test():
-    if execute({"age":50,"sex":1,"smokDurat":30,"copd":1,"priorDiag":0,"earlyOnset":0,"lateOnset":0}) != "This individual has a 6.03% probability of developing lung cancer.":
+    if execute({"age":50,"sex":1,"smokDurat":30,"copd":1,"priorDiag":0,"earlyOnset":0,"lateOnset":0}) != {'interpretation': 'This individual has a 6.03% probability of developing lung cancer.', 'result': 6.03}:
         return "error."
-    if execute({"age":70,"sex":0,"smokDurat":10,"copd":0,"priorDiag":0,"earlyOnset":0,"lateOnset":0}) != "This individual has a 1.49% probability of developing lung cancer.":
+    if execute({"age":70,"sex":0,"smokDurat":10,"copd":0,"priorDiag":0,"earlyOnset":0,"lateOnset":0}) != {'interpretation': 'This individual has a 1.49% probability of developing lung cancer.', 'result': 1.49}:
         return "error."
-    if execute({"age":10,"sex":0,"smokDurat":0,"copd":0,"priorDiag":0,"earlyOnset":0,"lateOnset":0}) != "This individual has a 0.11% probability of developing lung cancer.":
+    if execute({"age":10,"sex":0,"smokDurat":0,"copd":0,"priorDiag":0,"earlyOnset":0,"lateOnset":0}) != {'interpretation': 'This individual has a 0.11% probability of developing lung cancer.', 'result': 0.11}:
         return "error."
-    if execute({"age":0,"sex":0,"smokDurat":0,"copd":0,"priorDiag":0,"earlyOnset":0,"lateOnset":0}) != "This individual has a 0.08% probability of developing lung cancer.":
+    if execute({"age":0,"sex":0,"smokDurat":0,"copd":0,"priorDiag":0,"earlyOnset":0,"lateOnset":0}) != {'interpretation': 'This individual has a 0.08% probability of developing lung cancer.', 'result': 0.08}:
         return "error."
     return "ok."

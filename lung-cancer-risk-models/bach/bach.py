@@ -41,19 +41,20 @@ def execute(inputs):
 
 	runModel = doCalculation(age, cpd, yrsSmok, yrsQuit, asb, sex, quit)
 	runModelOut = round(runModel*100,2)
-	return "This individual has a total lung cancer risk of " + str(runModelOut) + "% in the next 10 years."
+	interpretation  = "This individual has a total lung cancer risk of " + str(runModelOut) + "% in the next 10 years."
+	return {"result":runModelOut,"interpretation":interpretation}
 
 def test():
-	if execute({"age":55, "cpd":20, "yrsSmok":30, "yrsQuit":0, "asb":0, "sex":1, "quit":1}) != "This individual has a total lung cancer risk of 0.78% in the next 10 years.":
+	if execute({"age":55, "cpd":20, "yrsSmok":30, "yrsQuit":0, "asb":0, "sex":1, "quit":1}) != {'interpretation': 'This individual has a total lung cancer risk of 0.78% in the next 10 years.', 'result': 0.78}:
 		return "error."
-	if execute({"age":62, "cpd":30, "yrsSmok":35, "yrsQuit":0, "asb":0, "sex":0, "quit":0}) != "This individual has a total lung cancer risk of 3.97% in the next 10 years.":
+	if execute({"age":62, "cpd":30, "yrsSmok":35, "yrsQuit":0, "asb":0, "sex":0, "quit":0}) != {'interpretation': 'This individual has a total lung cancer risk of 3.97% in the next 10 years.', 'result': 3.97}:
 		return "error."
-	if execute({"age":50, "cpd":20, "yrsSmok":20, "yrsQuit":10, "asb":1, "sex":0, "quit":1}) != "This individual has a total lung cancer risk of 0.3% in the next 10 years.":
+	if execute({"age":50, "cpd":20, "yrsSmok":20, "yrsQuit":10, "asb":1, "sex":0, "quit":1}) != {'interpretation': 'This individual has a total lung cancer risk of 0.3% in the next 10 years.', 'result': 0.3}:
 		return "error."
-	if execute({"age":40, "cpd":20, "yrsSmok":10, "yrsQuit":15, "asb":0, "sex":1, "quit":1}) != "This individual has a total lung cancer risk of 0.03% in the next 10 years.":
+	if execute({"age":40, "cpd":20, "yrsSmok":10, "yrsQuit":15, "asb":0, "sex":1, "quit":1}) != {'interpretation': 'This individual has a total lung cancer risk of 0.03% in the next 10 years.', 'result': 0.03}:
 		return "error."
-	if execute({"age":70, "cpd":40, "yrsSmok":55, "yrsQuit":0, "asb":0, "sex":1, "quit":0}) != "This individual has a total lung cancer risk of 10.47% in the next 10 years.":
+	if execute({"age":70, "cpd":40, "yrsSmok":55, "yrsQuit":0, "asb":0, "sex":1, "quit":0}) != {'interpretation': 'This individual has a total lung cancer risk of 10.47% in the next 10 years.', 'result': 10.47}:
 		return "error."
-	if execute({"age":20, "cpd":0, "yrsSmok":0, "yrsQuit":0, "asb":0, "sex":1, "quit":0}) != "This individual has a total lung cancer risk of 0.0% in the next 10 years.":
+	if execute({"age":20, "cpd":0, "yrsSmok":0, "yrsQuit":0, "asb":0, "sex":1, "quit":0}) != {'interpretation': 'This individual has a total lung cancer risk of 0.0% in the next 10 years.', 'result': 0.0}:
 		return "error."
 	return "ok."
