@@ -7,7 +7,7 @@
                 <rdf:li>smokerStatus</rdf:li>
                 <rdf:li>smokDurat</rdf:li>
                 <rdf:li>t</rdf:li>
-                <rdf:li>covariates</rdf:li>
+                <rdf:li>riskFactors</rdf:li>
             </rdf:Seq>
         </ot:params>
     </rdf:Description>

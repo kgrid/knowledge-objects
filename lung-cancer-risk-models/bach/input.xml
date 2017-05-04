@@ -8,7 +8,7 @@
                 <rdf:li>cpd</rdf:li>
                 <rdf:li>yrsSmok</rdf:li>
                 <rdf:li>yrsQuit</rdf:li>
-                <rdf:li>asb</rdf:li>
+                <rdf:li>asbestos</rdf:li>
                 <rdf:li>sex</rdf:li>
                 <rdf:li>quit</rdf:li>
             </rdf:Seq>
@@ -26,7 +26,7 @@
     <rdf:Description rdf:about="http://uofm.org/objectteller/yrsQuit/">
         <ot:datatype>INT</ot:datatype>
     </rdf:Description>
-    <rdf:Description rdf:about="http://uofm.org/objectteller/asb/">
+    <rdf:Description rdf:about="http://uofm.org/objectteller/asbestos/">
         <ot:datatype>INT</ot:datatype>
     </rdf:Description>
     <rdf:Description rdf:about="http://uofm.org/objectteller/sex/">

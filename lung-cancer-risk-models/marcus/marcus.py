@@ -1,4 +1,7 @@
-# LLPi: Liverpool Lung Project Risk Prediction Model for Lung Cancer Incidence
+# Marcus, LLPi: Liverpool Lung Project Risk Prediction Model for Lung Cancer Incidence (Marcus, et al, 2015)
+# Created by: Kristen McGarry, KGrid
+# Last Updated: May 4th, 2017
+
 from math import exp
 
 def execute(inputs):

@@ -1,3 +1,7 @@
+# Cassidy, The LLP risk model: an individual risk prediction model for lung cancer
+# Created by: Kristen McGarry, KGrid
+# Last Updated: May 4th, 2017
+
 from math import exp
 def getAlpha(sex,age):
     sex = sex.lower()
@@ -69,11 +73,11 @@ def getAlpha(sex,age):
     alpha = (multi_1*(alpha_1/5)) + (multi_2*(alpha_2/5))
     return alpha
 
-# Beta = sum(Bi * xi)
+# Beta = sum(Bi * xi), if risk factor is listed, x = 1
 def getBeta(listOfRiskFactors):
     total = 0
-    # Model Coefficients
-    logOddsRatio = {"pneum":0.602,"asb":0.634,"cancHx":0.675,"famHxCanc, early onset":0.703,"famHxCanc, late onset":0.168,"smoking duration, 1-20 years":0.769,"smoking duration, 21-40 years":1.452,"smoking duration, 41-60 years":2.507,"smoking duration, >= 60 years":2.724}
+    # Model Coefficients, Table 2
+    logOddsRatio = {"pneum":0.602,"asbestos":0.634,"cancHx":0.675,"famHxCanc, early onset":0.703,"famHxCanc, late onset":0.168,"smoking duration, 1-20 years":0.769,"smoking duration, 21-40 years":1.452,"smoking duration, 41-60 years":2.507,"smoking duration, >= 60 years":2.724}
     for riskFactor in listOfRiskFactors:
         if riskFactor not in logOddsRatio.keys():
             return "invalid risk factor"
@@ -113,7 +117,7 @@ def test():
         return "error."
     if str(getBeta({"smoking duration, 21-40 years":1})) != "1.452":
         return "error."
-    if execute({"sex":"male","age":77,"riskFactors":["famHxCanc, early onset","asb"]}) != {'interpretation': 'This individual has a 3.17% probability of developing lung cancer in the next 5 years.', 'result': 3.17}:
+    if execute({"sex":"male","age":77,"riskFactors":["famHxCanc, early onset","asbestos"]}) != {'interpretation': 'This individual has a 3.17% probability of developing lung cancer in the next 5 years.', 'result': 3.17}:
         return "error."
     if execute({"sex":"male","age":51,"riskFactors":["smoking duration, 21-40 years"]}) != {'interpretation': 'This individual has a 0.35% probability of developing lung cancer in the next 5 years.', 'result': 0.35}:
         return "error."
@@ -121,7 +125,7 @@ def test():
         return "error."
     if execute({"sex":"female","age":68,"riskFactors":["smoking duration, 21-40 years"]})!= {'interpretation': 'This individual has a 1.49% probability of developing lung cancer in the next 5 years.', 'result': 1.49}:
         return  "error."
-    if execute({"sex":"male","age":66,"riskFactors":["smoking duration, 41-60 years","asb"]}) != {'interpretation': 'This individual has a 8.75% probability of developing lung cancer in the next 5 years.', 'result': 8.75}:
+    if execute({"sex":"male","age":66,"riskFactors":["smoking duration, 41-60 years","asbestos"]}) != {'interpretation': 'This individual has a 8.75% probability of developing lung cancer in the next 5 years.', 'result': 8.75}:
         return "error."
     if execute({"sex":"male","age":90,"riskFactors":[]}) != "invalid age or age outside of 40-84 range":
         return "error."

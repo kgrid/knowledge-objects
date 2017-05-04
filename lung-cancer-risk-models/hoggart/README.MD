@@ -4,13 +4,13 @@ Organization: KGrid, University of Michigan, Michigan Medicine
 April 20th, 2017
 
 ### Objective
-This knowledge object takes in an individuals smoker status, smoking duration, age and covariates to calculate the individuals probability of being diagnosed with lung cancer in 1 year from age t.
+This knowledge object takes in an individuals smoker status, smoking duration, age and riskFactors to calculate the individuals probability of being diagnosed with lung cancer in 1 year from age t.
 
 
 ### Description
 Smoker status is either "current" or "former", smoking duration is years smoked, and t represents age with time zero being set to 35 years old (i.e. If someone is 62 years old, t will equal 27).
 
-The following variables are the covariates with each respective value:
+The following variables are the riskFactors with each respective value:
 	1)	sex
   	-	female 1
   	-	male 0
@@ -48,12 +48,12 @@ The following variables are the covariates with each respective value:
   	-	no 0
 
 ### Running
-The script can be run by calling execute({"smokerStatus":"","smokDurat":0,"t":0,"covariates":{}). We have also included a test() function that we suggest running before running your data through.
+The script can be run by calling execute({"smokerStatus":"","smokDurat":0,"t":0,"riskFactors":{}). We have also included a test() function that we suggest running before running your data through.
 
 To run program from terminal, go to terminal and cd into the directory where the python file is located. Enter the following:
 1. python
 2. import hoggart
-3. hoggart.execute({"smokerStatus":"former","smokDurat":10,"t":24,"covariates":{"sex":"female","bmi":28,"hayFever": 1}})
+3. hoggart.execute({"smokerStatus":"former","smokDurat":10,"t":24,"riskFactors":{"sex":"female","bmi":28,"hayFever": 1}})
 
 ### Running through SHELF REST API...
 The ark ID for this object is: **ark:/99999/fk45430b5m**
@@ -64,7 +64,7 @@ The ark ID for this object is: **ark:/99999/fk45430b5m**
    - Add the following headers:
      - Content-Type:application/json
      - Accept:application/json
-   - Enter input into "body" (i.e. {"smokerStatus":"former","smokDurat":10,"t":24,"covariates":{"sex":"female","bmi":28,"hayFever": 1}})
+   - Enter input into "body" (i.e. {"smokerStatus":"former","smokDurat":10,"t":24,"riskFactors":{"sex":"female","bmi":28,"hayFever": 1}})
    - Run the POST command. {{baseUrl}}/knowledgeObject/ark:/99999/fk45430b5m/result
 
 

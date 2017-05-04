@@ -1,18 +1,22 @@
+# Hoggart, A Risk Model for Lung Cancer Incidence (Hoggart, et al, 2012)
+# Created by: Kristen McGarry, KGrid
+# Last updated: May 4th, 2017
+
 import math
 from math import exp
 # **** TIME ZERO IS SET TO 35 YEARS OLD ****
 def execute(inputs):
     smokerStatus = inputs["smokerStatus"]
     smokDurat = inputs["smokDurat"]
-    covariates = inputs["covariates"]
+    riskFactors = inputs["riskFactors"]
     t = inputs["t"]
 
     survFuncCan = (calcSurvFunc(smokerStatus,"cancer",smokDurat,t))
-    exp_betaXCan = betaX(smokerStatus,covariates)
+    exp_betaXCan = betaX(smokerStatus,riskFactors)
     P_Cancer = (1-exp(exp_betaXCan*survFuncCan))
 
     survFuncDea = (calcSurvFunc(smokerStatus,"death",smokDurat,t))
-    exp_betaXDea = betaX(smokerStatus,covariates)
+    exp_betaXDea = betaX(smokerStatus,riskFactors)
     P_Death = (exp(exp_betaXCan*survFuncCan))
 
     P_diagnosis = round((P_Cancer * P_Death)*100,2)
@@ -21,14 +25,14 @@ def execute(inputs):
     return {"result":P_diagnosis,"interpretation":interpretation}
 
 
-def betaX(smokerStatus,covariates):
-    # sex: female = 1, male =0
-    HR_current = {"sex":1.35,"bmi":0.963,"edLevel":0.944,"hayFever":0.593,"asthma":0.85,"famHxCanc":1.27,"chr15q25":1.13,"chr5p15":0.954,"silica":0.893,"pah":0.988,"metal":0.961,"asb":0.943}
-    HR_former = {"sex":1.2,"bmi":0.96,"edLevel":0.436,"hayFever":0.901,"asthma":1.58,"famHxCanc":1.22,"chr15q25":1.14,"chr5p15":1.06,"silica":0.851,"pah":0.869,"metal":1.23,"asb":1.05}
+def betaX(smokerStatus,riskFactors):
+    # sex: female = 1, male =0, Hazard Rations, Table 3
+    HR_current = {"sex":1.35,"bmi":0.963,"edLevel":0.944,"hayFever":0.593,"asthma":0.85,"famHxCanc":1.27,"chr15q25":1.13,"chr5p15":0.954,"silica":0.893,"pah":0.988,"metal":0.961,"asbestos":0.943}
+    HR_former = {"sex":1.2,"bmi":0.96,"edLevel":0.436,"hayFever":0.901,"asthma":1.58,"famHxCanc":1.23,"chr15q25":1.14,"chr5p15":1.06,"silica":0.851,"pah":0.869,"metal":1.23,"asbestos":1.05}
 
     total = 0
 
-    for covariate in covariates.keys():
+    for covariate in riskFactors.keys():
         if smokerStatus == "current":
             HR_map = HR_current
         elif smokerStatus == "former":
@@ -36,7 +40,7 @@ def betaX(smokerStatus,covariates):
         HR = HR_map[covariate]
         beta = math.log(HR,10)
 
-        x = covariates[covariate]
+        x = riskFactors[covariate]
         if x == "female":
             x = 1
 
@@ -49,7 +53,21 @@ def betaX(smokerStatus,covariates):
     return (exp(total))
 
 def calcSurvFunc(smokerStatus,survivorStatus,smokDurat,t):
-    ref = {"current":{"cancer":{"lam":[3.819,4.056,4.23,4.339,4.38,4.567,4.506,4.504],"gamma":[0.999,1.071,1.298,1.518,1.679,1.517,1.615,1.684]},"death":{"lam":[3.69,3.774,3.859,3.944,3.979,4.049,4.096,4.069],"gamma":[1.22,1.312,1.569,1.775,1.925,1.854,1.838,1.912]}},"former":{"cancer":{"lam":[4.987,4.723,4.321,5.179,4.786,4.651,4.654,4.366,5.563,4.68,4.491,4.241,4.177],"gamma":[0.75,0.819,1.032,1.165,1.353,1.46,1.318,1.662,1.088,1.705,1.879,2.336,2.574]},"death":{"lam":[3.754,3.75,3.8,4.008,3.975,3.954,3.928,3.982,4.123,4.058,4.02,3.999,4.041],"gamma":[1.21,1.511,1.669,1.621,1.742,1.835,2.129,2.15,1.769,1.865,2.148,2.36,2.49]}}}
+    # Weibull hazard parameters, Table 2
+    ref ={"current":
+        {"cancer":
+            {"lam":[3.819,4.056,4.23,4.339,4.38,4.567,4.506,4.504],
+            "gamma":[0.999,1.071,1.298,1.518,1.679,1.517,1.615,1.684]},
+        "death":
+            {"lam":[3.69,3.774,3.859,3.944,3.979,4.049,4.096,4.069],
+            "gamma":[1.22,1.312,1.560,1.775,1.925,1.854,1.838,1.912]}},
+    "former":
+        {"cancer":
+            {"lam":[4.987,4.723,4.321,5.179,4.786,4.651,4.654,4.366,5.563,4.68,4.491,4.241,4.177],
+            "gamma":[0.75,0.819,1.032,1.165,1.353,1.46,1.318,1.662,1.088,1.705,1.879,2.336,2.574]},
+        "death":
+            {"lam":[3.754,3.75,3.8,4.008,3.975,3.954,3.928,3.982,4.123,4.058,4.02,3.999,4.041],
+            "gamma":[1.21,1.511,1.669,1.621,1.742,1.835,2.129,2.15,1.769,1.865,2.148,2.36,2.49]}}}
 
     s = smokDurat
 
@@ -133,12 +151,12 @@ def calcSurvFunc(smokerStatus,survivorStatus,smokDurat,t):
 def test():
     if str(calcSurvFunc("former","death",40,48)) != "-17.5759666625":
         return "error."
-    if execute({"smokerStatus":"former","smokDurat":10,"t":24,"covariates":{"sex":"female","bmi":28,"hayFever": 1}}) != {'interpretation': 'This individual has a 13.93% probability of being diagnosed with lung cancer in 1 year from age t.', 'result': 13.93}:
+    if execute({"smokerStatus":"former","smokDurat":10,"t":24,"riskFactors":{"sex":"female","bmi":28,"hayFever": 1}}) != {'interpretation': 'This individual has a 13.93% probability of being diagnosed with lung cancer in 1 year from age t.', 'result': 13.93}:
         return "error."
-    if execute({"smokerStatus":"current","smokDurat":10,"t":10,"covariates":{"sex":"male","bmi":34,"asb": 1}}) != {'interpretation': 'This individual has a 11.74% probability of being diagnosed with lung cancer in 1 year from age t.', 'result': 11.74}:
+    if execute({"smokerStatus":"current","smokDurat":10,"t":10,"riskFactors":{"sex":"male","bmi":34,"asbestos": 1}}) != {'interpretation': 'This individual has a 11.74% probability of being diagnosed with lung cancer in 1 year from age t.', 'result': 11.74}:
         return "error."
-    if execute({"smokerStatus":"current","smokDurat":15,"t":30,"covariates":{"sex":"male","bmi":38,"asb": 0,"famHxCanc": 1,"asthma":0}}) != {'interpretation': 'This individual has a 25.0% probability of being diagnosed with lung cancer in 1 year from age t.', 'result': 25.0}:
+    if execute({"smokerStatus":"current","smokDurat":15,"t":30,"riskFactors":{"sex":"male","bmi":38,"asbestos": 0,"famHxCanc": 1,"asthma":0}}) != {'interpretation': 'This individual has a 25.0% probability of being diagnosed with lung cancer in 1 year from age t.', 'result': 25.0}:
         return "error."
-    if execute({"smokerStatus":"current","smokDurat":15,"t":30,"covariates":{"sex":"male","bmi":38,"asb": 1,"famHxCanc": 1,"asthma":0}}) != {'interpretation': 'This individual has a 24.99% probability of being diagnosed with lung cancer in 1 year from age t.', 'result': 24.99}:
+    if execute({"smokerStatus":"current","smokDurat":15,"t":30,"riskFactors":{"sex":"male","bmi":38,"asbestos": 1,"famHxCanc": 1,"asthma":0}}) != {'interpretation': 'This individual has a 24.99% probability of being diagnosed with lung cancer in 1 year from age t.', 'result': 24.99}:
         return "error."
     return "ok."

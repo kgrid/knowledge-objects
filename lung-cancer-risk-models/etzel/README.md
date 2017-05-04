@@ -35,7 +35,7 @@ The inputs is as follows (i.e. {"smokerStatus":"former","sex":"female","riskFact
           - yrsCessation (years since cessation)
           - ageCessation>30y (age at cessation >30 yrs)
           - mentholCigUse (methanol cigarette us)
-          - asb
+          - asbestos
           - dust
           - fiber
           - svf
@@ -71,7 +71,7 @@ The ark ID for this object is: **ark:/99999/fk4bg2zf1n**
              - Add the following headers:
                - Content-Type:application/json
                - Accept:application/json
-             - Enter input into "body" (i.e. {"smokerStatus":"current","age":13,"sex":"male","riskFactors":["duration>30y","numCigsDay>20","asb","dust","dryCleaning","pack-years>40","copd"]})
+             - Enter input into "body" (i.e. {"smokerStatus":"current","age":13,"sex":"male","riskFactors":["duration>30y","numCigsDay>20","asbestos","dust","dryCleaning","pack-years>40","copd"]})
              - Run the POST command. {{baseUrl}}/knowledgeObject/ark:/99999/fk4bg2zf1n/result
 
 ### Literature
