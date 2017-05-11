@@ -1,6 +1,8 @@
 # Etzel, Development and Validation of a Lung Cancer Risk Prediction Model for African-Americans (Etzel et al, 2008)
 Author: Kristen McGarry
 Created: April 21, 2017
+Consultant: Phil Boonstra
+
 
 ### Objective
 This object predicts the absolute risk of an individual developing lung cancer within 5 years.
