@@ -1,5 +1,6 @@
 # Park, Individualized Risk Prediction Model for Lung Cancer in Korean Men (Park et al, 2013)
 Created: May 2, 2017
+Consultant: Phil Boonstra
 
 
 ### Objective
