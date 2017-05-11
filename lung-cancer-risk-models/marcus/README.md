@@ -1,4 +1,4 @@
-# Marcus Lung Project Risk Prediction Model for Lung Cancer Incidence
+# Marcus Lung Project Risk Prediction Model for Lung Cancer Incidence (Marcus, et al., 2015)
 Created: April 7, 2017
 
 

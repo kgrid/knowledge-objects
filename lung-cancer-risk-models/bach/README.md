@@ -15,7 +15,7 @@ Variables
   6. sex
       - 0 male
       - 1 female
-  7. yrsQuit (quit smoking)
+  7. quit (quit smoking)
       - 0 no
       - yes
 

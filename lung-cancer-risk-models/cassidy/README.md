@@ -1,4 +1,4 @@
-# LLP risk model: an individual 5-year risk prediction model for lung cancer
+# LLP risk model: an individual 5-year risk prediction model for lung cancer (Cassidy, et.al., 2008)
 Created: April 11, 2017
 
 
@@ -11,7 +11,7 @@ This knowledge object (KO) estimates the lung cancer 5-year risk for an individu
 The input is as follows: {"sex":"","age":0,"riskFactors":[]}
     riskFactors can include:
         - "pneumonia"
-        - "asb"
+        - "asbestos"
         - "prior cancer"
         - "famHxCanc, early onset"
         - "famHxCanc, late onset"

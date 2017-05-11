@@ -3,7 +3,7 @@ Created: May 2, 2017
 
 
 ### Objective
-This knowledge object (KO) predicts an individuals lung cancer risk within 8 years. This predictor is targeted for Korean mean. The calculation is from Appendix S1 in Park et al, 2013. The Park model fits a survival model by predicting the absolute probability of diagnosis at a certain time point and not dying before that time point. This specific object will predict the baseline survival time of 8 years.
+This knowledge object (KO) predicts an individuals lung cancer risk within 8 years. This predictor is targeted for Korean men. The calculation is from Appendix S1 in Park et al, 2013. The Park model fits a survival model by predicting the absolute probability of diagnosis at a certain time point and not dying before that time point. This specific object will predict the baseline survival time of 8 years.
 
 ### Description
 The input is as follows: {"age":0,"smokerStatus":0,"asi":0,"bmi":0,"physActiv":0,"fastingGluc":0})

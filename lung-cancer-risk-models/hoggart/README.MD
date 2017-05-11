@@ -43,7 +43,7 @@ The following variables are the riskFactors with each respective value:
 	11)	metal
   	-	yes 1
   	-	no 0
-	12)	asb (asbestos)
+	12)	asbestos
   	-	yes 1
   	-	no 0
 
