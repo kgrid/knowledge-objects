@@ -80,15 +80,15 @@
           - Output: Risk percentage and interpretation (i.e. {'interpretation': 'This individual has a 0.63% probability of developing lung cancer within 8 years.', 'result': 0.63})
           - ArkID: ark:/99999/fk4r49xd2g
     7. Spitz Model (Spitz, et al, 2007)
-   	- Objective: Predicts the probability of being diagnosed with lung cancer in the next year and still being alive
-	- Input: sex, age, smokerStatus, ets, emphysema, hayFever, dust, fumes, chemicals, asbestos, pesticides, woodDust, asthma, famHxCanc, famHxSmokeCanc, asi, ageQuit, asc, yrsCess, packYrs (i.e {"sex":"male","age":8,"smokerStatus":"former","ets":0,"emphysema":0,"hayFever":0,"dust":1,"fumes":1,"chemicals":1,"asbestos":0,"pesticides":1,"woodDust":0,"asthma":0,"famHxCanc":0,"famHxSmokeCanc":0,"asi":25,"ageQuit":30,"asc":0,"yrsCess":1,"packYrs":0})
-	- Output: Risk percentage and interpretation (i.e. {'interpretation': 'The probability of this individual being diagnosed with lung cancer in the next year and not dying is 30.26%.', 'result': 30.26})
-	- ArkID: ark:/99999/fk4k64rx3z
+   	  - Objective: Predicts the probability of being diagnosed with lung cancer in the next year and still being alive
+	  - Input: sex, age, smokerStatus, ets, emphysema, hayFever, dust, fumes, chemicals, asbestos, pesticides, woodDust, asthma, famHxCanc, famHxSmokeCanc, asi, ageQuit, asc, yrsCess, packYrs (i.e {"sex":"male","age":8,"smokerStatus":"former","ets":0,"emphysema":0,"hayFever":0,"dust":1,"fumes":1,"chemicals":1,"asbestos":0,"pesticides":1,"woodDust":0,"asthma":0,"famHxCanc":0,"famHxSmokeCanc":0,"asi":25,"ageQuit":30,"asc":0,"yrsCess":1,"packYrs":0})
+	  - Output: Risk percentage and interpretation (i.e. {'interpretation': 'The probability of this individual being diagnosed with lung cancer in the next year and not dying is 30.26%.', 'result': 30.26})
+	  - ArkID: ark:/99999/fk4k64rx3z
     8. Tammemamgi Model (Tammemamgi, et al,2013) 
-    	- Objective: Calculates the 6-year lung cancer risk for a given individual
-        - Input: age, edLevel, bmi, copd, hxLungCancer, famHxCanc, race, cigsPerDay, smokDurat, yrsQuit(i.e. {"age":70,"edLevel":0,"bmi":0,"copd":0,"hxLungCancer":1,"famHxCanc":1,"race":0,"cigsPerDay":0,"smokDurat":0,"yrsQuit":0})
-        - Output: Risk percentage and interpretation (i.e. {'interpretation': "This individual's six year probability of developing lung cancer is 8.68%.", 'result': 8.68})
-        - ArkID: ark:/99999/fk4jh3tk9s
+    	  - Objective: Calculates the 6-year lung cancer risk for a given individual
+          - Input: age, edLevel, bmi, copd, hxLungCancer, famHxCanc, race, cigsPerDay, smokDurat, yrsQuit(i.e. {"age":70,"edLevel":0,"bmi":0,"copd":0,"hxLungCancer":1,"famHxCanc":1,"race":0,"cigsPerDay":0,"smokDurat":0,"yrsQuit":0})
+          - Output: Risk percentage and interpretation (i.e. {'interpretation': "This individual's six year probability of developing lung cancer is 8.68%.", 'result': 8.68})
+          - ArkID: ark:/99999/fk4jh3tk9s
 
 ### Other
 To aid in testing and execution, a postman collection (lcrm.json) has been included. This collection includes basic PUT, GET, and POST commands for each lung cancer model.
