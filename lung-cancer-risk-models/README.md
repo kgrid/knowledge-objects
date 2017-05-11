@@ -1,11 +1,14 @@
 # Lung Cancer Risk Models
 
 ### Knowledge Objects
-  A total of 8 lung cancer models have been developed as knowledge objects. Within each subdirectory, you can find a (1) python payload, (2) input RDF, (3) output RDF,(4) README.md and (5) the corresponding research paper. The README.md contains more in depth information about each particularly knowledge object, but an overview is shown below. All of these knowledge objects are located on the dev library, and have been deployed to the KGrid sandbox activator (baseUrl: "http://kgrid.med.umich.edu/stack"). 
+  A total of 8 lung cancer predictive models have been developed as knowledge objects. Currently, confidence intervals are NOT included, although some models do include that information. Within each subdirectory, you can find a (1) python payload, (2) input RDF, (3) output RDF,(4) README.md and (5) the corresponding research paper. The README.md contains more in depth information about each particularly knowledge object, but an overview is shown below. All of these knowledge objects are located on the dev library, and have been deployed to the KGrid sandbox activator (baseUrl: "http://kgrid.med.umich.edu/stack"). 
  
     1. Bach Model (Bach, et al, 2003)
           - Objective: calculate an individuals total lung caner risk within the next 10 years
-          - Input: age, cpd, yrsSmok (years smoked), yrsQuit (years quit), asbestos (exposure y/n), sex, quit (quit smoking y/n)(i.e. {"age":55, "cpd":20, "yrsSmok":30, "yrsQuit":0, "asbestos":0, "sex":1, "quit":1})
+          - Input: age, cpd (cirgarettes smoked per day), yrsSmok (years smoked), 
+	           yrsQuit (years quit), asbestos (exposure y/n), 
+		   sex, quit (quit smoking y/n)
+		   (i.e. {"age":55, "cpd":20, "yrsSmok":30, "yrsQuit":0, "asbestos":0, "sex":1, "quit":1})
           - Output: Risk percentage and interpretation (i.e. {'interpretation': 'This individual has a total lung cancer risk of 0.78% in the next 10 years.', 'result': 0.78})
           - ArkID: ark:/99999/fk4057tv7z
     2. Cassidy Model (Cassidy, et al, 2008)
@@ -15,8 +18,8 @@
                           - "pneumonia"
                           - "asbestos"
                           - "prior cancer"
-                          - "famHxCanc, early onset"
-                          - "famHxCanc, late onset"
+                          - "famHxCanc, early onset" (early onset is: < 60 years old at diagnosis)
+                          - "famHxCanc, late onset" (late onset is: >= 60 years old at diagnosis)
                           - "smoking duration, 1-20 years"
                           - "smoking duration, 21-40 years"
                           - "smoking duration, 41-60 years"
@@ -28,20 +31,20 @@
           - Input: smokerStatus, sex, riskFactors(i.e. {"smokerStatus":"current","age":13,"sex":"male","riskFactors":["duration>30y","numCigsDay>20","asbestos","dust","dryCleaning","pack-years>40","copd"]})
                 - age is represented as a range, see README.md (i.e age = 13, >= 85 years old)
                 - possible riskFactors include:
-                          - "duration>30y"
+                          - "duration>30y"  (of smoking)
                           - "numCigsDay>20"
                           - "pack-years>40"
                           - "yrsCessation" (years since cessation)
                           - "ageCessation>30y" (age at cessation >30 yrs)
-                          - "mentholCigUse" (methanol cigarette us)
+                          - "mentholCigUse" (methanol cigarette use)
                           - "asbestos"
                           - "dust"
                           - "fiber"
-                          - "svf"
+                          - "svf" (synthetic vitreous fibers)
                           - "benzene"
                           - "toluene/xylene"
                           - "dryCleaning"
-                          - "vehicleExhaust"
+                          - "vehicleExhaust" (? degree of exposure)
                           - "pesticide"
                           - "gluesPlastic"
                           - "asthma"
@@ -61,11 +64,11 @@
                           - "hayFever"
 	                  - "asthma"
                           - "famHxCanc"
-                          - "chr15q25" (presence of SNP)
-                          - "chr5p15" (presence of SNP)
+                          - "chr15q25" (genetic: presence of SNP)
+                          - "chr5p15" (genetic: presence of SNP)
                           - "silica"
-                          - "pah"
-                          - "metal"
+                          - "pah" (polycrylic aromatic hydrocarbons)
+                          - "metal"  (exposure to metal as a carcinogen)
                           - "asbestos"
           - Output: Risk percentage and interpretation (i.e. {'interpretation': 'This individual has a 13.93% probability of being diagnosed with lung cancer in 1 year from age t.', 'result': 13.93})
           - ArkID: ark:/99999/fk45430b5m
@@ -76,12 +79,12 @@
           - ArkID: ark:/99999/fk4x92gk0r
     6. Park Model (Park, et al, 2013)
           - Objective: Predicts an individuals lung cancer risk within 8 years, specifically for Korean men
-          - Input: age, smokerStatus, asi, bmi, physActiv, fastingGluc (i.e. {"age":0,"smokerStatus":0,"asi":0,"bmi":0,"physActiv":0,"fastingGluc":0})
+          - Input: age, smokerStatus, asi (age @ smoking initiation), bmi, physActiv, fastingGluc (i.e. {"age":0,"smokerStatus":0,"asi":0,"bmi":0,"physActiv":0,"fastingGluc":0})
           - Output: Risk percentage and interpretation (i.e. {'interpretation': 'This individual has a 0.63% probability of developing lung cancer within 8 years.', 'result': 0.63})
           - ArkID: ark:/99999/fk4r49xd2g
     7. Spitz Model (Spitz, et al, 2007)
    	      - Objective: Predicts the probability of being diagnosed with lung cancer in the next year and still being alive
-	      - Input: sex, age, smokerStatus, ets, emphysema, hayFever, dust, fumes, chemicals, asbestos, pesticides, woodDust, asthma, famHxCanc, famHxSmokeCanc, asi, ageQuit, asc, yrsCess, packYrs (i.e {"sex":"male","age":8,"smokerStatus":"former","ets":0,"emphysema":0,"hayFever":0,"dust":1,"fumes":1,"chemicals":1,"asbestos":0,"pesticides":1,"woodDust":0,"asthma":0,"famHxCanc":0,"famHxSmokeCanc":0,"asi":25,"ageQuit":30,"asc":0,"yrsCess":1,"packYrs":0})
+	      - Input: sex, age, smokerStatus, ets (environmental tabacco smoke), emphysema, hayFever, dust, fumes, chemicals, asbestos, pesticides, woodDust, asthma, famHxCanc, famHxSmokeCanc, asi (age @ smoking initiation), ageQuit (0<=38yo, 1>38), asc (age @ smoking cessation), yrsCess, packYrs (i.e {"sex":"male","age":8,"smokerStatus":"former","ets":0,"emphysema":0,"hayFever":0,"dust":1,"fumes":1,"chemicals":1,"asbestos":0,"pesticides":1,"woodDust":0,"asthma":0,"famHxCanc":0,"famHxSmokeCanc":0,"asi":25,"ageQuit":30,"asc":0,"yrsCess":1,"packYrs":0})
 	      - Output: Risk percentage and interpretation (i.e. {'interpretation': 'The probability of this individual being diagnosed with lung cancer in the next year and not dying is 30.26%.', 'result': 30.26})
 	      - ArkID: ark:/99999/fk4k64rx3z
     8. Tammemamgi Model (Tammemamgi, et al,2013) 
