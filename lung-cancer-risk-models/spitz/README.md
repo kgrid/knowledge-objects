@@ -1,6 +1,7 @@
 # Spitz, A Risk Model for Prediction of Lung Cancer (Spitz et al, 2007)
 Author: Kristen McGarry
 Created: May 3, 2017
+Consultant: Phil Boonstra
 
 ### Objective
 The Spitz model predicts the probability of being diagnosed with lung cancer in the next year and not dying before that point.
