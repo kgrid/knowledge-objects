@@ -10,9 +10,9 @@ This knowledge object (KO) estimates the lung cancer 5-year risk for an individu
 ### Description
 The input is as follows: {"sex":"","age":0,"riskFactors":[]}
     riskFactors can include:
-        - "pneumonia"
+        - "pneum"
         - "asbestos"
-        - "prior cancer"
+        - "cancHx"
         - "famHxCanc, early onset"
         - "famHxCanc, late onset"
         - "smoking duration, 1-20 years"
