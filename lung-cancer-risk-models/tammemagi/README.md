@@ -18,7 +18,7 @@ The script can be run by calling execute({"age":0,"sex":0,"smokDurat":0,"copd":0
 To run program from terminal, go to terminal and cd into the directory where the python file is located. Enter the following:
 1. python
 2. import tammemagi
-3. tammemagi.execute({"age":70,"edLevel":0,"bmi":0,"copd":0,"hxLungCancer":1,"famHxCanc":1,"race":0,"cigsPerDay":0,"smokDurat":0,"yrsQuit":0})
+3. tammemagi.execute({"age":70,"edLevel":1,"bmi":0,"copd":0,"hxLungCancer":1,"famHxCanc":1,"race":1,"cigsPerDay":0,"smokDurat":0,"yrsQuit":0})
 
 ### Running through SHELF REST API...
 To run through SHELF REST API, the knowledge object needs to be added to ObjectTeller and to the REST API SHELF before its executable.
@@ -30,7 +30,7 @@ The ark ID for this object is: **ark:/99999/fk4jh3tk9s**
    - Add the following headers:
      - Content-Type:application/json
      - Accept:application/json
-   - Enter input into "body" (i.e. {"age":70,"edLevel":0,"bmi":0,"copd":0,"hxLungCancer":1,"famHxCanc":1,"race":0,"cigsPerDay":0,"smokDurat":0,"yrsQuit":0})
+   - Enter input into "body" (i.e. {"age":70,"edLevel":1,"bmi":0,"copd":0,"hxLungCancer":1,"famHxCanc":1,"race":1,"cigsPerDay":0,"smokDurat":0,"yrsQuit":0})
    - Run the POST command. {{baseUrl}}/knowledgeObject/ark:/99999/fk4x92gk0r/result
 
 ### Literature
