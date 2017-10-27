@@ -1,0 +1,598 @@
+{
+	"info": {
+		"name": "aaa.LungCancer.collection",
+		"_postman_id": "df83d889-2a5e-69dc-69da-9a8185fa8925",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Bach0",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"age\":55, \"cpd\":20, \"yrsSmok\":30, \"yrsQuit\":0, \"asbestos\":0, \"sex\":1, \"quit\":1}"
+				},
+				"url": {
+					"raw": "kgrid.med.umich.edu/stack/shelf/ark:/99999/fk4057tv7z",
+					"host": [
+						"kgrid",
+						"med",
+						"umich",
+						"edu"
+					],
+					"path": [
+						"stack",
+						"shelf",
+						"ark:",
+						"99999",
+						"fk4057tv7z"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Bach1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"age\":68, \"cpd\":40, \"yrsSmok\":50, \"yrsQuit\":0, \"asbestos\":0, \"sex\":0, \"quit\":0}"
+				},
+				"url": {
+					"raw": "kgrid.med.umich.edu/stack/knowledgeObject/ark:/99999/fk4057tv7z/result",
+					"host": [
+						"kgrid",
+						"med",
+						"umich",
+						"edu"
+					],
+					"path": [
+						"stack",
+						"knowledgeObject",
+						"ark:",
+						"99999",
+						"fk4057tv7z",
+						"result"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Cassidy0",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"age\":55, \"cpd\":20, \"yrsSmok\":30, \"yrsQuit\":0, \"asbestos\":0, \"sex\":1, \"quit\":1}"
+				},
+				"url": {
+					"raw": "kgrid.med.umich.edu/stack/shelf/ark:/99999/fk4571pp25",
+					"host": [
+						"kgrid",
+						"med",
+						"umich",
+						"edu"
+					],
+					"path": [
+						"stack",
+						"shelf",
+						"ark:",
+						"99999",
+						"fk4571pp25"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Cassidy1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"sex\":\"male\",\"age\":51,\"riskFactors\":[\"smoking duration, 21-40 years\"]\n}"
+				},
+				"url": {
+					"raw": "kgrid.med.umich.edu/stack/knowledgeObject/ark:/99999/fk4571pp25/result",
+					"host": [
+						"kgrid",
+						"med",
+						"umich",
+						"edu"
+					],
+					"path": [
+						"stack",
+						"knowledgeObject",
+						"ark:",
+						"99999",
+						"fk4571pp25",
+						"result"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Etzel0",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"age\":55, \"cpd\":20, \"yrsSmok\":30, \"yrsQuit\":0, \"asbestos\":0, \"sex\":1, \"quit\":1}"
+				},
+				"url": {
+					"raw": "kgrid.med.umich.edu/stack/shelf/ark:/99999/fk4bg2zf1n",
+					"host": [
+						"kgrid",
+						"med",
+						"umich",
+						"edu"
+					],
+					"path": [
+						"stack",
+						"shelf",
+						"ark:",
+						"99999",
+						"fk4bg2zf1n"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Etzel1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"smokerStatus\":\"current\",\"age\":13,\"sex\":\"male\",\"riskFactors\":[\"duration>30y\",\"numCigsDay>20\",\"asbestos\",\"dust\",\"dryCleaning\",\"pack-years>40\",\"copd\"]\n}"
+				},
+				"url": {
+					"raw": "kgrid.med.umich.edu/stack/knowledgeObject/ark:/99999/fk4bg2zf1n/result",
+					"host": [
+						"kgrid",
+						"med",
+						"umich",
+						"edu"
+					],
+					"path": [
+						"stack",
+						"knowledgeObject",
+						"ark:",
+						"99999",
+						"fk4bg2zf1n",
+						"result"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Hoggart0",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"age\":55, \"cpd\":20, \"yrsSmok\":30, \"yrsQuit\":0, \"asbestos\":0, \"sex\":1, \"quit\":1}"
+				},
+				"url": {
+					"raw": "kgrid.med.umich.edu/stack/shelf/ark:/99999/fk45430b5m",
+					"host": [
+						"kgrid",
+						"med",
+						"umich",
+						"edu"
+					],
+					"path": [
+						"stack",
+						"shelf",
+						"ark:",
+						"99999",
+						"fk45430b5m"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Hoggart1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"smokerStatus\":\"current\",\"smokDurat\":22,\"t\":15,\"riskFactors\":{\"sex\":\"female\",\"edLevel\":1}\n}"
+				},
+				"url": {
+					"raw": "kgrid.med.umich.edu/stack/knowledgeObject/ark:/99999/fk45430b5m/result",
+					"host": [
+						"kgrid",
+						"med",
+						"umich",
+						"edu"
+					],
+					"path": [
+						"stack",
+						"knowledgeObject",
+						"ark:",
+						"99999",
+						"fk45430b5m",
+						"result"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Marcus0",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"age\":55, \"cpd\":20, \"yrsSmok\":30, \"yrsQuit\":0, \"asbestos\":0, \"sex\":1, \"quit\":1}"
+				},
+				"url": {
+					"raw": "kgrid.med.umich.edu/stack/shelf/ark:/99999/fk4x92gk0r",
+					"host": [
+						"kgrid",
+						"med",
+						"umich",
+						"edu"
+					],
+					"path": [
+						"stack",
+						"shelf",
+						"ark:",
+						"99999",
+						"fk4x92gk0r"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Marcus1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"age\":50,\"sex\":1,\"smokDurat\":30,\"copd\":1,\"priorDiag\":0,\"earlyOnset\":0,\"lateOnset\":0\n}"
+				},
+				"url": {
+					"raw": "kgrid.med.umich.edu/stack/knowledgeObject/ark:/99999/fk4x92gk0r/result",
+					"host": [
+						"kgrid",
+						"med",
+						"umich",
+						"edu"
+					],
+					"path": [
+						"stack",
+						"knowledgeObject",
+						"ark:",
+						"99999",
+						"fk4x92gk0r",
+						"result"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Park0",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"age\":55, \"cpd\":20, \"yrsSmok\":30, \"yrsQuit\":0, \"asbestos\":0, \"sex\":1, \"quit\":1}"
+				},
+				"url": {
+					"raw": "kgrid.med.umich.edu/stack/shelf/ark:/99999/fk4r49xd2g",
+					"host": [
+						"kgrid",
+						"med",
+						"umich",
+						"edu"
+					],
+					"path": [
+						"stack",
+						"shelf",
+						"ark:",
+						"99999",
+						"fk4r49xd2g"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Park1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"age\":50,\"smokerStatus\":3,\"asi\":1,\"bmi\":2,\"physActiv\":1,\"fastingGluc\":1\n}"
+				},
+				"url": {
+					"raw": "kgrid.med.umich.edu/stack/knowledgeObject/ark:/99999/fk4r49xd2g/result",
+					"host": [
+						"kgrid",
+						"med",
+						"umich",
+						"edu"
+					],
+					"path": [
+						"stack",
+						"knowledgeObject",
+						"ark:",
+						"99999",
+						"fk4r49xd2g",
+						"result"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Spitz0",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"age\":55, \"cpd\":20, \"yrsSmok\":30, \"yrsQuit\":0, \"asbestos\":0, \"sex\":1, \"quit\":1}"
+				},
+				"url": {
+					"raw": "kgrid.med.umich.edu/stack/shelf/ark:/99999/fk4k64rx3z",
+					"host": [
+						"kgrid",
+						"med",
+						"umich",
+						"edu"
+					],
+					"path": [
+						"stack",
+						"shelf",
+						"ark:",
+						"99999",
+						"fk4k64rx3z"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Spitz1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"sex\":\"male\",\"age\":8,\"smokerStatus\":\"former\",\"ets\":0,\"emphysema\":0,\"hayFever\":0,\"dust\":1,\"fumes\":1,\"chemicals\":1,\"asbestos\":0,\"pesticides\":1,\"woodDust\":0,\"asthma\":0,\"famHxCanc\":0,\"famHxSmokeCanc\":0,\"asi\":25,\"ageQuit\":30,\"asc\":0,\"yrsCess\":1,\"packYrs\":0\n}"
+				},
+				"url": {
+					"raw": "kgrid.med.umich.edu/stack/knowledgeObject/ark:/99999/fk4k64rx3z/result",
+					"host": [
+						"kgrid",
+						"med",
+						"umich",
+						"edu"
+					],
+					"path": [
+						"stack",
+						"knowledgeObject",
+						"ark:",
+						"99999",
+						"fk4k64rx3z",
+						"result"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Tammemagi0",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"age\":55, \"cpd\":20, \"yrsSmok\":30, \"yrsQuit\":0, \"asbestos\":0, \"sex\":1, \"quit\":1}"
+				},
+				"url": {
+					"raw": "kgrid.med.umich.edu/stack/shelf/ark:/99999/fk4jh3tk9s",
+					"host": [
+						"kgrid",
+						"med",
+						"umich",
+						"edu"
+					],
+					"path": [
+						"stack",
+						"shelf",
+						"ark:",
+						"99999",
+						"fk4jh3tk9s"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Tammemagi1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"age\":70,\"edLevel\":1,\"bmi\":0,\"copd\":0,\"hxLungCancer\":1,\"famHxCanc\":1,\"race\":1,\"cigsPerDay\":0,\"smokDurat\":0,\"yrsQuit\":0\n}"
+				},
+				"url": {
+					"raw": "kgrid.med.umich.edu/stack/knowledgeObject/ark:/99999/fk4jh3tk9s/result",
+					"host": [
+						"kgrid",
+						"med",
+						"umich",
+						"edu"
+					],
+					"path": [
+						"stack",
+						"knowledgeObject",
+						"ark:",
+						"99999",
+						"fk4jh3tk9s",
+						"result"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
