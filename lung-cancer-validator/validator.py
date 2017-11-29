@@ -8,6 +8,7 @@
 
 import requests
 import xlrd
+import json
 
 #base url for using kgrid server activator
 url = "http://kgrid.med.umich.edu/stack/knowledgeObject/ark:/99999"
@@ -30,7 +31,7 @@ def bach(bach_age, bach_cpd, bach_yrs_smok, bach_yrs_quit, bach_asbestos, bach_s
 	response = requests.post(bach_url, data=json.dumps(payload), headers=headers)
 	bach_data = json.loads(response.text)
 
-	print json.dumps(bach_data['result'], indent=4, sort_keys=True)
+	return(bach_data['result']['result'])
 
 def marcus(marcus_age, marcus_sex, marcus_smok_durat, marcus_copd, marcus_prior_diag,
 		marcus_early_onset, marcus_late_onset):
@@ -42,7 +43,7 @@ def marcus(marcus_age, marcus_sex, marcus_smok_durat, marcus_copd, marcus_prior_
 	response = requests.post(marcus_url, data=json.dumps(payload), headers=headers)
 	marcus_data = json.loads(response.text)
 
-	return json.dumps(marcus_data['result'], indent=4, sort_keys=True)
+	return(marcus_data['result']['result'])
 
 def park(park_age, park_smok_status, park_asi, park_bmi, park_phys_activ, park_fasting_gluc):
 
@@ -53,7 +54,7 @@ def park(park_age, park_smok_status, park_asi, park_bmi, park_phys_activ, park_f
 	response = requests.post(park_url, data=json.dumps(payload), headers=headers)
 	park_data = json.loads(response.text)
 
-	return json.dumps(park_data['result'], indent=4, sort_keys=True)
+	return(park_data['result']['result'])
 
 
 #

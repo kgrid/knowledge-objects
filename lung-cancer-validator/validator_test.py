@@ -9,12 +9,11 @@
 #
 
 import requests
+import xlrd
 import json
-import urllib2 
-#from openpyxl import load_workbook # for reading in excel files later
 
-#base url for using kgrid server activartor
-url = "http://kgrid.med.umich.edu/stack/knowledgeObject/ark:/99999" 
+#base url for using kgrid server activator
+url = "http://kgrid.med.umich.edu/stack/knowledgeObject/ark:/99999"
 
 headers = {
     'content-type': "application/json",
@@ -34,7 +33,7 @@ def bach(bach_age, bach_cpd, bach_yrs_smok, bach_yrs_quit, bach_asbestos, bach_s
 	response = requests.post(bach_url, data=json.dumps(payload), headers=headers)
 	bach_data = json.loads(response.text)
 
-	return bach_data
+	return(bach_data['result']['result'])
 
 def marcus(marcus_age, marcus_sex, marcus_smok_durat, marcus_copd, marcus_prior_diag,
 		marcus_early_onset, marcus_late_onset):
@@ -46,7 +45,7 @@ def marcus(marcus_age, marcus_sex, marcus_smok_durat, marcus_copd, marcus_prior_
 	response = requests.post(marcus_url, data=json.dumps(payload), headers=headers)
 	marcus_data = json.loads(response.text)
 
-	return marcus_data
+	return(marcus_data['result']['result'])
 
 def park(park_age, park_smok_status, park_asi, park_bmi, park_phys_activ, park_fasting_gluc):
 
@@ -57,49 +56,52 @@ def park(park_age, park_smok_status, park_asi, park_bmi, park_phys_activ, park_f
 	response = requests.post(park_url, data=json.dumps(payload), headers=headers)
 	park_data = json.loads(response.text)
 
-	return park_data
+	return(park_data['result']['result'])
+
+
+#
+#
+#	Main
+#
+#
+
 
 def main():
 
+	    # bach model
+		bach_age = 50
+		bach_cpd = 1
+		bach_yrs_smok = 30
+		bach_yrs_quit = 0
+		bach_asbestos = 0
+		bach_sex = 0 # 0 male, 1 female 
+		bach_quit = 0 # 0 no, 1 yes
 
-	# bach model
-	bach_age = 50
-	bach_cpd = 1
-	bach_yrs_smok = 30
-	bach_yrs_quit = 0
-	bach_asbestos = 0
-	bach_sex = 0 # 0 male, 1 female 
-	bach_quit = 0 # 0 no, 1 yes
+		# marcus model
+		marcus_age = 50
+		marcus_sex = 1
+		marcus_smok_durat = 30
+		marcus_copd = 1
+		marcus_prior_diag = 0
+		marcus_early_onset = 0
+		marcus_late_onset = 0
 
-	# marcus model
-	marcus_age = 50
-	marcus_sex = 1
-	marcus_smok_durat = 30
-	marcus_copd = 1
-	marcus_prior_diag = 0
-	marcus_early_onset = 0
-	marcus_late_onset = 0
+		# park model
+		park_age = 50
+		park_smok_status = 2
+		park_asi = 2
+		park_bmi = 0
+		park_phys_activ = 0
+		park_fasting_gluc = 0
 
-	# park model
-	park_age = 50
-	park_smok_status = 2
-	park_asi = 2
-	park_bmi = 0
-	park_phys_activ = 0
-	park_fasting_gluc = 0
-
-	bach_json = bach(bach_age, bach_cpd, bach_yrs_smok, bach_yrs_quit, bach_asbestos, bach_sex, bach_quit)
-	marcus_json = marcus(marcus_age, marcus_sex, marcus_smok_durat, marcus_copd, marcus_prior_diag, marcus_early_onset, marcus_late_onset)
-	park_json = park(park_age, park_smok_status, park_asi, park_bmi, park_phys_activ, park_fasting_gluc)
-
-	# prints results of each json object
-	print json.dumps(bach_json['result'], indent=4, sort_keys=True)
-	print json.dumps(marcus_json['result'], indent=4, sort_keys=True)
-	print json.dumps(park_json['result'], indent=4, sort_keys=True)
-
+		
+		print bach(bach_age, bach_cpd, bach_yrs_smok, bach_yrs_quit, bach_asbestos, bach_sex, bach_quit)
+		print marcus(marcus_age, marcus_sex, marcus_smok_durat, marcus_copd, marcus_prior_diag, marcus_early_onset, marcus_late_onset)
+		print park(park_age, park_smok_status, park_asi, park_bmi, park_phys_activ, park_fasting_gluc)
 
 
 main()
+
 
 
 

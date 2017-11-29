@@ -29,24 +29,26 @@ def bach(bach_age, bach_cpd, bach_yrs_smok, bach_yrs_quit, bach_asbestos, bach_s
 	
 	payload = {'age':bach_age, 'cpd':bach_cpd, 'yrsSmok':bach_yrs_smok, 'yrsQuit':bach_yrs_quit, 'asbestos':bach_asbestos, 
 	'sex':bach_sex, 'quit':bach_quit}
-
+	
 	response = requests.post(bach_url, data=json.dumps(payload), headers=headers)
 	bach_data = json.loads(response.text)
 
-	return bach_data
+	return(bach_data['result']['result'])
 
 def marcus(marcus_age, marcus_sex, marcus_smok_durat, marcus_copd, marcus_prior_diag,
 		marcus_early_onset, marcus_late_onset):
 	
+
 	payload = {'age':marcus_age, 'sex':marcus_sex, 'smokDurat':marcus_smok_durat, 'copd':marcus_copd, 
 	'priorDiag':marcus_prior_diag, 'earlyOnset':marcus_early_onset, 'lateOnset':marcus_late_onset}
 
 	response = requests.post(marcus_url, data=json.dumps(payload), headers=headers)
 	marcus_data = json.loads(response.text)
 
-	return marcus_data
+	return(marcus_data['result']['result'])
 
 def park(park_age, park_smok_status, park_asi, park_bmi, park_phys_activ, park_fasting_gluc):
+
 
 	payload = { 'age':park_age,'smokerStatus':park_smok_status,'asi':park_asi,
 		'bmi':park_bmi,'physActiv':park_phys_activ,'fastingGluc':park_fasting_gluc }
@@ -54,7 +56,8 @@ def park(park_age, park_smok_status, park_asi, park_bmi, park_phys_activ, park_f
 	response = requests.post(park_url, data=json.dumps(payload), headers=headers)
 	park_data = json.loads(response.text)
 
-	return park_data
+	return(park_data['result']['result'])
+
 
 def main():
 
