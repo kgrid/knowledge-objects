@@ -7,7 +7,7 @@
 #
 
 import requests
-from openpyxl import load_workbook
+import xlrd
 
 #base url for using kgrid server activator
 url = "http://kgrid.med.umich.edu/stack/knowledgeObject/ark:/99999"
@@ -65,10 +65,10 @@ def park(park_age, park_smok_status, park_asi, park_bmi, park_phys_activ, park_f
 
 def main():
 
-	xl_workbook = load_workbook(filename = 'three_model_excel_template.xlsx')
-	ws = xl_workbook['Sheet0']
+    book = xlrd.open_workbook("three_model_excel_template.xlsx")
+    sh = book.sheet_by_index(0)
 
-	while (ws.rows)
+	while (sh.rows)
 		#row by row iteration
 		#assign all variables, call all model functions 
 		# id = a.value
