@@ -10,24 +10,18 @@
 
 import requests
 import json
-import urllib2 # unsure if this is necessary
+import urllib2 
 #from openpyxl import load_workbook # for reading in excel files later
 
 #base url for using kgrid server activartor
 url = "http://kgrid.med.umich.edu/stack/knowledgeObject/ark:/99999" 
-# i took off a '/' at the end of this
-# replaced 'shelf' with 'knowledgeObject'
 
 headers = {
     'content-type': "application/json",
-    # 'accept': "application/json",
-    # 'authorization': "application/json",
-    # 'cache-control': "no-cache", #?
-    # 'postman-token': "830323d5-1a21-4458-50d7-e0c0b3bb55eb" # commented out all of these besides content-type
     }
 
 #model specific urls
-bach_url = url + "/fk4057tv7z/result" #added /result
+bach_url = url + "/fk4057tv7z/result"
 marcus_url = url + "/fk4x92gk0r/result"
 park_url = url + "/fk4r49xd2g/result"
 
@@ -98,7 +92,7 @@ def main():
 	marcus_json = marcus(marcus_age, marcus_sex, marcus_smok_durat, marcus_copd, marcus_prior_diag, marcus_early_onset, marcus_late_onset)
 	park_json = park(park_age, park_smok_status, park_asi, park_bmi, park_phys_activ, park_fasting_gluc)
 
-	# pretty prints results of each json object
+	# prints results of each json object
 	print json.dumps(bach_json['result'], indent=4, sort_keys=True)
 	print json.dumps(marcus_json['result'], indent=4, sort_keys=True)
 	print json.dumps(park_json['result'], indent=4, sort_keys=True)

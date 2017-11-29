@@ -13,24 +13,17 @@ import urllib2 # not sure if necessary
 
 #base url for using kgrid server activartor
 url = "http://kgrid.med.umich.edu/stack/knowledgeObject/ark:/99999" 
-# i took off a '/' at the end of this
-# replaced shelf with knowledgeObject 
+
 
 headers = {
     'content-type': "application/json",
-    # 'accept': "application/json",
-    # 'authorization': "application/json",
-    # 'cache-control': "no-cache", #?
-    # 'postman-token': "830323d5-1a21-4458-50d7-e0c0b3bb55eb" #? commented out everything but content type
     }
 
 #model specific urls
-bach_url = url + "/fk4057tv7z/result" #added /result
+bach_url = url + "/fk4057tv7z/result"
 marcus_url = url + "/fk4x92gk0r/result"
 park_url = url + "/fk4r49xd2g/result"
 
-#read in excel spreadsheet
-#assign values to variables
 
 def bach(bach_age, bach_cpd, bach_yrs_smok, bach_yrs_quit, bach_asbestos, bach_sex, bach_quit):
 	

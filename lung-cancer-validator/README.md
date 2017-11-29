@@ -1,5 +1,6 @@
-# LungCancerDataAPI
-Repository for working on the API(s) for running patient data through the lung cancer risk models
+# Lung-Cancer-Validator
+Lung Cancer Validator
+Pulls data from excel spreadsheet in order to make API call to lung cancer risk model knowledge objects. Writes result to same spreadsheet. 
 
 Contributors: Jack Allan, Natalie Lampa
 Contact: jackall@umich.edu, nlampa@umich.edu
