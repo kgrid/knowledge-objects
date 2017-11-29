@@ -100,6 +100,21 @@ def main():
 		park_phys_activ = t.value
 		park_fasting_gluc = u.value
 
+		# create new sheet, destination for results
+		newsheet = three_model_excel_template.add_sheet('Model Results')
+
+		#Bach
+		for r in range(sheet.nrows):
+			value = bach(r.a, r.b, bach_yrs_smok, bach_yrs_quit, bach_asbestos, bach_sex, 
+			bach_quit)
+
+       		newsheet.write(r, 0, value)
+
+		#Marcus
+		for r in range(sheet.nrows):
+       		newsheet.write(r, 1, sheet.cell_value(r, 1))
+
+
 		v.value = bach(bach_age, bach_cpd, bach_yrs_smok, bach_yrs_quit, bach_asbestos, bach_sex, 
 		bach_quit)
 
