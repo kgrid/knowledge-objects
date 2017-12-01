@@ -129,4 +129,54 @@ def main():
 main()
 
 
+## new main
+
+def main():
+
+	# opens a workbook
+	workbook = xlrd.open_workbook(filename = 'three_model_excel_template.xlsx')
+
+	worksheet = workbook.sheet_by_index(0)
+	
+	current_row = 1
+	col_index = 0
+
+	while (current_row < int(worksheet.nrows)):
+		bach_age = int(worksheet.cell(current_row, col_index + 1).value)
+		bach_cpd = int(worksheet.cell(current_row, col_index + 2).value)
+		bach_yrs_smok = int(worksheet.cell(current_row, col_index + 3).value)
+		bach_yrs_quit = int(worksheet.cell(current_row, col_index + 4).value)
+		bach_asbestos = int(worksheet.cell(current_row, col_index + 5).value)
+		bach_sex = int(worksheet.cell(current_row, col_index + 6).value)
+		bach_quit = int(worksheet.cell(current_row, col_index + 7).value)
+
+		marcus_age = int(worksheet.cell(current_row, col_index + 8).value)
+		marcus_sex = int(worksheet.cell(current_row, col_index + 9).value)
+		marcus_smok_durat = int(worksheet.cell(current_row, col_index + 10).value)
+		marcus_copd = int(worksheet.cell(current_row, col_index + 11).value)
+		marcus_prior_diag = int(worksheet.cell(current_row, col_index + 12).value)
+		marcus_early_onset = int(worksheet.cell(current_row, col_index + 13).value)
+		marcus_late_onset = int(worksheet.cell(current_row, col_index + 14).value)
+
+		park_age = int(worksheet.cell(current_row, col_index + 15).value)
+		park_smok_status = int(worksheet.cell(current_row, col_index + 16).value)
+		park_asi = int(worksheet.cell(current_row, col_index + 17).value)
+		park_bmi = int(worksheet.cell(current_row, col_index + 18).value)
+		park_phys_activ = int(worksheet.cell(current_row, col_index + 19).value)
+		park_fasting_gluc = int(worksheet.cell(current_row, col_index + 20).value)
+
+		bach_json = bach(bach_age, bach_cpd, bach_yrs_smok, bach_yrs_quit, bach_asbestos, bach_sex, bach_quit)
+		marcus_json = marcus(marcus_age, marcus_sex, marcus_smok_durat, marcus_copd, marcus_prior_diag, marcus_early_onset, marcus_late_onset)
+		park_json = park(park_age, park_smok_status, park_asi, park_bmi, park_phys_activ, park_fasting_gluc)
+		# pretty prints results of each json object
+		print json.dumps(bach_json['result'], indent=4, sort_keys=True)
+		print json.dumps(marcus_json['result'], indent=4, sort_keys=True)
+		print json.dumps(park_json['result'], indent=4, sort_keys=True)
+
+		current_row = current_row + 1
+
+main()
+
+
+
 
