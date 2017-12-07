@@ -65,7 +65,7 @@ def park(park_age, park_smok_status, park_asi, park_bmi, park_phys_activ, park_f
 #
 #
 
-
+# testing with values from Marcus model under Table 2 in literature
 def main():
 
 	    # bach model

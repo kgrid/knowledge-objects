@@ -58,7 +58,7 @@ def park(park_age, park_smok_status, park_asi, park_bmi, park_phys_activ, park_f
 
 	return(park_data['result']['result'])
 
-
+# testing with test values from Park model literature
 def main():
 
 	# bach model
