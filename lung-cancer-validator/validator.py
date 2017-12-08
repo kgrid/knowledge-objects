@@ -85,14 +85,14 @@ def spitz(spitz_sex, spitz_age, spitz_smokerStatus, spitz_former, spitz_ets, spi
 
 
 # 21 possible risk factors // how do we wanna take in all these variables...??
-def etzel(etzel_smokerStatus, etzel_current, etzel_age, etzel_sex, etzel_riskFactor1, etzel_riskFactor2, etzel_riskFactor3, etzel_riskFactor4
-			etzel_riskFactor5, etzel_riskFactor6, etzel_riskFactor7, etzel_riskFactor8, etzel_riskFactor9, etzel_riskFactor10, etzel_riskFactor11
+def etzel(etzel_smokerStatus, etzel_current, etzel_age, etzel_sex, etzel_riskFactor1, etzel_riskFactor2, etzel_riskFactor3, etzel_riskFactor4,
+			etzel_riskFactor5, etzel_riskFactor6, etzel_riskFactor7, etzel_riskFactor8, etzel_riskFactor9, etzel_riskFactor10, etzel_riskFactor11,
 			etzel_riskFactor12, etzel_riskFactor13, etzel_riskFactor14, etzel_riskFactor15, etzel_riskFactor16, etzel_riskFactor17,
 			etzel_riskFactor18, etzel_riskFactor19, etzel_riskFactor20, etzel_riskFactor21):
 
 	payload = {"smokerStatus":etzel_smokerStatus,"age":etzel_age,"sex":etzel_sex,"riskFactors":
-				[etzel_riskFactor1, etzel_riskFactor2, etzel_riskFactor3, etzel_riskFactor4
-				etzel_riskFactor5, etzel_riskFactor6, etzel_riskFactor7, etzel_riskFactor8, etzel_riskFactor9, etzel_riskFactor10, etzel_riskFactor11
+				[etzel_riskFactor1, etzel_riskFactor2, etzel_riskFactor3, etzel_riskFactor4,
+				etzel_riskFactor5, etzel_riskFactor6, etzel_riskFactor7, etzel_riskFactor8, etzel_riskFactor9, etzel_riskFactor10, etzel_riskFactor11,
 				etzel_riskFactor12, etzel_riskFactor13, etzel_riskFactor14, etzel_riskFactor15, etzel_riskFactor16, etzel_riskFactor17,
 				etzel_riskFactor18, etzel_riskFactor19, etzel_riskFactor20, etzel_riskFactor21]}
 				#  test to see if this works when some of these risk factors are empty
@@ -197,12 +197,19 @@ def main():
 		park_score = park(park_age, park_smok_status, park_asi, park_bmi, park_phys_activ, park_fasting_gluc)
 
 		# prints the risk scores
-		print bach_score + " " + marcus_score + " " + park_score
+		print bach_score
+		print marcus_score
+		print park_score
 
 
 		scores_ws.write(current_row, col_index + 1, bach_score)
 		scores_ws.write(current_row, col_index + 2, marcus_score)
 		scores_ws.write(current_row, col_index + 3, park_score)
+		# scores_ws.write(current_row, col_index + 4, tammemagi_score)
+		# scores_ws.write(current_row, col_index + 5, spitz_score)
+		# scores_ws.write(current_row, col_index + 6, etzel_score)
+		# scores_ws.write(current_row, col_index + 7, hoggart_score)
+		# scores_ws.write(current_row, col_index + 8, cassidy_score)
 
 		current_row = current_row + 1
 
