@@ -4,7 +4,7 @@ The Lung Cancer Validator is a python script which allows a user to supply a for
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See 'Running the tests' for further information on example API calls. 
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See 'Running the tests' for further information on example API calls, and input/output formatting.
 
 ### Prerequisites
 
