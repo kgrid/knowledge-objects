@@ -28,7 +28,7 @@ Provide name of the input file containing the patient data
 Input File: data.xlsx
 ```
 
-File will run and responses will be recorded in the same file under sheetname "Model Output". 
+File will run and responses will be recorded in the same file under sheetname "Model Output".
 
 ## Running the tests
 
