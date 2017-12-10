@@ -1,6 +1,6 @@
 # Lung Cancer Validator
 
-The Lung Cancer Validator is python script which allows a user to supply a formatted excel spreadsheet of patient data which will be read and formatted into RESTful API calls to the KnowledgeGrid database, providing lung cancer risk scores generated from multiple published models. The response of these calls are then written to a new sheet of the provided excel file. 
+The Lung Cancer Validator is a python script which allows a user to supply a formatted excel spreadsheet of patient data which will be read and formatted into RESTful API calls to the KnowledgeGrid database, providing lung cancer risk scores generated from multiple published models. The response of these calls are then written to a new sheet of the provided excel file. 
 
 ## Getting Started
 
