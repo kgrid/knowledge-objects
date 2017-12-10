@@ -1,22 +1,18 @@
 # Lung Cancer Validator
 
-The Lung Cancer Validator is python script which allows a user to supply a formatted excel spreadsheet of patient data which will be read and formatted into RESTful API calls to the KnowledgeGrid database, providing lung cancer risk scores generated from multiple published models. The response of these calls are then written to a new sheet of the provided excel file. 
+The Lung Cancer Validator is a python script which allows a user to supply a formatted excel spreadsheet of patient data which will be read and formatted into RESTful API calls to the KnowledgeGrid database, providing lung cancer risk scores generated from multiple published models. The response of these calls are then written to a new sheet of the provided excel file. 
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See 'Running the tests' for further information on example API calls. 
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See 'Running the tests' for further information on example API calls, and input/output formatting.
 
 ### Prerequisites
 
-The Lung Cancer Validator makes calls to the Knowledge Grid Activator hosted remotely at kgrid.med.umich.edu, so no local files are necessary beyond the executable and input files.
-
-```
-excel input template can be found in knowledge-objects/lung-cancer-validator/template.xlsx
-```
+The Lung Cancer Validator makes calls to the Knowledge Grid Activator hosted remotely at kgrid.med.umich.edu, so no local files are necessary beyond the executable and input files. A template for the excel input file can be found [here](/template.xlsx).
 
 ### Running
 
-direct to repository where file is saved and run the Lung Cancer Validator executable
+Direct to repository where file is saved and run the Lung Cancer Validator executable
 
 ```
 python validator.py
