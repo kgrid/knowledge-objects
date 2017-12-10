@@ -12,7 +12,7 @@ The Lung Cancer Validator makes calls to the Knowledge Grid Activator hosted rem
 
 ### Running
 
-direct to repository where file is saved and run the Lung Cancer Validator executable
+Direct to repository where file is saved and run the Lung Cancer Validator executable
 
 ```
 python validator.py
