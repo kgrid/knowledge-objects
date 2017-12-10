@@ -143,7 +143,8 @@ def cassidy(cassidy_sex, cassidy_age, cassidy_pneum, cassidy_asbestos, cassidy_c
 def main():
 
 	# opens a workbook
-	workbook_in = xlrd.open_workbook(filename = 'three_model_excel_template.xlsx')
+	inputFile = raw_input("Input File: ")
+	workbook_in = xlrd.open_workbook(filename = inputFile)
 
 	worksheet = workbook_in.sheet_by_index(0)
 	

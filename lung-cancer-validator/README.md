@@ -1,60 +1,55 @@
 # Lung Cancer Validator
 
-One Paragraph of project description goes here
+The Lung Cancer Validator is python script which allows a user to supply a formatted excel spreadsheet of patient data which will be read and formatted into RESTful API calls to the KnowledgeGrid database, providing lung cancer risk scores generated from multiple published models. The response of these calls are then written to a new sheet of the provided excel file. 
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See 'Running the tests' for further information on example API calls. 
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+The Lung Cancer Validator makes calls to the Knowledge Grid Activator hosted remotely at kgrid.med.umich.edu, so no local files are necessary beyond the executable and input files.
 
 ```
-Give examples
+excel input template can be found in knowledge-objects/lung-cancer-validator/template.xlsx
 ```
 
-### Installing
+### Running
 
-A step by step series of examples that tell you have to get a development env running
-
-Say what the step will be
+direct to repository where file is saved and run the Lung Cancer Validator executable
 
 ```
-Give the example
+python validator.py
 ```
 
-And repeat
+Provide name of the input file containing the patient data
 
 ```
-until finished
+Input File: data.xlsx
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
+File will run and responses will be recorded in the same file under sheetname "Model Output".
 
 ## Running the tests
 
-Explain how to run the automated tests for this system
+Sample input and output can be found in the /test folder.
 
-### Break down into end to end tests
+### validator_test
 
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
+which models?
 
 ```
-Give an example
+lets have this one give a sample output
 ```
 
-## Deployment
+### validator_test_2
 
-Add additional notes about how to deploy this on a live system
+which models? what data?
+
+```
+and this one write to an excel sheet
+```
+
 
 ## Built With
 
