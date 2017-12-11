@@ -10,7 +10,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 The Lung Cancer Validator makes calls to the Knowledge Grid Activator hosted remotely at kgrid.med.umich.edu, so no local files are necessary beyond the executable and input files. A template for the excel input file can be found [here](/template.xlsx).
 
-The **xlrd** and **xlwt** plugins are used in this project for implementing excel reading/writing functionality. If not already installed, follow their respective [links](/README.md/Built_With) to download, then navigate to that directory and run the following: 
+The **xlrd** and **xlwt** plugins are used in this project for implementing excel reading/writing functionality. If not already installed, follow their respective [links](http://www.python-excel.org/) to download, then navigate to that directory and run the following: 
 
 ```
 python setup.py install
