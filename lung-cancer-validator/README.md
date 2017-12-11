@@ -30,27 +30,28 @@ File will run and responses will be recorded in the same file under sheetname "M
 
 Sample input and output can be found in the /test folder.
 
-### validator_test
+### activator_test
 
-which models?
+This test file runs API calls to each of the eight lung cancer prediction models from their respective test cases based on hard coded variables (i.e. without the need for excel functionality).
 
 ```
-lets have this one give a sample output
+python activator_test.py
 ```
 
 ### validator_test_2
 
-which models? what data?
+This test file is to assure the reading/writing functionality of the Validator. Issues with this program may be indicative of an outdated version of the plugin used for this project, which can be troubleshooted [here](http://www.python-excel.org/)
 
 ```
-and this one write to an excel sheet
+python validator_test.py
 ```
 
 
 ## Built With
 
 * [KnowledgeGrid](http://kgrid.org/) - The database system used
-
+* [xlrd](https://github.com/python-excel/xlrd) - Plugin for data extraction from excel
+* [xlwt](https://github.com/python-excel/xlwt) - Plugin for generating excel spreadsheets
 
 ## Authors
 

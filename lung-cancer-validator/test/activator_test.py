@@ -1,5 +1,5 @@
 #
-# validator_test_2.py
+# activator_test.py
 # Created: November 9th, 2017
 # Contributors: Jack Allan and Natalie Lampa
 # jackall@umich.edu, nlampa@umich.edu
