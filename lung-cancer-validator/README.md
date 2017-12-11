@@ -46,7 +46,7 @@ python activator_test.py
 
 ### validator_test_2
 
-This test file is to assure the reading/writing functionality of the Validator. Issues with this program may be indicative of an outdated version of the plugin used for this project, which can be troubleshooted [here](http://www.python-excel.org/)
+This test file is to assure the reading/writing functionality of the Validator. Issues with this program may be indicative of an outdated version of the plugin used for this project, which can be troubleshooted [here](http://www.python-excel.org/).
 
 ```
 python validator_test.py
