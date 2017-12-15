@@ -27,10 +27,10 @@ python validator.py
 Provide name of the input file containing the patient data
 
 ```
-Input File: data.xlsx
+Input File: input.xlsx
 ```
 
-File will run and responses will be recorded in the same file under sheetname "Model Output".
+File will run and responses will be recorded in a new XL file titled, "PatientRiskScores.xls"
 
 ## Running the tests
 
