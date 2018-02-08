@@ -29,9 +29,8 @@ def tammemagi(tam_age, tam_edLevel, tam_bmi, tam_copd, tam_hxLungCancer, tam_fam
 	tammemagi_data = json.loads(response.text)
 
 	return(tammemagi_data)
-
-def cassidy(cassidy_sex, cassidy_age, cassidy_pneum, cassidy_asbestos, cassidy_cancHx, cassidy_famHxCanc_early, cassidy_famHxCanc_late,
-			cassidy_smokDur1to20, cassidy_smokDur21to40, cassidy_smokDur41to60, cassidy_smokeDur60plus):
+# cassidy_famHxCanc_early, cassidy_famHxCanc_late
+def cassidy(cassidy_sex, cassidy_age, cassidy_pneum, cassidy_asbestos, cassidy_cancHx, cassidy_famHxCanc, cassidy_smokDur):
 	risk_factors = []
 	if cassidy_pneum != "":
 		risk_factors.append(cassidy_pneum)
@@ -42,23 +41,30 @@ def cassidy(cassidy_sex, cassidy_age, cassidy_pneum, cassidy_asbestos, cassidy_c
 	if cassidy_cancHx != "":
 		risk_factors.append(cassidy_cancHx)
 
-	if cassidy_famHxCanc_early != "":
-		risk_factors.append(cassidy_famHxCanc_early)
+	if cassidy_famHxCanc != "":
+		risk_factors.append(cassidy_famHxCanc)
 
-	if cassidy_famHxCanc_late != "":
-		risk_factors.append(cassidy_famHxCanc_late)
-
-	if cassidy_smokDur1to20 != "":
+	if cassidy_smokDur != "":
 		risk_factors.append(cassidy_smokDur1to20)
 
-	if cassidy_smokDur21to40 != "":
-		risk_factors.append(cassidy_smokDur21to40)
 
-	if cassidy_smokDur41to60 != "":
-		risk_factors.append(cassidy_smokDur41to60)
+	# if cassidy_famHxCanc_early != "":
+	# 	risk_factors.append(cassidy_famHxCanc_early)
 
-	if cassidy_smokeDur60plus != "":
-		risk_factors.append(cassidy_smokeDur60plus)
+	# if cassidy_famHxCanc_late != "":
+	# 	risk_factors.append(cassidy_famHxCanc_late)
+
+	# if cassidy_smokDur1to20 != "":
+	# 	risk_factors.append(cassidy_smokDur1to20)
+
+	# if cassidy_smokDur21to40 != "":
+	# 	risk_factors.append(cassidy_smokDur21to40)
+
+	# if cassidy_smokDur41to60 != "":
+	# 	risk_factors.append(cassidy_smokDur41to60)
+
+	# if cassidy_smokeDur60plus != "":
+	# 	risk_factors.append(cassidy_smokeDur60plus)
 
 	payload = {"sex":cassidy_sex,"age":cassidy_age,"riskFactors":risk_factors}
 
@@ -75,7 +81,7 @@ def cassidy(cassidy_sex, cassidy_age, cassidy_pneum, cassidy_asbestos, cassidy_c
 def main():
 
 	# opens a workbook
-	workbook_in = xlrd.open_workbook(filename = 'three_model_excel_template.xlsx')
+	workbook_in = xlrd.open_workbook(filename = 'Patient_Data.xlsx')
 
 	worksheet = workbook_in.sheet_by_index(0)
 	
@@ -106,23 +112,21 @@ def main():
 		tam_cigsPerDay = int(worksheet.cell(current_row, col_index + 8).value)
 		tam_smokDurat = int(worksheet.cell(current_row, col_index + 9).value)
 		tam_yrsQuit = int(worksheet.cell(current_row, col_index + 10).value)
-
+# "pneum" - "asbestos" - "cancHx" - "famHxCanc, early onset" - "famHxCanc, late onset" - 
+# "smoking duration, 1-20 years" - "smoking duration, 21-40 years"
+ # - "smoking duration, 41-60 years" - "smoking duration, >= 60 years"
 		cassidy_sex = str(worksheet.cell(current_row, col_index + 11).value)
 		cassidy_age = int(float(worksheet.cell(current_row, col_index + 12).value))
 		cassidy_pneum = str(worksheet.cell(current_row, col_index + 13).value)
 		cassidy_asbestos = str(worksheet.cell(current_row, col_index + 14).value)
 		cassidy_cancHx = str(worksheet.cell(current_row, col_index + 15).value)
-		cassidy_famHxCanc_early = str(worksheet.cell(current_row, col_index + 16).value)
-		cassidy_famHxCanc_late = str(worksheet.cell(current_row, col_index + 17).value)
-		cassidy_smokDur1to20 = str(worksheet.cell(current_row, col_index + 18).value)
-		cassidy_smokDur21to40 = str(worksheet.cell(current_row, col_index + 19).value)
-		cassidy_smokDur41to60 = str(worksheet.cell(current_row, col_index + 20).value)
-		cassidy_smokeDur60plus = str(worksheet.cell(current_row, col_index + 21).value)
+		cassidy_famHxCanc = str(worksheet.cell(current_row, col_index + 16).value)
+		cassidy_smokDur = str(worksheet.cell(current_row, col_index + 17).value)
 
-		cassidy_score = cassidy(cassidy_sex, cassidy_age, cassidy_pneum, cassidy_asbestos, cassidy_cancHx, cassidy_famHxCanc_early, 
-			cassidy_famHxCanc_late, cassidy_smokDur1to20, cassidy_smokDur21to40, cassidy_smokDur41to60, cassidy_smokeDur60plus)
 		tammemagi_score = tammemagi(tam_age, tam_edLevel, tam_bmi, tam_copd, tam_hxLungCancer, tam_famHxCanc, tam_race, 
 			tam_cigsPerDay, tam_smokDurat, tam_yrsQuit)
+		cassidy_score = cassidy(cassidy_sex, cassidy_age, cassidy_pneum, cassidy_asbestos, cassidy_cancHx, cassidy_famHxCanc,
+			cassidy_smokDur)
 
 		# prints the risk scores (visual test - REMOVE later)
 		print tammemagi_score
