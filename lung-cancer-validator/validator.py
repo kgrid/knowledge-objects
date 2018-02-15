@@ -27,8 +27,9 @@ def tammemagi(tam_age, tam_edLevel, tam_bmi, tam_copd, tam_hxLungCancer, tam_fam
 
 	response = requests.post(tammemagi_url, data=json.dumps(payload), headers=headers)
 	tammemagi_data = json.loads(response.text)
-	print tammemagi_data
+	
 	return(tammemagi_data['result'])
+
 # cassidy_famHxCanc_early, cassidy_famHxCanc_late
 def cassidy(cassidy_sex, cassidy_age, cassidy_pneum, cassidy_asbestos, cassidy_cancHx, cassidy_famHxCanc, cassidy_smokDur):
 	risk_factors = []
@@ -51,7 +52,7 @@ def cassidy(cassidy_sex, cassidy_age, cassidy_pneum, cassidy_asbestos, cassidy_c
 
 	response = requests.post(cassidy_url, data=json.dumps(payload), headers=headers)
 	cassidy_data = json.loads(response.text)
-	print cassidy_data['result']
+	
 	return(cassidy_data['result']['result'])
 
 #
