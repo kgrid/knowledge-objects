@@ -22,13 +22,13 @@ cassidy_url = url + "/fk4571pp25/result"
 
 def tammemagi(tam_age, tam_edLevel, tam_bmi, tam_copd, tam_hxLungCancer, tam_famHxCanc, tam_race, tam_cigsPerDay, tam_smokDurat, tam_yrsQuit):
 	payload = {'age':tam_age,'edLevel':tam_edLevel,'bmi':tam_bmi,
-				'copd':tam_copd,'hxLungCancer':tam_hxLungCancer,'famHxCanc':tam_famHxCanc, 
-				'race':tam_race, 'cigsPerDay':tam_cigsPerDay, 'smokDurat':tam_smokDurat, 'yrsQuit':tam_yrsQuit}
+				'hxNonLungCancerDz':tam_copd,'hxLungCancer':tam_hxLungCancer,'hxLungCancerFam':tam_famHxCanc, 
+				'ethnicity':tam_race, 'cigsPerDay':tam_cigsPerDay, 'yrsSmoker':tam_smokDurat, 'yrsQuit':tam_yrsQuit}
 
 	response = requests.post(tammemagi_url, data=json.dumps(payload), headers=headers)
 	tammemagi_data = json.loads(response.text)
-
-	return(tammemagi_data)
+	print tammemagi_data
+	return(tammemagi_data['result'])
 # cassidy_famHxCanc_early, cassidy_famHxCanc_late
 def cassidy(cassidy_sex, cassidy_age, cassidy_pneum, cassidy_asbestos, cassidy_cancHx, cassidy_famHxCanc, cassidy_smokDur):
 	risk_factors = []
@@ -45,32 +45,13 @@ def cassidy(cassidy_sex, cassidy_age, cassidy_pneum, cassidy_asbestos, cassidy_c
 		risk_factors.append(cassidy_famHxCanc)
 
 	if cassidy_smokDur != "":
-		risk_factors.append(cassidy_smokDur1to20)
-
-
-	# if cassidy_famHxCanc_early != "":
-	# 	risk_factors.append(cassidy_famHxCanc_early)
-
-	# if cassidy_famHxCanc_late != "":
-	# 	risk_factors.append(cassidy_famHxCanc_late)
-
-	# if cassidy_smokDur1to20 != "":
-	# 	risk_factors.append(cassidy_smokDur1to20)
-
-	# if cassidy_smokDur21to40 != "":
-	# 	risk_factors.append(cassidy_smokDur21to40)
-
-	# if cassidy_smokDur41to60 != "":
-	# 	risk_factors.append(cassidy_smokDur41to60)
-
-	# if cassidy_smokeDur60plus != "":
-	# 	risk_factors.append(cassidy_smokeDur60plus)
+		risk_factors.append(cassidy_smokDur)
 
 	payload = {"sex":cassidy_sex,"age":cassidy_age,"riskFactors":risk_factors}
 
 	response = requests.post(cassidy_url, data=json.dumps(payload), headers=headers)
 	cassidy_data = json.loads(response.text)
-
+	print cassidy_data['result']
 	return(cassidy_data['result']['result'])
 
 #
@@ -112,9 +93,8 @@ def main():
 		tam_cigsPerDay = int(worksheet.cell(current_row, col_index + 8).value)
 		tam_smokDurat = int(worksheet.cell(current_row, col_index + 9).value)
 		tam_yrsQuit = int(worksheet.cell(current_row, col_index + 10).value)
-# "pneum" - "asbestos" - "cancHx" - "famHxCanc, early onset" - "famHxCanc, late onset" - 
-# "smoking duration, 1-20 years" - "smoking duration, 21-40 years"
- # - "smoking duration, 41-60 years" - "smoking duration, >= 60 years"
+
+		# age not working for over or equal to 80 cassidy (says outside 40-84 range)
 		cassidy_sex = str(worksheet.cell(current_row, col_index + 11).value)
 		cassidy_age = int(float(worksheet.cell(current_row, col_index + 12).value))
 		cassidy_pneum = str(worksheet.cell(current_row, col_index + 13).value)
