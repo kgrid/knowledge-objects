@@ -1,12 +1,12 @@
 {"payload": {
     "content": "",
-    "engineType": "Python",
-    "functionName": "rxcompare"},
+    "engineType": "PYTHON",
+    "functionName": "execute"},
 	"metadata":
-	{"title":"GOLD2",
+	{"title":"Cassidy LLP Risk Model: an individual 5-year risk prediction model for lung cancer",
 		"owner":"",
-		"description":"Test SN object",
-		"contributors":"",
+		"description":"Updated Feb 16 2018",
+		"contributors":"Jack Allan, Natalie Lampa, Allen Flynn, Kristen McGarry",
 		"keywords":"",
 		"published":false,
 		"lastModified":1515942979000,
