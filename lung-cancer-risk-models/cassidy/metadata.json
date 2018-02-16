@@ -1,0 +1,20 @@
+{"payload": {
+    "content": "",
+    "engineType": "Python",
+    "functionName": "rxcompare"},
+	"metadata":
+	{"title":"GOLD2",
+		"owner":"",
+		"description":"Test SN object",
+		"contributors":"",
+		"keywords":"",
+		"published":false,
+		"lastModified":1515942979000,
+		"createdOn":1515942979000,
+		"objectType":null,
+		"citations":[],
+		"license":
+			{"licenseName":"",
+			"licenseLink":"null"}
+	}
+}
