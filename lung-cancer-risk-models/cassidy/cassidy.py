@@ -65,7 +65,7 @@ def getAlpha(sex,age):
         alpha_2 = alpha_ref["70-74"]
     elif ((age >= 75) & (age < 80)):
         alpha_2 = alpha_ref["75-79"]
-    elif ((age >= 80) & (age < 85)):
+    elif ((age >= 80) & (age <= 85)):
         alpha_2 = alpha_ref["80-84"]
     else:
         return "invalid age or age outside of 40-84 range"
