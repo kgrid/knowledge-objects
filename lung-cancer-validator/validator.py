@@ -55,6 +55,22 @@ def cassidy(cassidy_sex, cassidy_age, cassidy_pneum, cassidy_asbestos, cassidy_c
 	
 	return(cassidy_data['result']['result'])
 
+# randomization function used for generation of missing values
+def flip(p):
+    return '1' if random.random() < p  else '0'
+
+
+# append random values to worksheet containing variable values
+def randomize(worksheet):
+	worksheet.write(0, 18, "")
+	worksheet.write(0, 19, "")
+	current_row = 1
+	
+	while (current_row < int(worksheet.nrows)):
+		worksheet.write(current_row, 18, int(flip(worksheet.cell(current_row, col_index).value))) # cassidy what?
+		worksheet.write(current_row, 19, int(flip(worksheet.cell(current_row, col_index).value))) # tamm what? 
+		current_row = current_row + 1
+
 #
 #
 ## This creates a new workbook for the patient risk scores
@@ -65,22 +81,27 @@ def main():
 	# opens a workbook
 	workbook_in = xlrd.open_workbook(filename = 'Patient_Data.xlsx')
 
-	worksheet = workbook_in.sheet_by_index(0)
+	input_worksheet = workbook_in.sheet_by_index(0)
 	
 	current_row = 1
 	col_index = 0
 
+	# call randomize function to input missing variables
+	randomize(input_worksheet)
+
 	# creates new workbook for the patient data risk scores
 	new_workbook = xlwt.Workbook()
-	scores_ws = new_workbook.add_sheet('Patient Risk Scores')
+	result_worksheet = new_workbook.add_sheet('Patient Risk Scores')
 
-	scores_ws.write(0, 0, "id")
-	scores_ws.write(0, 1, "tammemagi risk score")
-	scores_ws.write(0, 2, "cassidy risk score")
+	result_worksheet.write(0, 0, "id")
+	result_worksheet.write(0, 1, "tammemagi risk score")
+	result_worksheet.write(0, 2, "cassidy risk score")
+
+	current_row = 1
 
 	while (current_row < int(worksheet.nrows)):
 		# writes patient id to the new patient risk scores worksheet 
-		scores_ws.write(current_row, col_index, int(worksheet.cell(current_row, col_index).value)) 
+		result_worksheet.write(current_row, col_index, int(worksheet.cell(current_row, col_index).value)) 
 
 		# read in the variable data from Excel cells
 
@@ -109,13 +130,9 @@ def main():
 		cassidy_score = cassidy(cassidy_sex, cassidy_age, cassidy_pneum, cassidy_asbestos, cassidy_cancHx, cassidy_famHxCanc,
 			cassidy_smokDur)
 
-		# prints the risk scores (visual test - REMOVE later)
-		print tammemagi_score
-		print cassidy_score
-
 		# writes scores to new woorksheet
-		scores_ws.write(current_row, col_index + 1, tammemagi_score)
-		scores_ws.write(current_row, col_index + 2, cassidy_score)
+		result_worksheet.write(current_row, col_index + 1, tammemagi_score)
+		result_worksheet.write(current_row, col_index + 2, cassidy_score)
 
 		current_row = current_row + 1
 
