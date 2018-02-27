@@ -1,6 +1,12 @@
 var Questionnaire = require('./questionnaire.js');
 
-var gad7 = new Questionnaire("matrix")
+var gad7 = new Questionnaire("matrix", function()
+{
+    console.log("suh");
+}, function()
+{
+
+})
 gad7.jsonBuilder().build(
     "Generalized Anxiety Disorder 7-item (GAD-7) scale",
 
@@ -26,6 +32,26 @@ gad7.jsonBuilder().build(
     ]
 )
 
+var json = {
+    title: "gad7",
+    prompt: "over the last 2 weeks...",
+    questions: [
+        {
+            question: "Feeling nervous, anxious, or on edge",
+            options: [
+                "Not at all sure", 
+                "Several days",
+                "Over half the days",
+                "Nearly every day"
+            ],
+            option_scores: [0, 1, 2, 3]
+
+        }
+    ]
+}
+
+console.log(gad7.getJson());
+
 function question()
 {
     return gad7.getJson();
@@ -40,5 +66,5 @@ function score(answers)
 
 function interpret()
 {
-    
+
 }
