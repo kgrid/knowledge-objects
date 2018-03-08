@@ -30,7 +30,7 @@ def tammemagi(tam_age, tam_edLevel, tam_bmi, tam_copd, tam_hxLungCancer, tam_fam
 	
 	return(tammemagi_data['result'])
 
-# cassidy_famHxCanc_early, cassidy_famHxCanc_late
+
 def cassidy(cassidy_sex, cassidy_age, cassidy_pneum, cassidy_asbestos, cassidy_cancHx, cassidy_famHxCanc, cassidy_smokDur):
 	risk_factors = []
 	if cassidy_pneum != "":
@@ -62,13 +62,49 @@ def flip(p):
 
 # append random values to worksheet containing variable values
 def randomize(worksheet):
-	worksheet.write(0, 18, "")
-	worksheet.write(0, 19, "")
+	worksheet.write_string(0, 18, "personal_cancHx_by_age")
+	worksheet.write_string(0, 19, "family_cancHx_by_age")
 	current_row = 1
 	
 	while (current_row < int(worksheet.nrows)):
-		worksheet.write(current_row, 18, int(flip(worksheet.cell(current_row, col_index).value))) # cassidy what?
-		worksheet.write(current_row, 19, int(flip(worksheet.cell(current_row, col_index).value))) # tamm what? 
+		#column 18 : prevalence ratio based on reported age
+		if worksheet.cell(current_row, 1).value < 45:
+			worksheet.write(current_row, 18, "1.8")
+		elif worksheet.cell(current_row, 1).value < 65:
+			worksheet.write(current_row, 18, "8.7")
+		elif worksheet.cell(current_row, 1).value < 75:
+			worksheet.write(current_row, 18, "21.2")
+		else:
+			worksheet.write(current_row, 18, "31.8")
+
+
+		#column 5 : randomization 0/1 weighted based on column 18
+		worksheet.write(current_row, 5, int(flip(worksheet.cell(current_row, 18).value)))
+		#column 15 : randomization "cancHx"/"" weighted based on column 18
+		worksheet.write(current_row, 15, int(flip(worksheet.cell(current_row, 18).value)))
+		if worksheet.cell(current_row, 15).value == 1:
+			worksheet.write(current_row, 15, "cancHx")
+		else:
+			worksheet.write(current_row, 15, "")
+
+
+		#column 19 : prevalence ratio for early onset famHx of cancer
+		worksheet.write(current_row, 19, int(flip(0.0622)))
+		#column 20 : prevalence ratio for late onset famHx of cancer
+		worksheet.write(current_row, 20, int(flip(0.1296)))
+		#column 6 : 0/1 
+		if worksheet.cell(current_row, 19).value == 1 or worksheet.cell(current_row, 20).value == 1:
+			worksheet.write(current_row, 6, "1")
+		else:
+			worksheet.write(current_row, 6, "0")
+		#column 16 : 
+		if worksheet.cell(current_row, 19).value == 1:
+			worksheet.write(current_row, 16, "famHxCanc, early onset")
+		if worksheet.cell(current_row, 20).value == 1:
+			worksheet.write(current_row, 16, "famHxCanc, late onset")
+		else:
+			worksheet.write(current_row, 16, "")
+		
 		current_row = current_row + 1
 
 #
@@ -77,31 +113,27 @@ def randomize(worksheet):
 #
 #
 def main():
+	workbook_in = xlrd.open_workbook('DS3.xlsx')
 
-	# opens a workbook
-	workbook_in = xlrd.open_workbook(filename = 'DS3.xlsx')
+	#create results worksheet
+	results_worksheet = workbook_in.create_sheet('Results')
+	results_worksheet.write(0, 0, "id")
+	results_worksheet.write(0, 1, "tammemagi risk score")
+	results_worksheet.write(0, 2, "cassidy risk score")
 
-	input_worksheet = workbook_in.sheet_by_index(0)
-	
 	current_row = 1
 	col_index = 0
-
+	input_worksheet = workbook_in.sheet_by_index(0)
 	# call randomize function to input missing variables
 	randomize(input_worksheet)
 
-	# creates new workbook for the patient data risk scores
-	new_workbook = xlwt.Workbook()
-	result_worksheet = new_workbook.add_sheet('Patient Risk Scores')
-
-	result_worksheet.write(0, 0, "id")
-	result_worksheet.write(0, 1, "tammemagi risk score")
-	result_worksheet.write(0, 2, "cassidy risk score")
 
 	current_row = 1
+	col_index = 0
 
 	while (current_row < int(worksheet.nrows)):
 		# writes patient id to the new patient risk scores worksheet 
-		result_worksheet.write(current_row, col_index, int(worksheet.cell(current_row, col_index).value)) 
+		results_worksheet.write(current_row, col_index, int(worksheet.cell(current_row, col_index).value)) 
 
 		# read in the variable data from Excel cells
 
@@ -116,7 +148,6 @@ def main():
 		tam_smokDurat = int(worksheet.cell(current_row, col_index + 9).value)
 		tam_yrsQuit = int(worksheet.cell(current_row, col_index + 10).value)
 
-		# age not working for over or equal to 80 cassidy (says outside 40-84 range)
 		cassidy_sex = str(worksheet.cell(current_row, col_index + 11).value)
 		cassidy_age = int(float(worksheet.cell(current_row, col_index + 12).value))
 		cassidy_pneum = str(worksheet.cell(current_row, col_index + 13).value)
@@ -131,11 +162,11 @@ def main():
 			cassidy_smokDur)
 
 		# writes scores to new woorksheet
-		result_worksheet.write(current_row, col_index + 1, tammemagi_score)
-		result_worksheet.write(current_row, col_index + 2, cassidy_score)
+		results_worksheet.write(current_row, col_index + 1, tammemagi_score)
+		results_worksheet.write(current_row, col_index + 2, cassidy_score)
 
 		current_row = current_row + 1
 
-	new_workbook.save('PatientRiskScores.xls')
+	workbook_in.save('Results.xlsx')
 
 main()
