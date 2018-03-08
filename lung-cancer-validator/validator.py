@@ -79,7 +79,7 @@ def randomize(worksheet):
 def main():
 
 	# opens a workbook
-	workbook_in = xlrd.open_workbook(filename = 'Patient_Data.xlsx')
+	workbook_in = xlrd.open_workbook(filename = 'DS3.xlsx')
 
 	input_worksheet = workbook_in.sheet_by_index(0)
 	
