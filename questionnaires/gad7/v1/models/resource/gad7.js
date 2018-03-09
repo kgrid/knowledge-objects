@@ -1,4 +1,3 @@
-
 var questionnaire = {
     questions: [
         {
@@ -86,54 +85,59 @@ var questionnaire = {
 }
 
 var answers = {
-    answers: [
+    "answers": [
         {
-            id: "1",
-            scores: [
+            "id": "1",
+            "scores": [
                 {
-                    id: "1a",
-                    score: 1
+                    "id": "1a",
+                    "score": 1
                 },
                 {
-                    id: "1b",
-                    score: 2
+                    "id": "1b",
+                  "score": 2
                 },
                 {
-                    id: "1c",
-                    score: 1
+                    "id": "1c",
+                    "score": 1
                 },
                 {
-                    id: "1d",
-                    score: 3
+                    "id": "1d",
+                  "score": 3
                 },
                 {
-                    id: "1e",
-                    score: 0
+                  "id": "1e",
+                  "score": 0
                 },
                 {
-                    id: "1f",
-                    score: 1
+                  "id": "1f",
+                  "score": 1
                 },
                 {
-                    id: "1g",
-                    score: 2
+                  "id": "1g",
+                  "score": 2
                 }
-            ],
+            ]
         }
     ]
 }
 
 
+function status()
+{
+  return { status: "OK" }
+}
+
 function question()
 {
-    return JSON.stringify(questionnaire)
+  return questionnaire
 }
 
 
 function score(answerJson)
 {
     var sum = 0
-    for(let i = 0; i < answerJson.answers[0].scores.length; i += 1)
+    for(var i = 0; i < answerJson.answers[0].scores.length; i += 1)
     {
         sum += answerJson.answers[0].scores[i].score;
     }
@@ -162,12 +166,11 @@ function interpret(score)
     })
 }
 
-console.log(question());
+print(question());
 
-var score = score(answers);
-console.log(score)
+print(score(answers))
 
-console.log(interpret(score))
+print(interpret(score))
 
 
 
