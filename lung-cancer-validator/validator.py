@@ -184,7 +184,7 @@ def main():
 		elif s3 == 1 and s2 == 0:
 			s.write(current_row, 16, "famHxCanc, late onset")
 		elif s3 == 1 and s2 == 1:
-			s.write(current_row, 16, "famHxCanc, early onset, late onset")
+			s.write(current_row, 16, "famHxCanc, early onset, famHxCanc, late onset")
 		else:
 			s.write(current_row, 16, "")
 
