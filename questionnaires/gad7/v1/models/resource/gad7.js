@@ -1,104 +1,216 @@
-var Questionnaire = require('./questionnaire.js');
 
-var answers = {
-    answers: [
-        "not at all",
-        "sometimes",
-        "..."
-    ]
-}
-
-var gad7 = new Questionnaire("matrix", function(answersJson)
-{
-    var answers = answersJson.answers;
-    var sum = 0;
-    for(var i = 0; i < answers.length; i += 1)
-    {
-        sum += gad7.getAnswerScore(i, answers[i])
-    }
-    return sum;
-
-}, function()
-{
-
-})
-gad7.jsonBuilder().build(
-    "Generalized Anxiety Disorder 7-item (GAD-7) scale",
-
-    "Over the last two weeks, how often have you been bothered by the following problems?",
-
-    [
-        "Feeling nervous, anxious, or on edge",
-        "Not being able to stop or control worrying",
-        "Worrying too much about different things",
-        "Trouble relaxing",
-        "Being so restless that it's hard to sit still",
-        "Becoming easily annoyed or irritable",
-        "Feeling afraid as if something awful might happen"
-    ],
-
-    [0, 3],
-
-    [
-        "Not at all sure",
-        "Several days",
-        "Over half the days",
-        "Nearly every day"
-    ]
-)
-
-var json = {
-    title: "gad7",
-    prompt: "over the last 2 weeks...",
+var questionnaire = {
     questions: [
         {
-            question: "Feeling nervous, anxious, or on edge",
-            options: [
-                "Not at all sure", 
-                "Several days",
-                "Over half the days",
-                "Nearly every day"
+            id: "1",
+            type: "matrix",
+            prompt: "Over the last 2 weeks, how often have you been bothered by the following problems?",
+
+            columns: [
+                {
+                    text: "Not at all sure",
+                    score: 0,
+                },
+                {
+                    text: "Several days",
+                    score: 1,
+                },
+                {
+                    text: "Over half the days",
+                    score: 2,
+                },
+                {
+                    text: "Nearly every day",
+                    score: 3
+                }
             ],
-            option_scores: [0, 1, 2, 3]
+
+            rows: [
+                {
+                    id: "1a",
+                    text: "Feeling nervous, anxious, or on edge"
+                },
+                {
+                    id: "1b",
+                    text: "Not being able to stop or control worrying"
+                },
+                {
+                    id: "1c",
+                    text: "Worrying too much about different things"
+                },
+                {
+                    id: "1d",
+                    text: "Trouble relaxing"
+                },
+                {
+                    id: "1e",
+                    text: "Being so restless that it's hard to sit still"
+                },
+                {
+                    id: "1f",
+                    text: "Becoming easily annoyed or irratable"
+                },
+                {
+                    id: "1g",
+                    text: "Feeling afraid as if something awful might happen"
+                }
+
+            ]
+        },
+        {
+            id: "2",
+            type: "uniform checkboxes",
+            prompt: "If you checked off any problems, how difficult have these made it for you to do your work" +
+                "take care of things at home, or get along with other people?",
+            options: [
+                { 
+                    value: 0, 
+                    text: "Not difficult at all"
+                },
+                { 
+                    value: 1, 
+                    text: "Somewhat difficult"
+                },
+                { 
+                    value: 2, 
+                    text: "Very difficult"
+                },
+                { 
+                    value: 3, 
+                    text: "Extremely difficult"
+                }
+            ]
 
         }
     ]
 }
 
-console.log(gad7.getJson());
+var answers = {
+    answers: [
+        {
+            id: "1",
+            scores: [
+                {
+                    id: "1a",
+                    score: 1
+                },
+                {
+                    id: "1b",
+                    score: 2
+                },
+                {
+                    id: "1c",
+                    score: 1
+                },
+                {
+                    id: "1d",
+                    score: 3
+                },
+                {
+                    id: "1e",
+                    score: 0
+                },
+                {
+                    id: "1f",
+                    score: 1
+                },
+                {
+                    id: "1g",
+                    score: 2
+                }
+            ],
+        }
+    ]
+}
+
 
 function question()
 {
-    return gad7.getJson();
+    return JSON.stringify(questionnaire)
 }
 
 
 function score(answerJson)
 {
-    return gad7.scoreAnswers(answerJson)
+    var sum = 0
+    for(let i = 0; i < answerJson.answers[0].scores.length; i += 1)
+    {
+        sum += answerJson.answers[0].scores[i].score;
+    }
+    return JSON.stringify({
+        score: sum
+    })
 }
 
 function interpret(score)
 {
-    if(score < 4)
-        return "you're good"
-    else if(score >= 4 && score < 7)
-        return "idk maybe take another one"
-    else return "maybe do something"
+    var interpretation = "";
+
+    if(score < 5)
+        interpretation = "Minimal anxiety"
+    //between 5 and 10
+    else if(score < 10)
+        interpretation = "Mild anxiety"
+    //between 10 and 15
+    else if(score < 15)
+        interpretation = "Moderate anxiety"
+    else
+        interpretation = "Severe anxiety"
+
+    return JSON.stringify({
+        interpretation: interpretation
+    })
 }
 
 console.log(question());
 
-console.log(score({
-    answers: [
-        "Several days",
-        "Over half the days",
-        "Not at all sure",
-        "Nearly every day",
-        "Not at all sure",
-        "Several days",
-        "Over half the days"
-    ]
-}))
+var score = score(answers);
+console.log(score)
 
-console.log(interpret(4))
+console.log(interpret(score))
+
+
+
+
+{
+    answers: [
+        {
+            id: 3,
+            options : [
+                {
+                    "Several days": 1
+                }
+            ]
+        }
+    ]
+    
+}
+
+
+
+
+
+{
+    questions : [
+        {
+            id: 6,
+            options: [
+                {
+                    "not at all sure": 0
+                },
+                { 
+                    "some days": 1
+                }
+            ]
+        }
+    ]
+}
+
+{
+    answers: [
+        {
+            id: 6,
+            answer: 2
+        }
+    ]
+}
