@@ -65,11 +65,7 @@ def flip(p):
 	return(0)
 
 
-#
-#
-## This creates a new workbook for the patient risk scores
-#
-#
+
 
 def main():
 	# read in Excel Workbook
