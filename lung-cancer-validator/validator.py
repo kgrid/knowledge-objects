@@ -11,9 +11,9 @@ import requests
 import random
 import xlwt, xlrd, json
 from xlrd import open_workbook
-from xlutils.copy import copy
 
-#base url for using kgrid server activator
+
+#base url for using KGrid Server Activator
 url = "http://kgrid.med.umich.edu/stack/knowledgeObject/ark:/"
 
 headers = {'content-type': "application/json"}
@@ -22,7 +22,7 @@ headers = {'content-type': "application/json"}
 tammemagi_url = url + "99999/fk4jh3tk9s/result"
 cassidy_url = url + "22318/cassidy2/result"
 
-
+#generate api call for tammemagi model and return risk score
 def tammemagi(tam_age, tam_edLevel, tam_bmi, tam_copd, tam_hxLungCancer, tam_famHxCanc, tam_race, tam_cigsPerDay, tam_smokDurat, tam_yrsQuit):
 	payload = {'age':tam_age,'edLevel':tam_edLevel,'bmi':tam_bmi,
 				'hxNonLungCancerDz':tam_copd,'hxLungCancer':tam_hxLungCancer,'hxLungCancerFam':tam_famHxCanc, 
@@ -33,7 +33,7 @@ def tammemagi(tam_age, tam_edLevel, tam_bmi, tam_copd, tam_hxLungCancer, tam_fam
 	
 	return(tammemagi_data['result'])
 
-
+#generate api call for cassidy model and return risk score
 def cassidy(cassidy_sex, cassidy_age, cassidy_pneum, cassidy_asbestos, cassidy_cancHx, cassidy_famHxCanc, cassidy_smokDur):
 	risk_factors = []
 	if cassidy_pneum != "":
@@ -58,7 +58,7 @@ def cassidy(cassidy_sex, cassidy_age, cassidy_pneum, cassidy_asbestos, cassidy_c
 	
 	return(cassidy_data['result']['result'])
 
-# randomization function used for generation of missing values
+#function used for weighted randomization
 def flip(p):
 	x = random.random()
 	if x < p: return(1) 
@@ -66,92 +66,79 @@ def flip(p):
 
 
 
-
 def main():
 	# read in Excel Workbook
-	workbook_in = xlrd.open_workbook('DS3_20.xlsx')
-
-	# to hold new workbook
-	wb = copy(workbook_in)
-	s = wb.get_sheet(0)
-
-	# creates new workbook for the patient data risk scores
-	new_workbook = xlwt.Workbook()
-	results_ws = new_workbook.add_sheet('Patient Risk Scores')
-
-	results_ws.write(0, 0, "id")
-	results_ws.write(0, 1, "tammemagi risk score")
-	results_ws.write(0, 2, "cassidy risk score")
+	workbook_in = xlrd.open_workbook('DS3_22.xlsx')
 
 	current_row = 1
 	input_worksheet = workbook_in.sheet_by_index(0)
 	n = 0
 
-	filename = 'next'
-
-	while(n < 10):
-		# randomize (NEW WORKBOOK)
+	while(n < 10): #for testing purposes ------------------------------------------------------------------------------------------------------------
+		# randomize and append to existing excel file
 		while (current_row < int(input_worksheet.nrows)):
 
 		# column 18 : prevalence ratio based on reported age
 			for_transform = 0;
 			if input_worksheet.cell(current_row, 1).value < 45:
-				s.write(current_row, 18, 1.8)
+				input_worksheet.write(current_row, 18, 1.8)
 				for_transform = 0.018
 			elif input_worksheet.cell(current_row, 1).value < 65:
-				s.write(current_row, 18, 8.7)
+				input_worksheet.write(current_row, 18, 8.7)
 				for_transform = 0.087
 			elif input_worksheet.cell(current_row, 1).value < 75:
-				s.write(current_row, 18, 21.2)
+				input_worksheet.write(current_row, 18, 21.2)
 				for_transform = 0.212
 			else:
-				s.write(current_row, 18, 31.8)
+				input_worksheet.write(current_row, 18, 31.8)
 				for_transform = 0.318
 
 			#column 5 TAM_HXLUNGCANCER: randomization 0/1 weighted based on column 18
 			save = int(flip(for_transform))
-			s.write(current_row, 5, save)
+			input_worksheet.write(current_row, 5, save)
 			#column 15 : randomization "cancHx"/"" weighted based on column 18
 			if save == 1:
-				s.write(current_row, 15, "cancHx")
+				input_worksheet.write(current_row, 15, "cancHx")
 			else:
-				s.write(current_row, 15, "")
+				input_worksheet.write(current_row, 15, "")
 
 			#column 19 : prevalence ratio for early onset famHx of cancer
 			s2 = int(flip(0.0622))
 			s3 = int(flip(0.1296))
-			s.write(current_row, 19, s2)
+			input_worksheet.write(current_row, 19, s2)
 			#column 20 : prevalence ratio for late onset famHx of cancer
-			s.write(current_row, 20, s3)
+			input_worksheet.write(current_row, 20, s3)
 
 			#column 6 : 0/1 
 			if s2 == 1 or s3 == 1:
-				s.write(current_row, 6, 1)
+				input_worksheet.write(current_row, 6, 1)
 			else:
-				s.write(current_row, 6, 0)
+				input_worksheet.write(current_row, 6, 0)
 			#column 16 : 
 			if s2 == 1:
-				s.write(current_row, 16, "famHxCanc, early onset")
+				input_worksheet.write(current_row, 16, "famHxCanc, early onset")
 			elif s3 == 1:
-				s.write(current_row, 16, "famHxCanc, late onset")
+				input_worksheet.write(current_row, 16, "famHxCanc, late onset")
 			elif s2 == 1 and s3 == 1:
-				s.write(current_row, 16, ("famHxCanc, late onset", "famHxCanc, early onset"))
+				input_worksheet.write(current_row, 16, ("famHxCanc, late onset", "famHxCanc, early onset"))
 			else:
-				s.write(current_row, 16, "")
+				input_worksheet.write(current_row, 16, "")
 
 			current_row = current_row + 1
-	
-		wb.save('DS3_20_UP.xls')
-	
-		wbin = xlrd.open_workbook('DS3_20_UP.xls')
-		inws = wbin.sheet_by_index(0)
+
+
+		######################################################################################################################## 
+
+
+		output = open("results.txt","x+")
+
 		current_row = 1
 		col_index = 0
 
 		while (current_row < int(input_worksheet.nrows)):
 
-			# writes patient id to the new patient risk scores worksheet 
-			results_ws.write(current_row, col_index, int(inws.cell(current_row, col_index).value)) 
+			# writes patient id to the output file
+			output.write(current_row, col_index, int(inws.cell(current_row, col_index).value)) 
 
 			# read in the variable data from Excel worksheet cells
 			tam_age = int(inws.cell(current_row, col_index + 1).value)
@@ -173,20 +160,20 @@ def main():
 			cassidy_famHxCanc = str(inws.cell(current_row, col_index + 16).value)
 			cassidy_smokDur = str(inws.cell(current_row, col_index + 17).value)
 
+			#generate risk scores from api calls to the KGrid Server Activator
 			tammemagi_score = tammemagi(tam_age, tam_edLevel, tam_bmi, tam_copd, tam_hxLungCancer, tam_famHxCanc, tam_race, 
 				tam_cigsPerDay, tam_smokDurat, tam_yrsQuit)
 			cassidy_score = cassidy(cassidy_sex, cassidy_age, cassidy_pneum, cassidy_asbestos, cassidy_cancHx, cassidy_famHxCanc,
 				cassidy_smokDur)
 
-			# writes scores to new worksheet
-			results_ws.write(current_row, col_index + 1, tammemagi_score)
-			results_ws.write(current_row, col_index + 2, cassidy_score)
+			# writes scores to output textfile
+			output.write(current_row, col_index + 1, tammemagi_score)
+			output.write(current_row, col_index + 2, cassidy_score)
 
 			current_row = current_row + 1
 		
-		results_ws = new_workbook.add_sheet(filename)
-		filename = filename + 'n'
-		n = n + 1
-	new_workbook.save('Results.xls')
+		n = n + 1 #for testing purposes ------------------------------------------------------------------------------------------------------------
+
+	output.close()
 
 main()
