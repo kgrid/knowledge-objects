@@ -78,7 +78,7 @@ def main():
 	current_row = 1
 	input_worksheet = workbook_in.sheet_by_index(0)
 
-	results = open("workfile.txt","w+")
+	results = open("workfile.txt","r+")
 
 	while(current_row < int(input_worksheet.nrows)):
 		#reset n
@@ -147,10 +147,10 @@ def main():
 			cassidy_score = cassidy(cassidy_sex, cassidy_age, cassidy_pneum, cassidy_asbestos, cassidy_cancHx, cassidy_famHxCanc,
 				cassidy_smokDur)
 			
-			line_one_0 = str(current_row) + " " + str(tam_age) + " " + str(tam_edLevel) + " " + str(tam_bmi) + " " + str(tam_copd) + " t1" + " t2&t3 " + str(tam_race) + " " 
-			line_one_1 = str(tam_cigsPerDay) + " " + str(tam_smokDurat) + " " + str(tam_yrsQuit) + " " + str(cassidy_sex) + " " + str(cassidy_age) + " " + "pneum: " + str(cassidy_pneum) 
-			line_one_2 = " " + "asbestos: " + str(cassidy_asbestos) + " c_cancHx: t1 c_famHxCanc: t2&t3 " + str(cassidy_smokDur)
-			line_one_together = line_one_0 + line_one_1 + line_one_2 + " " + str(tammemagi_score) + " " + str(cassidy_score) + " " + str(t1) + " " + str(t2) + " " + str(t3)
+			line_one_0 = str(current_row) + "\t" + str(tam_age) + "\t" + str(tam_edLevel) + "\t" + str(tam_bmi) + "\t" + str(tam_copd) + "\tt1" + "\tt2&t3\t" + str(tam_race) + "\t" 
+			line_one_1 = str(tam_cigsPerDay) + "\t" + str(tam_smokDurat) + "\t" + str(tam_yrsQuit) + "\t" + str(cassidy_sex) + "\t" + str(cassidy_age) + "\t" + "pneum:" + str(cassidy_pneum) 
+			line_one_2 = "\t" + "asbestos:" + str(cassidy_asbestos) + "\tc_cancHx:t1\t" + "c_famHxCanc:t2&t3\t" + str(cassidy_smokDur)
+			line_one_together = line_one_0 + line_one_1 + line_one_2 + "\t" + str(tammemagi_score) + "\t" + str(cassidy_score) + "\t" + str(t1) + "\t" + str(t2) + "\t" + str(t3)
 			results.write(line_one_together)
 			results.write('\n')
 		
