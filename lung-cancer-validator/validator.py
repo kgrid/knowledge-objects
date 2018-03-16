@@ -121,8 +121,8 @@ def main():
 				cassidy_famHxCanc = "famHxCanc, early onset"
 			elif t3 == 1:
 				cassidy_famHxCanc = "famHxCanc, late onset"
-			# elif t2 == 1 and s3 == 1:
-				# cassidy_famHxCanc = ("famHxCanc, late onset", "famHxCanc, early onset")
+			elif t2 == 1 and s3 == 1:
+				cassidy_famHxCanc = ("famHxCanc, late onset", "famHxCanc, early onset")
 			else:
 				cassidy_famHxCanc = ""
 
