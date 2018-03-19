@@ -132,6 +132,8 @@ function question()
 
 function score(answerJson)
 {
+    if(answerJson.answers[0].scores.length != 7)
+        throw 302
     var sum = 0
     for(let i = 0; i < answerJson.answers[0].scores.length; i += 1)
     {
@@ -169,7 +171,7 @@ console.log(score)
 
 console.log(interpret(score))
 
-
+2
 
 
 {
