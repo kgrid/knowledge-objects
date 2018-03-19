@@ -1,14 +1,16 @@
 #
 # validator.py
 # Created: October 30th, 2017
-# Contributors: Jack Allan and Natalie Lampa
-# jackall@umich.edu, nlampa@umich.edu
+# Contributors: Natalie Lampa, Jack Allan 
+# nlampa@umich.edu, jackall@umich.edu
 #
 #
 
 
 import requests
-import xlwt, xlrd, json
+import random
+import xlrd, json
+from xlrd import open_workbook
 
 #base url for using kgrid server activator
 url = "http://kgrid.med.umich.edu/stack/knowledgeObject/ark:/"
@@ -57,116 +59,104 @@ def cassidy(cassidy_sex, cassidy_age, cassidy_pneum, cassidy_asbestos, cassidy_c
 
 # randomization function used for generation of missing values
 def flip(p):
-    return '1' if random.random() < p  else '0'
+	x = random.random()
+	if x < p: return(1) 
+	return(0)
 
-
-# append random values to worksheet containing variable values
-def randomize(worksheet):
-	worksheet.write_string(0, 18, "personal_cancHx_by_age")
-	worksheet.write_string(0, 19, "family_cancHx_by_age")
-	current_row = 1
-	
-	while (current_row < int(worksheet.nrows)):
-		#column 18 : prevalence ratio based on reported age
-		if worksheet.cell(current_row, 1).value < 45:
-			worksheet.write(current_row, 18, "1.8")
-		elif worksheet.cell(current_row, 1).value < 65:
-			worksheet.write(current_row, 18, "8.7")
-		elif worksheet.cell(current_row, 1).value < 75:
-			worksheet.write(current_row, 18, "21.2")
-		else:
-			worksheet.write(current_row, 18, "31.8")
-
-
-		#column 5 : randomization 0/1 weighted based on column 18
-		worksheet.write(current_row, 5, int(flip(worksheet.cell(current_row, 18).value)))
-		#column 15 : randomization "cancHx"/"" weighted based on column 18
-		worksheet.write(current_row, 15, int(flip(worksheet.cell(current_row, 18).value)))
-		if worksheet.cell(current_row, 15).value == 1:
-			worksheet.write(current_row, 15, "cancHx")
-		else:
-			worksheet.write(current_row, 15, "")
-
-
-		#column 19 : prevalence ratio for early onset famHx of cancer
-		worksheet.write(current_row, 19, int(flip(0.0622)))
-		#column 20 : prevalence ratio for late onset famHx of cancer
-		worksheet.write(current_row, 20, int(flip(0.1296)))
-		#column 6 : 0/1 
-		if worksheet.cell(current_row, 19).value == 1 or worksheet.cell(current_row, 20).value == 1:
-			worksheet.write(current_row, 6, "1")
-		else:
-			worksheet.write(current_row, 6, "0")
-		#column 16 : 
-		if worksheet.cell(current_row, 19).value == 1:
-			worksheet.write(current_row, 16, "famHxCanc, early onset")
-		if worksheet.cell(current_row, 20).value == 1:
-			worksheet.write(current_row, 16, "famHxCanc, late onset")
-		else:
-			worksheet.write(current_row, 16, "")
-		
-		current_row = current_row + 1
 
 #
 #
 ## This creates a new workbook for the patient risk scores
 #
 #
+
 def main():
-	workbook_in = xlrd.open_workbook('DS3.xlsx')
+	# read in Excel Workbook
+	workbook_in = xlrd.open_workbook('DS3_20.xlsx')
 
-	#create results worksheet
-	results_worksheet = workbook_in.create_sheet('Results')
-	results_worksheet.write(0, 0, "id")
-	results_worksheet.write(0, 1, "tammemagi risk score")
-	results_worksheet.write(0, 2, "cassidy risk score")
-
-	current_row = 1
 	col_index = 0
+	current_row = 1
 	input_worksheet = workbook_in.sheet_by_index(0)
-	# call randomize function to input missing variables
-	randomize(input_worksheet)
 
+	results = open("workfile.txt","r+")
 
-	current_row = 1
-	col_index = 0
+	while(current_row < int(input_worksheet.nrows)):
+		#reset n
+		n = 0
+		# transforms for column 5, 6, 15, 16 - personal/family history of cancer
+		while (n < 100):
 
-	while (current_row < int(worksheet.nrows)):
-		# writes patient id to the new patient risk scores worksheet 
-		results_worksheet.write(current_row, col_index, int(worksheet.cell(current_row, col_index).value)) 
+			for_transform = 0;
+			if input_worksheet.cell(current_row, 1).value < 45:
+				for_transform = 0.018	
+			elif input_worksheet.cell(current_row, 1).value < 65:
+				for_transform = 0.087
+			elif input_worksheet.cell(current_row, 1).value < 75:
+				for_transform = 0.212
+			else:
+				for_transform = 0.318
 
-		# read in the variable data from Excel cells
+			#column 5 TAM_HXLUNGCANCER: randomization 0/1 weighted based on column 18
+			t1 = int(flip(for_transform))
+			tam_hxLungCancer = t1
 
-		tam_age = int(worksheet.cell(current_row, col_index + 1).value)
-		tam_edLevel = int(worksheet.cell(current_row, col_index + 2).value)
-		tam_bmi = int(worksheet.cell(current_row, col_index + 3).value)
-		tam_copd = int(worksheet.cell(current_row, col_index + 4).value)
-		tam_hxLungCancer = int(worksheet.cell(current_row, col_index + 5).value)
-		tam_famHxCanc = int(worksheet.cell(current_row, col_index + 6).value)
-		tam_race = int(worksheet.cell(current_row, col_index + 7).value)
-		tam_cigsPerDay = int(worksheet.cell(current_row, col_index + 8).value)
-		tam_smokDurat = int(worksheet.cell(current_row, col_index + 9).value)
-		tam_yrsQuit = int(worksheet.cell(current_row, col_index + 10).value)
+			#column 15 : randomization "cancHx"/"" weighted based on column 18
+			if t1 == 1:
+				cassidy_cancHx = "cancHx"
+			else:
+				cassidy_cancHx = ""
 
-		cassidy_sex = str(worksheet.cell(current_row, col_index + 11).value)
-		cassidy_age = int(float(worksheet.cell(current_row, col_index + 12).value))
-		cassidy_pneum = str(worksheet.cell(current_row, col_index + 13).value)
-		cassidy_asbestos = str(worksheet.cell(current_row, col_index + 14).value)
-		cassidy_cancHx = str(worksheet.cell(current_row, col_index + 15).value)
-		cassidy_famHxCanc = str(worksheet.cell(current_row, col_index + 16).value)
-		cassidy_smokDur = str(worksheet.cell(current_row, col_index + 17).value)
+			# transforms for column 6, 16 - family history cancer
+			t2 = int(flip(0.0622))
+			t3 = int(flip(0.1296))
 
-		tammemagi_score = tammemagi(tam_age, tam_edLevel, tam_bmi, tam_copd, tam_hxLungCancer, tam_famHxCanc, tam_race, 
-			tam_cigsPerDay, tam_smokDurat, tam_yrsQuit)
-		cassidy_score = cassidy(cassidy_sex, cassidy_age, cassidy_pneum, cassidy_asbestos, cassidy_cancHx, cassidy_famHxCanc,
-			cassidy_smokDur)
+			#column 6 : 0/1 
+			if t2 == 1 or t3 == 1:
+				tam_famHxCanc = 1
+			else:		
+				tam_famHxCanc = 0
+			
+			#column 16 : 
+			if t2 == 1:
+				cassidy_famHxCanc = "famHxCanc, early onset"
+			elif t3 == 1:
+				cassidy_famHxCanc = "famHxCanc, late onset"
+			elif t2 == 1 and s3 == 1:
+				cassidy_famHxCanc = ("famHxCanc, late onset", "famHxCanc, early onset")
+			else:
+				cassidy_famHxCanc = ""
 
-		# writes scores to new woorksheet
-		results_worksheet.write(current_row, col_index + 1, tammemagi_score)
-		results_worksheet.write(current_row, col_index + 2, cassidy_score)
+			# read in the variable data from Excel worksheet cells
+			tam_age = int(input_worksheet.cell(current_row, col_index + 1).value)
+			tam_edLevel = int(input_worksheet.cell(current_row, col_index + 2).value)
+			tam_bmi = int(input_worksheet.cell(current_row, col_index + 3).value)
+			tam_copd = int(input_worksheet.cell(current_row, col_index + 4).value)
+			tam_race = int(input_worksheet.cell(current_row, col_index + 7).value)
+			tam_cigsPerDay = int(input_worksheet.cell(current_row, col_index + 8).value)
+			tam_smokDurat = int(input_worksheet.cell(current_row, col_index + 9).value)
+			tam_yrsQuit = int(input_worksheet.cell(current_row, col_index + 10).value)
 
-		current_row = current_row + 1
+			cassidy_sex = str(input_worksheet.cell(current_row, col_index + 11).value)
+			cassidy_age = int(float(input_worksheet.cell(current_row, col_index + 12).value))
+			cassidy_pneum = str(input_worksheet.cell(current_row, col_index + 13).value)
+			cassidy_asbestos = str(input_worksheet.cell(current_row, col_index + 14).value)
+			cassidy_smokDur = str(input_worksheet.cell(current_row, col_index + 17).value)
 
-	workbook_in.save('Results.xlsx')
+			tammemagi_score = tammemagi(tam_age, tam_edLevel, tam_bmi, tam_copd, tam_hxLungCancer, tam_famHxCanc, tam_race, 
+				tam_cigsPerDay, tam_smokDurat, tam_yrsQuit)
+			cassidy_score = cassidy(cassidy_sex, cassidy_age, cassidy_pneum, cassidy_asbestos, cassidy_cancHx, cassidy_famHxCanc,
+				cassidy_smokDur)
+			
+			line_one_0 = str(current_row) + "\t" + str(tam_age) + "\t" + str(tam_edLevel) + "\t" + str(tam_bmi) + "\t" + str(tam_copd) + "\tt1" + "\tt2&t3\t" + str(tam_race) + "\t" 
+			line_one_1 = str(tam_cigsPerDay) + "\t" + str(tam_smokDurat) + "\t" + str(tam_yrsQuit) + "\t" + str(cassidy_sex) + "\t" + str(cassidy_age) + "\t" + "pneum:" + str(cassidy_pneum) 
+			line_one_2 = "\t" + "asbestos:" + str(cassidy_asbestos) + "\tc_cancHx:t1\t" + "c_famHxCanc:t2&t3\t" + str(cassidy_smokDur)
+			line_one_together = line_one_0 + line_one_1 + line_one_2 + "\t" + str(tammemagi_score) + "\t" + str(cassidy_score) + "\t" + str(t1) + "\t" + str(t2) + "\t" + str(t3)
+			results.write(line_one_together)
+			results.write('\n')
+		
+			n = n + 1
+
+		current_row = current_row + 1 # == current patient number
+
 
 main()
