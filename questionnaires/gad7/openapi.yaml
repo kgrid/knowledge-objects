@@ -1,0 +1,50 @@
+
+openapi: "3.0.0"
+info:
+  version: 1.0.0
+  title: GAD7
+paths:
+  /question:
+    get:
+      summary: get GAD7 questionnaire representation
+      responses:
+        '200':
+          description: A JSON object representing the questionnaaire
+          content:
+            application/json:    
+              schema:
+                $ref: "#/"
+  /score:
+    get:
+      summary: Scores the answers to the questionnaire
+      parameters:
+        - name: answers
+          in: path
+          required: true
+          description: list of answers to questionnaire
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Expected response to a valid request
+          content:
+            application/json:
+              schema:
+                $ref: "#/"
+ /interpret:
+    get:
+      summary: interprets score of questionnaire
+      parameters:
+        - name: score
+          in: path
+          required: true
+          description: score for answered questionnaire
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Expected response to a valid request
+          content:
+            application/json:
+              schema:
+                $ref: "#/"
