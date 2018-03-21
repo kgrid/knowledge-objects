@@ -72,7 +72,7 @@ def flip(p):
 
 def main():
 	# read in Excel Workbook
-	workbook_in = xlrd.open_workbook('DS3.xlsx')
+	workbook_in = xlrd.open_workbook('DS3_19.xlsx')
 
 	col_index = 0
 	current_row = 1
@@ -84,7 +84,7 @@ def main():
 		#reset n
 		n = 0
 		# transforms for column 5, 6, 15, 16 - personal/family history of cancer
-		while (n < 1000):
+		while (n < 100):
 
 			for_transform = 0;
 			if input_worksheet.cell(current_row, 1).value < 45:
