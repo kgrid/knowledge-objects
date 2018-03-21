@@ -13,14 +13,15 @@ import xlrd, json
 from xlrd import open_workbook
 
 #base url for using kgrid server activator
-url = "http://kgrid.med.umich.edu/stack/knowledgeObject/ark:/"
+# url = "http://kgrid.med.umich.edu/stack/knowledgeObject/ark:/"
 
 headers = {'content-type': "application/json"}
 
 #model specific urls
-tammemagi_url = url + "99999/fk4jh3tk9s/result"
-cassidy_url = url + "22318/cassidy2/result"
-
+tammemagi_url = "http://localhost:8080/knowledgeObject/ark:/99999/fk4jh3tk9s/result"
+# = url + "99999/fk4jh3tk9s/result"
+cassidy_url = "http://localhost:8080/knowledgeObject/ark:/22318/cassidy2/result"
+# = url + "22318/cassidy2/result"
 
 def tammemagi(tam_age, tam_edLevel, tam_bmi, tam_copd, tam_hxLungCancer, tam_famHxCanc, tam_race, tam_cigsPerDay, tam_smokDurat, tam_yrsQuit):
 	payload = {'age':tam_age,'edLevel':tam_edLevel,'bmi':tam_bmi,
