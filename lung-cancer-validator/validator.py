@@ -73,7 +73,7 @@ def flip(p):
 
 def main():
 	# read in Excel Workbook
-	workbook_in = xlrd.open_workbook('DS3_Natalie.xlsx')
+	workbook_in = xlrd.open_workbook('DS3_Jack.xlsx')
 
 	col_index = 0
 	current_row = 1
