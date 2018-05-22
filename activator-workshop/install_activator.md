@@ -1,6 +1,6 @@
 # Installation Instructions for the Knowledge Grid Activator
 
-One Paragraph of project description goes here
+(Intro) 
 
 ## Getting Started
 
@@ -19,7 +19,7 @@ sudo apt-get install python3-pip
 pip3 install xlrd
 ```
 * [Postman](https://www.getpostman.com/)
-
+* **Optional** [JSON Formatter for Chrome](https://chrome.google.com/webstore/detail/json-formatter/cfaihfocdnniaholfnjcemnfhcjchohb) - Better viewing for JSON files in web browser.
 
 
 ### Installing
@@ -40,19 +40,12 @@ until finished
 
 End with an example of getting some data out of the system or using it for a little demo
 
-## Running the tests
 
-Explain how to run the automated tests for this system
+## Downloading a Knowledge Object
 
-### Break down into end to end tests
+A list of Clinical Pharmacogenetics Implementation Consortium (CPIC®) guidelines can be found in knowledge object form in the [Knowledge Grid Library](http://kgrid.med.umich.edu/library2/#/). This tutorial will be using an object authored for determining Codeine reccomendations based on the CYP2D6 gene, which can be found here: [x]()
 
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
+### Interacting with a CPIC Knowledge Object
 
 Explain what these tests test and why
 
@@ -60,37 +53,29 @@ Explain what these tests test and why
 Give an example
 ```
 
-## Deployment
 
-Add additional notes about how to deploy this on a live system
+## **Optional** Create a Knowledge Object using the CPIC Wizard
+
+Explain what these tests test and why
+
+```
+Give an example
+```
+
+
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+* [KnowledgeGrid](http://kgrid.org/index.html) - The web framework used?
+* [Fedora](https://duraspace.org/fedora/) - The .... used
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Allen Flynn**
+* **Jack Allan**
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
 ## Acknowledgments
 
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc
+* ?
 
