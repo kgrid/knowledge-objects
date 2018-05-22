@@ -8,11 +8,19 @@ These instructions will get you interacting with a version of the Knowledge Grid
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+* [Java](http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html) - Must be updated to version 8
+* Python, version 2.7 or above
+* [pip3](https://stackoverflow.com/questions/6587507/how-to-install-pip-with-python-3)
+```
+sudo apt-get install python3-pip
+```
+* [XLRD](https://pypi.python.org/pypi/xlrd)
+```
+pip3 install xlrd
+```
+* [Postman](https://www.getpostman.com/)
 
-```
-Give examples
-```
+
 
 ### Installing
 
