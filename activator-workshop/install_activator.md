@@ -9,15 +9,6 @@ These instructions will get you a copy of the Knowledge Grid Activator up and ru
 ### Prerequisites
 
 * [Java](http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html) - Must be updated to version 8
-* Python, version 2.7 or above
-* [pip3](https://stackoverflow.com/questions/6587507/how-to-install-pip-with-python-3)
-```
-sudo apt-get install python3-pip
-```
-* [XLRD](https://pypi.python.org/pypi/xlrd)
-```
-pip3 install xlrd
-```
 * [Postman](https://www.getpostman.com/)
 * **Optional** [JSON Formatter for Chrome](https://chrome.google.com/webstore/detail/json-formatter/cfaihfocdnniaholfnjcemnfhcjchohb) - Better viewing for JSON files in web browser.
 
@@ -57,6 +48,19 @@ Give an example
 ## **Optional** Create a Knowledge Object using the CPIC Wizard
 
 Explain what these tests test and why
+
+###Prerequisites
+* Python, version 2.7 or above
+* [pip3](https://stackoverflow.com/questions/6587507/how-to-install-pip-with-python-3)
+```
+sudo apt-get install python3-pip
+```
+* [XLRD](https://pypi.python.org/pypi/xlrd)
+```
+pip3 install xlrd
+```
+
+
 
 ```
 Give an example
