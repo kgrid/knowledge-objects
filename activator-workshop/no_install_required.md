@@ -78,11 +78,13 @@ curl -X POST \
   -d '{"phenotype": "Normal metabolizer", "choice":"1"}'
 ```
 
-![Reccomendation](/activator-workshop/screenshots/curl4.png?raw=true)
 *API response in Terminal showing the recommended dosing*
+![Reccomendation](/activator-workshop/screenshots/curl4.png?raw=true)
 
-![Online Result](/activator-workshop/screenshots/online_response.png?raw=true)
+
 *API response in browser showing the recommended dosing*
+![Online Result](/activator-workshop/screenshots/online_response.png?raw=true)
+
 
 ## **_Optional..._** Create a Knowledge Object using the CPIC Wizard
 
