@@ -1,6 +1,6 @@
 # Installation Instructions for the Knowledge Grid Activator
 
-(Intro) 
+
 
 ## Getting Started
 
@@ -15,9 +15,9 @@ These instructions will get you a copy of the Knowledge Grid Activator up and ru
 
 ### Installing
 
-A step by step series of examples that tell you have to get a development env running
 
-Say what the step will be
+
+**Step 1** Download starter files from https://umich.box.com/v/KnowledgeGridStarterKit .
 
 ```
 Give the example
@@ -70,8 +70,8 @@ Give an example
 
 ## Built With
 
-* [KnowledgeGrid](http://kgrid.org/index.html) - The web framework used?
-* [Fedora](https://duraspace.org/fedora/) - The .... used
+* [KnowledgeGrid](http://kgrid.org/index.html) - The web framework used
+
 
 ## Authors
 
@@ -81,5 +81,5 @@ Give an example
 
 ## Acknowledgments
 
-* ?
+
 
