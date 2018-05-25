@@ -9,7 +9,7 @@ These instructions will get you a copy of the Knowledge Grid Activator up and ru
 ### Prerequisites
 
 * [Java](http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html) - Must be updated to version 8
-* [Postman](https://www.getpostman.com/)
+* [Postman](https://www.getpostman.com/) - An API development environment.
 * **Optional** [JSON Formatter for Chrome](https://chrome.google.com/webstore/detail/json-formatter/cfaihfocdnniaholfnjcemnfhcjchohb) - Better viewing for JSON files in web browser.
 
 
@@ -31,9 +31,11 @@ and a second folder for the adapter:
 ```
 /users/name/activator/adapters
 ```
+![Folder Setup](/screenshots/folder_setup.png?raw=true)
+
 
 **Step 3** Navigate to the command line (Terminal on MacOS and Command Prompt on Windows) and run the Activator start up command.
-![Terminal](/screenshots/terminal.png?raw=true)
+![Terminal](/activator-workshop/screenshots/terminal.png?raw=true)
 <!-- ![Command Prompt](https://raw.github.com/ryanmaxwell/iArrived/master/Screenshots/Settings.png) -->
 
 ```
@@ -66,9 +68,7 @@ Within this folder you can find a series of PUT and GET commands which will allo
 
 ## **_Optional..._** Create a Knowledge Object using the CPIC Wizard
 
-Explain what these tests test and why
-
-###Prerequisites
+### Prerequisites
 * Python, version 2.7 or above
 * [pip3](https://stackoverflow.com/questions/6587507/how-to-install-pip-with-python-3)
 ```
