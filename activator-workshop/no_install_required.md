@@ -9,9 +9,6 @@ These instructions will get you interacting with a version of the Knowledge Grid
 
 * [Java](http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html) - Must be updated to version 8
 
-* **Optional** [JSON Formatter for Chrome](https://chrome.google.com/webstore/detail/json-formatter/cfaihfocdnniaholfnjcemnfhcjchohb) - Better viewing for JSON files in web browser.
-
-
 
 ### Interacting with the Activator
 **Step 1** Navigate to your browser and connet to the remote Activator.
@@ -82,9 +79,10 @@ curl -X POST \
 ```
 
 ![Reccomendation](/activator-workshop/screenshots/curl4.png?raw=true)
+*API response in Terminal showing the recommended dosing*
 
 ![Online Result](/activator-workshop/screenshots/online_response.png?raw=true)
-
+*API response in browser showing the recommended dosing*
 
 ## **_Optional..._** Create a Knowledge Object using the CPIC Wizard
 
