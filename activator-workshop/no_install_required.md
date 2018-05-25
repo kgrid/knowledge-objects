@@ -26,6 +26,7 @@ http://kgrid.med.umich.edu/stack2/health
 **Step 2** Open the command line (Terminal on MacOS and Command Prompt on Windows).
 
 ![Search Terminal](/activator-workshop/screenshots/search_terminal.png?raw=true)
+![Search Command Prompt](/activator-workshop/screenshots/search_command_prompt.png?raw=true)
 
 
 
