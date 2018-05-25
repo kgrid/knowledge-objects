@@ -19,7 +19,7 @@ These instructions will get you a copy of the Knowledge Grid Activator up and ru
 
 **Step 1** Download starter files from https://umich.box.com/v/KnowledgeGridStarterKit .
 
-**Step 2**Arrange files in appropriate two-folder structure.
+**Step 2** Arrange files in appropriate two-folder structure.
 
 One folder for storing Knowledge Objects:
 ```
@@ -47,7 +47,7 @@ http://localhost:8082/shelf
 ```
 
 
-##Interacting With a Knowledge Object
+### Interacting With a Knowledge Object
 
 A list of Clinical Pharmacogenetics Implementation Consortium (CPIC®) guidelines can be found in knowledge object form in the [Knowledge Grid Library](http://kgrid.med.umich.edu/library2/#/). This tutorial will be using an object authored for determining Codeine reccomendations based on the CYP2D6 gene, which can be found here: [x]()
 
@@ -64,7 +64,7 @@ Within this folder you can find a series of PUT and GET commands which will allo
 
 
 
-## **Optional** Create a Knowledge Object using the CPIC Wizard
+## **_Optional_** Create a Knowledge Object using the CPIC Wizard
 
 Explain what these tests test and why
 
