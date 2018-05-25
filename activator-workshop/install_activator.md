@@ -40,7 +40,7 @@ java –jar activator-0.5.8.SNAPSHOT.war
 ```
 
 ![Terminal](/activator-workshop/screenshots/terminal.png?raw=true)
-![Command Prompt](/activator-workshop/screenshots/command_prompt.png?raw=true)
+![Command Prompt](/activator-workshop/screenshots/command_prompt.PNG?raw=true)
 
 
 **Step 4** Navigate to your browser and confirm that the Activator is live by running the following command:
