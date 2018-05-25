@@ -34,7 +34,7 @@ and a second folder for the adapter:
 ![Folder Setup](/activator-workshop/screenshots/folder_setup.png?raw=true)
 
 
-**Step 3** Navigate to the command line (Terminal on MacOS and Command Prompt on Windows) and run the Activator start up command.
+**Step 3** Open the command line (Terminal on MacOS and Command Prompt on Windows), navigate to the Activator directory, and run the start up command.
 ```
 java -jar activator-0.5.8-SNAPSHOT.war
 ```
@@ -48,9 +48,9 @@ java -jar activator-0.5.8-SNAPSHOT.war
 ```
 http://localhost:8082/health
 ```
-**Tip** /health shows the status of the Activator running locally on your machine. If you properly organized the /shelf files the _"Number of objects on the shelf"_ should be four (the two knowledge objects that come pre-installed on the Activator, and the two CPIC objects you downloaded for this activity). 
+**Tip** /health shows the status of the Activator running locally on your machine. If you properly organized the /shelf files the _"Number of objects on the shelf"_ should be **4** (the two knowledge objects that come pre-installed on the Activator, and the two CPIC objects you downloaded for this activity). 
 
-![MacOS Health](/activator-workshop/screenshots/macos_health.PNG?raw=true)
+![MacOS Health](/activator-workshop/screenshots/macos_health.png?raw=true)
 
 
 ### Interacting With a Knowledge Object
