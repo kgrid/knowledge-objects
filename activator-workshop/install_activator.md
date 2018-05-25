@@ -36,7 +36,7 @@ and a second folder for the adapter:
 
 **Step 3** Navigate to the command line (Terminal on MacOS and Command Prompt on Windows) and run the Activator start up command.
 ```
-java –jar activator-0.5.8.SNAPSHOT.war
+java -jar activator-0.5.8-SNAPSHOT.war
 ```
 
 ![Terminal](/activator-workshop/screenshots/terminal.png?raw=true)
@@ -46,8 +46,11 @@ java –jar activator-0.5.8.SNAPSHOT.war
 **Step 4** Navigate to your browser and confirm that the Activator is live by running the following command:
 
 ```
-http://localhost:8082/shelf
+http://localhost:8082/health
 ```
+**Tip** /health shows the status of the Activator running locally on your machine. If you properly organized the /shelf files the _"Number of objects on the shelf"_ should be four (the two knowledge objects that come pre-installed on the Activator, and the two CPIC objects you downloaded for this activity). 
+
+![MacOS Health](/activator-workshop/screenshots/macos_health.PNG?raw=true)
 
 
 ### Interacting With a Knowledge Object
