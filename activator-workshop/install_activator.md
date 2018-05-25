@@ -37,7 +37,7 @@ and a second folder for the adapter:
 
 **Step 3** Navigate to the command line (Terminal on MacOS and Command Prompt on Windows) and run the Activator start up command.
 ![Terminal](/activator-workshop/screenshots/terminal.png?raw=true)
-<!-- ![Command Prompt](https://raw.github.com/ryanmaxwell/iArrived/master/Screenshots/Settings.png) -->
+![Command Prompt](/activator-workshop/screenshots/command_prompt.png?raw=true)
 
 ```
 java –jar activator-0.5.8.SNAPSHOT.war
