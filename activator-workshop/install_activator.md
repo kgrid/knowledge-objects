@@ -32,22 +32,36 @@ and a second folder for the adapter:
 /users/name/activator/adapters
 ```
 
-**Step 3** Navigate to the command line (Terminal on MacOS and Command Prompt on Windows).
+**Step 3** Navigate to the command line (Terminal on MacOS and Command Prompt on Windows) and run the Activator start up command.
 ![Terminal](/screenshots/terminal.png?raw=true)
 <!-- ![Command Prompt](https://raw.github.com/ryanmaxwell/iArrived/master/Screenshots/Settings.png) -->
 
+```
+java –jar activator-0.5.8.SNAPSHOT.war
+```
 
-## Downloading a Knowledge Object
+**Step 4** Navigate to your browser and confirm that the Activator is live by running the following command:
+
+```
+http://localhost:8082/shelf
+```
+
+
+##Interacting With a Knowledge Object
 
 A list of Clinical Pharmacogenetics Implementation Consortium (CPIC®) guidelines can be found in knowledge object form in the [Knowledge Grid Library](http://kgrid.med.umich.edu/library2/#/). This tutorial will be using an object authored for determining Codeine reccomendations based on the CYP2D6 gene, which can be found here: [x]()
 
-### Interacting with a CPIC Knowledge Object
 
-Explain what these tests test and why
+**Step 5** Start Postman and import the Postman Files from [Box](https://umich.box.com/v/KnowledgeGridStarterKit).
+![Postman_import](/screenshots/postman_import.png?raw=true)
 
-```
-Give an example
-```
+Within this folder you can find a series of PUT and GET commands which will allow you to interact with the CYP2D6 knowledge objects.
+
+
+
+- [ ] 
+
+
 
 
 ## **Optional** Create a Knowledge Object using the CPIC Wizard
