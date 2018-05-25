@@ -64,7 +64,7 @@ Within this folder you can find a series of PUT and GET commands which will allo
 
 
 
-## **_Optional_** Create a Knowledge Object using the CPIC Wizard
+## **_Optional..._** Create a Knowledge Object using the CPIC Wizard
 
 Explain what these tests test and why
 
