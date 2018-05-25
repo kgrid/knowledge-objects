@@ -33,7 +33,7 @@ and a second folder for the adapter:
 ```
 
 **Step 3** Navigate to the command line (Terminal on MacOS and Command Prompt on Windows).
-![Terminal](https://raw.github.com/jack-allan/kgrid/master/knowledge-objects/activator-workshop/screenshots/terminal.png)
+![Terminal](https://raw.github.com/jack-allan/knowledge-objects/activator-workshop/screenshots/search_terminal.png)
 <!-- ![Command Prompt](https://raw.github.com/ryanmaxwell/iArrived/master/Screenshots/Settings.png) -->
 
 
