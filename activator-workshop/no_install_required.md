@@ -35,9 +35,30 @@ http://kgrid.med.umich.edu/stack2/health
 A list of Clinical Pharmacogenetics Implementation Consortium (CPIC®) guidelines can be found in knowledge object form in the [Knowledge Grid Library](http://kgrid.med.umich.edu/library2/#/). This tutorial will be using two objects authored for determining Codeine reccomendations based on the CYP2D6 gene, which can be found [here](https://umich.box.com/v/CPICKnowledgeObjects).
 
 
+Use a cURL Command to get CPIC Object #1, (what it does....)
+```
+cURL GET
+```
+
+Use a cURL Command to get CPIC Object #2, (what it does....)
+```
+cURL GET
+```
+
+Use a cURL Command to engage CPIC Object #1, (what it does....)
+```
+cURL POST
+```
+
+Use a cURL Command to engage CPIC Object #2, (what it does....)
+```
+cURL POST
+```
 
 
-### **Optional** Authoring a Knowledge Object
+
+
+## **_Optional..._** Create a Knowledge Object using the CPIC Wizard
 
 ### Prerequisites
 * [pip3](https://stackoverflow.com/questions/6587507/how-to-install-pip-with-python-3)
