@@ -37,23 +37,48 @@ A list of Clinical Pharmacogenetics Implementation Consortium (CPIC®) guideline
 
 Use a cURL Command to get CPIC Object #1, (what it does....)
 ```
-cURL GET
+curl -X GET \
+  http://kgrid.med.umich.edu/stack2/knowledgeObject/ark:/99999/fk49z9gr7p \
+  -H 'Cache-Control: no-cache' \
+  -H 'Postman-Token: 1e486f30-ba1b-4b05-a94f-f0a70cc578bc'
 ```
+
 
 Use a cURL Command to get CPIC Object #2, (what it does....)
 ```
-cURL GET
+curl -X GET \
+  http://kgrid.med.umich.edu/stack2/knowledgeObject/ark:/99999/fk4mc97w6m \
+  -H 'Cache-Control: no-cache' \
+  -H 'Postman-Token: 85b5ac3f-b886-4b58-ace9-397fe7741c0f'
 ```
+
+
 
 Use a cURL Command to engage CPIC Object #1, (what it does....)
 ```
-cURL POST
+curl -X POST \
+  http://kgrid.med.umich.edu/stack2/knowledgeObject/ark:/99999/fk49z9gr7p/result \
+  -H 'Accept: application/json' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Content-Type: application/json' \
+  -H 'Postman-Token: b944f1d5-d34a-4182-8bbf-9a3a8f25a25d' \
+  -d '{"diplotype":"","allele1":"*3","allele2":"*3"}'
 ```
+
+
 
 Use a cURL Command to engage CPIC Object #2, (what it does....)
 ```
-cURL POST
+curl -X POST \
+  http://kgrid.med.umich.edu/stack2/knowledgeObject/ark:/99999/fk4mc97w6m/result \
+  -H 'Accept: application/json' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Content-Type: application/json' \
+  -H 'Postman-Token: ef25c4be-8dc6-4365-88de-8705015b77d9' \
+  -d '{"phenotype": "Normal metabolizer", "choice":"1"}'
 ```
+
+![Reccomendation](/activator-workshop/screenshots/curl4.png?raw=true)
 
 
 
