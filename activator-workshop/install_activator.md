@@ -19,17 +19,21 @@ These instructions will get you a copy of the Knowledge Grid Activator up and ru
 
 **Step 1** Download starter files from https://umich.box.com/v/KnowledgeGridStarterKit .
 
+**Step 2**Arrange files in appropriate two-folder structure.
+
+One folder for storing Knowledge Objects:
 ```
-Give the example
+/users/name/activator/shelf
 ```
 
-And repeat
+and a second folder for the adapter:
 
 ```
-until finished
+/users/name/activator/adapters
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
+**Step 3** Navigate to the command line (Terminal on MacOS and Command Prompt on Windows).
+
 
 
 ## Downloading a Knowledge Object
