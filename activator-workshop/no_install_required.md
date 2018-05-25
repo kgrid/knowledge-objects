@@ -9,7 +9,33 @@ These instructions will get you interacting with a version of the Knowledge Grid
 ### Prerequisites
 
 * [Java](http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html) - Must be updated to version 8
-* Python, version 2.7 or above
+
+* **Optional** [JSON Formatter for Chrome](https://chrome.google.com/webstore/detail/json-formatter/cfaihfocdnniaholfnjcemnfhcjchohb) - Better viewing for JSON files in web browser.
+
+
+
+### Interacting with the Activator
+**Step 1** Navigate to your browser and connet to the remote Activator.
+
+```
+http://kgrid.med.umich.edu/stack2/health
+```
+
+![Remote Activator](/activator-workshop/screenshots/remote_activator.png?raw=true)
+
+**Step 2** Open the command line (Terminal on MacOS and Command Prompt on Windows).
+
+![Search Terminal](/activator-workshop/screenshots/search_terminal.png?raw=true)
+
+
+
+## Downloading a Knowledge Object
+
+A list of Clinical Pharmacogenetics Implementation Consortium (CPIC®) guidelines can be found in knowledge object form in the [Knowledge Grid Library](http://kgrid.med.umich.edu/library2/#/). This tutorial will be using an object authored for determining Codeine reccomendations based on the CYP2D6 gene, which can be found here: [x]()
+
+### Interacting with a CPIC Knowledge Object
+
+### Prerequisites
 * [pip3](https://stackoverflow.com/questions/6587507/how-to-install-pip-with-python-3)
 ```
 sudo apt-get install python3-pip
@@ -19,38 +45,6 @@ sudo apt-get install python3-pip
 pip3 install xlrd
 ```
 * [Postman](https://www.getpostman.com/)
-* **Optional** [JSON Formatter for Chrome](https://chrome.google.com/webstore/detail/json-formatter/cfaihfocdnniaholfnjcemnfhcjchohb) - Better viewing for JSON files in web browser.
-
-
-
-### Interacting with the Activator
-
-There exists a version of the Activator hosted remotely...
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-
-## Downloading a Knowledge Object
-
-A list of Clinical Pharmacogenetics Implementation Consortium (CPIC®) guidelines can be found in knowledge object form in the [Knowledge Grid Library](http://kgrid.med.umich.edu/library2/#/). This tutorial will be using an object authored for determining Codeine reccomendations based on the CYP2D6 gene, which can be found here: [x]()
-
-### Interacting with a CPIC Knowledge Object
-
-Explain what these tests test and why
-
-```
-Give an example
-```
 
 
 ## **Optional** Create a Knowledge Object using the CPIC Wizard

@@ -55,7 +55,7 @@ http://localhost:8082/health
 
 ### Interacting With a Knowledge Object
 
-A list of Clinical Pharmacogenetics Implementation Consortium (CPIC®) guidelines can be found in knowledge object form in the [Knowledge Grid Library](http://kgrid.med.umich.edu/library2/#/). This tutorial will be using an object authored for determining Codeine reccomendations based on the CYP2D6 gene, which can be found here: [x]()
+A list of Clinical Pharmacogenetics Implementation Consortium (CPIC®) guidelines can be found in knowledge object form in the [Knowledge Grid Library](http://kgrid.med.umich.edu/library2/#/). This tutorial will be using two objects authored for determining Codeine reccomendations based on the CYP2D6 gene, which can be found [here](https://umich.box.com/v/CPICKnowledgeObjects) .
 
 
 **Step 5** Start Postman and import the Postman Files from [Box](https://umich.box.com/v/KnowledgeGridStarterKit).
