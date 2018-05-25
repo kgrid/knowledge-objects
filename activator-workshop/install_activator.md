@@ -32,16 +32,16 @@ and a second folder for the adapter:
 /users/name/activator/adapters
 ```
 ![Folder Setup](/activator-workshop/screenshots/folder_setup.png?raw=true)
-![Folder Setup](/activator-workshop/screenshots/folder_setup_shelf.png?raw=true)
 
 
 **Step 3** Navigate to the command line (Terminal on MacOS and Command Prompt on Windows) and run the Activator start up command.
-![Terminal](/activator-workshop/screenshots/terminal.png?raw=true)
-![Command Prompt](/activator-workshop/screenshots/command_prompt.png?raw=true)
-
 ```
 java –jar activator-0.5.8.SNAPSHOT.war
 ```
+
+![Terminal](/activator-workshop/screenshots/terminal.png?raw=true)
+![Command Prompt](/activator-workshop/screenshots/command_prompt.png?raw=true)
+
 
 **Step 4** Navigate to your browser and confirm that the Activator is live by running the following command:
 
@@ -62,7 +62,10 @@ Within this folder you can find a series of PUT and GET commands which will allo
 
 
 
-- [ ] 
+- [ ] do something with object 1
+- [ ] do something with object 2
+- [ ] didnt we have four things?
+- [ ] I think so...
 
 
 
