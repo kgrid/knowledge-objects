@@ -31,7 +31,8 @@ and a second folder for the adapter:
 ```
 /users/name/activator/adapters
 ```
-![Folder Setup](/screenshots/folder_setup.png?raw=true)
+![Folder Setup](/activator-workshop/screenshots/folder_setup.png?raw=true)
+![Folder Setup](/activator-workshop/screenshots/folder_setup_shelf.png?raw=true)
 
 
 **Step 3** Navigate to the command line (Terminal on MacOS and Command Prompt on Windows) and run the Activator start up command.
@@ -55,7 +56,7 @@ A list of Clinical Pharmacogenetics Implementation Consortium (CPIC®) guideline
 
 
 **Step 5** Start Postman and import the Postman Files from [Box](https://umich.box.com/v/KnowledgeGridStarterKit).
-![Postman_import](/screenshots/postman_import.png?raw=true)
+![Postman Import](/activator-workshop/screenshots/postman_import.png?raw=true)
 
 Within this folder you can find a series of PUT and GET commands which will allow you to interact with the CYP2D6 knowledge objects.
 
