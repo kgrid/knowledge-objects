@@ -34,7 +34,7 @@ http://kgrid.med.umich.edu/stack2/health
 A list of Clinical Pharmacogenetics Implementation Consortium (CPIC®) guidelines can be found in knowledge object form in the [Knowledge Grid Library](http://kgrid.med.umich.edu/library2/#/). This tutorial will be using two objects authored for determining Codeine reccomendations based on the CYP2D6 gene, which can be found [here](https://umich.box.com/v/CPICKnowledgeObjects).
 
 
-For MacOS users, the following cURL commands can be run directly from the command line. If you are working in a Windows or Linux environment, naviagate to https://onlinecurl.com/ in your browser and copy the below commands directly.
+For MacOS users, the following cURL commands can be run directly from the command line. If you are working in a Windows or Linux environment, naviagate to https://onlinecurl.com/ in your browser and copy the below commands directly (no need to include your email address). 
 
 
 
