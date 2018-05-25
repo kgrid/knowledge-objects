@@ -1,6 +1,5 @@
 # No Install Required Version of the Knowledge Grid Activator
 
-(Intro)
 
 ## Getting Started
 
