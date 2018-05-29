@@ -65,7 +65,7 @@ Within this folder you can find a series of PUT and GET commands which will allo
 
 
 
-- [ ] Check Local Activator: confirms that your Activator is running properly and your knowledge objects are loaded onto the shelf.
+- [ ] **Check Local Activator:** confirms that your Activator is running properly and your knowledge objects are loaded onto the shelf.
 - [ ] Get Shelf From Local Activator: returns the full list of objects stored on your local Shelf.
 - [ ] Get Single CPIC Object From Local Activator: returns the knowledge object for going from genotype to phenotype for the CYP2D6 gene.
 - [ ] Get Single CPIC Object From Local Activator: returns the knowledge object for mapping dosing recommendations bbased on phenotype for the CYP2D6 gene.
