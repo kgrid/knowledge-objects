@@ -19,7 +19,7 @@ These instructions will get you a copy of the Knowledge Grid Activator up and ru
 
 **Step 1** Download starter files from https://umich.box.com/v/KnowledgeGridStarterKit .
 
-**Step 2** Arrange files in appropriate two-folder structure.
+**Step 2**  Arrange files in appropriate two-folder structure.
 
 One folder for storing Knowledge Objects:
 ```
@@ -87,25 +87,13 @@ pip3 install xlrd
 ```
 
 
-
-```
-Give an example
-```
-
-
-
-## Built With
-
-* [KnowledgeGrid](http://kgrid.org/index.html) - The web framework used
-
-
 ## Authors
 
 * **Allen Flynn**
 * **Jack Allan**
 
 
-## Acknowledgments
+
 
 
 
