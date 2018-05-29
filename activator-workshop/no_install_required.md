@@ -38,7 +38,7 @@ For MacOS users, the following cURL commands can be run directly from the comman
 
 **Pre-Written Commands**
 
-Use a cURL Command to get CPIC Object #1, (what it does....)
+Use a cURL Command to get CPIC Object #1, this is the object that 
 ```
 curl -X GET \
   http://kgrid.med.umich.edu/stack2/knowledgeObject/ark:/99999/fk49z9gr7p \

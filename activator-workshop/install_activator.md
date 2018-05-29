@@ -9,7 +9,7 @@ These instructions will get you a copy of the Knowledge Grid Activator up and ru
 ### Prerequisites
 
 * [Java](http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html) - Must be updated to version 8
-* [Postman](https://www.getpostman.com/) - An API development environment.
+* [Postman](https://www.getpostman.com/) - An API development environment
 * **Optional** [JSON Formatter for Chrome](https://chrome.google.com/webstore/detail/json-formatter/cfaihfocdnniaholfnjcemnfhcjchohb) - Better viewing for JSON files in web browser.
 
 
@@ -58,17 +58,19 @@ http://localhost:8082/health
 A list of Clinical Pharmacogenetics Implementation Consortium (CPIC®) guidelines can be found in knowledge object form in the [Knowledge Grid Library](http://kgrid.med.umich.edu/library2/#/). This tutorial will be using two objects authored for determining Codeine reccomendations based on the CYP2D6 gene, which can be found [here](https://umich.box.com/v/CPICKnowledgeObjects) .
 
 
-**Step 5** Start Postman and import the Postman Files from [Box](https://umich.box.com/v/KnowledgeGridStarterKit).
+**Step 5** Start Postman and import the 'Postman Files' folder from [Box](https://umich.box.com/v/KnowledgeGridStarterKit).
 ![Postman Import](/activator-workshop/screenshots/postman_import.png?raw=true)
 
-Within this folder you can find a series of PUT and GET commands which will allow you to interact with the CYP2D6 knowledge objects.
+Within this folder you can find a series of PUT and GET commands which will allow you to interact with the CYP2D6 knowledge objects. The commands in this folder are listed below.
 
 
 
-- [ ] do something with object 1
-- [ ] do something with object 2
-- [ ] didnt we have four things?
-- [ ] I think so...
+- [ ] Check Local Activator: confirms that your Activator is running properly and your knowledge objects are loaded onto the shelf.
+- [ ] Get Shelf From Local Activator: returns the full list of objects stored on your local Shelf.
+- [ ] Get Single CPIC Object From Local Activator: returns the knowledge object for going from genotype to phenotype for the CYP2D6 gene.
+- [ ] Get Single CPIC Object From Local Activator: returns the knowledge object for mapping dosing recommendations bbased on phenotype for the CYP2D6 gene.
+- [ ] Post Single CPIC Object From Local Activator: returns metabolizing status based on example gene information.
+- [ ] Post Single CPIC Object From Local Activator: returns a Codeine dosing reccomendation based on example data. 
 
 
 
