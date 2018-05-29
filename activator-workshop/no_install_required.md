@@ -20,7 +20,7 @@ http://kgrid.med.umich.edu/stack2/health
 ![Remote Activator](/activator-workshop/screenshots/remote_activator.png?raw=true)
 
 
-If working properly, the "Number of objects on the shelf" should bbe 41. This is the number of Knowledge Objects available for use.
+If working properly, the "Number of objects on the shelf" should be 41. This is the number of Knowledge Objects available for use.
 
 
 ## Interacting With a Knowledge Object
@@ -31,12 +31,12 @@ A list of Clinical Pharmacogenetics Implementation Consortium (CPIC®) guideline
 For MacOS users, the following cURL commands can be run directly from the command line. If you are working in a Windows or Linux environment, naviagate to https://onlinecurl.com/ in your browser and copy the below commands directly (no need to include your email address to use this website). 
 
 
-**Step 2** Open the command line (Terminal on MacOS and Command Prompt on Windows).
+**Step 2** Open the command line (MacOS Users).
 
 ![Search Terminal](/activator-workshop/screenshots/search_terminal.png?raw=true)
-![Search Command Prompt](/activator-workshop/screenshots/search_command_prompt.png?raw=true)
 
 
+**Pre-Written Commands**
 
 Use a cURL Command to get CPIC Object #1, (what it does....)
 ```
@@ -80,6 +80,9 @@ curl -X POST \
   -H 'Postman-Token: ef25c4be-8dc6-4365-88de-8705015b77d9' \
   -d '{"phenotype": "Normal metabolizer", "choice":"1"}'
 ```
+
+
+**Example**
 
 *API response in Terminal showing the recommended dosing*
 ![Reccomendation](/activator-workshop/screenshots/curl4.png?raw=true)
