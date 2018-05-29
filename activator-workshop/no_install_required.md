@@ -38,7 +38,7 @@ For MacOS users, the following cURL commands can be run directly from the comman
 
 **Pre-Written Commands**
 
-Use a cURL Command to get CPIC Object #1, this is the object that 
+Use a cURL Command to get CPIC Object #1, this is the object that maps genotype to phenotype for the CYP2D6 gene.
 ```
 curl -X GET \
   http://kgrid.med.umich.edu/stack2/knowledgeObject/ark:/99999/fk49z9gr7p \
@@ -47,7 +47,7 @@ curl -X GET \
 ```
 
 
-Use a cURL Command to get CPIC Object #2, (what it does....)
+Use a cURL Command to get CPIC Object #2, this is the object that returns Codeine dosing recommendations based on the CYP2D6 gene information.
 ```
 curl -X GET \
   http://kgrid.med.umich.edu/stack2/knowledgeObject/ark:/99999/fk4mc97w6m \
@@ -57,7 +57,7 @@ curl -X GET \
 
 
 
-Use a cURL Command to engage CPIC Object #1, (what it does....)
+Use a cURL Command to engage CPIC Object #1.
 ```
 curl -X POST \
   http://kgrid.med.umich.edu/stack2/knowledgeObject/ark:/99999/fk49z9gr7p/result \
@@ -70,7 +70,7 @@ curl -X POST \
 
 
 
-Use a cURL Command to engage CPIC Object #2, (what it does....)
+Use a cURL Command to engage CPIC Object #2.
 ```
 curl -X POST \
   http://kgrid.med.umich.edu/stack2/knowledgeObject/ark:/99999/fk4mc97w6m/result \
