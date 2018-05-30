@@ -35,6 +35,8 @@ SwaggerUI is a web-based API tool which we will be using today to interact with 
 ![SwaggerUI](/activator-workshop/screenshots/swaggerhome.png?raw=true)
 
 **Step 2** Engage either of the Knowledge Objects by clicking on their green box >> "Try it out" >> Execute
+
+
 _Tip_ Chrome and other browsers may try to block this web client as a security precaution, click "Allow Scripts to Run".
 
 
