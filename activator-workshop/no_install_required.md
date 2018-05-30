@@ -40,7 +40,7 @@ SwaggerUI is a web-based API tool which we will be using today to interact with 
 _Tip_ Chrome and other browsers may try to block this web client as a security precaution, click "Allow Scripts to Run" (as shown in the video below).
 
 
-![Demo](/activator-workshop/screenshots/get.mp4?raw=true)
+![Demo](/activator-workshop/screenshots/get.gif?raw=true)
 
 
 ## Interacting With a Knowledge Object Using the MacOS Terminal
