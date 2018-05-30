@@ -28,7 +28,7 @@ If working properly, the "Number of objects on the shelf" should be 41. This is 
 A list of Clinical Pharmacogenetics Implementation Consortium (CPIC®) guidelines can be found in knowledge object form in the [Knowledge Grid Library](http://kgrid.med.umich.edu/library2/#/). This tutorial will be using two objects authored for determining Codeine reccomendations based on the CYP2D6 gene, which can be found [here](https://umich.box.com/v/CPICKnowledgeObjects).
 
 
-For MacOS users, the following cURL commands can be run directly from the command line. If you are working in a Windows or Linux environment, naviagate to https://kgrid-demos.github.io/swaggerui/ in your browser and copy the below commands directly (no need to include your email address to use this website). 
+For MacOS users, the following cURL commands can be run directly from the command line. If you are working in a Windows or Linux environment, naviagate to https://kgrid-demos.github.io/swaggerui/ in your browser and skip to the next section of these instructions, **Web Based API Interaction Through SwaggerUI**.
 
 
 **Step 2** Open the command line (MacOS Users).
@@ -86,6 +86,12 @@ curl -X POST \
 
 *API response in Terminal showing the recommended dosing*
 ![Reccomendation](/activator-workshop/screenshots/curl4.png?raw=true)
+
+
+
+
+## Web Based API Interaction Through SwaggerUI
+
 
 
 
