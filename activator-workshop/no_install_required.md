@@ -34,7 +34,11 @@ SwaggerUI is a web-based API tool which we will be using today to interact with 
 
 ![SwaggerUI](/activator-workshop/screenshots/swaggerhome.png?raw=true)
 
-**Step 2** Engage either of the Knowledge Objects by clicking on their green box >> "Try it out" >> Execute
+**Step 2** Engage either of the Knowledge Objects (video demonstration below)
+* Click on one of the green "Post" boxes
+* Click "Try it out"
+* The request body already contains the necessary message, so you need only click "Execute"
+* Scroll down to the reponse and view the result given by the Knowledge Object
 
 
 _Tip_ Chrome and other browsers may try to block this web client as a security precaution, click "Allow Scripts to Run" (as shown in the video below).

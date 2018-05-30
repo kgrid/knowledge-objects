@@ -34,15 +34,8 @@ and a second folder for the adapter:
 ![Folder Setup](/activator-workshop/screenshots/folder_setup.png?raw=true)
 
 
-**Step 3** Open the command line (Terminal on MacOS and Command Prompt on Windows), navigate to the Activator directory, and run the start up command.
+**Step 3** Open the command line (Terminal on MacOS and Command Prompt on Windows) and run the start up command, the end of this command needs to be appended with the correct path to where you stored the activator folder, for example **home=/Users/jackallan/Desktop/activator**. 
 
-MacOS:
-
-```
-java -jar activator-0.5.8-SNAPSHOT.war
-```
-
-Windows OS:
 ```
 java -jar activator-0.5.8-SNAPSHOT.war --activator.home=/Users/path/to/folder
 ```
