@@ -7,7 +7,7 @@ These instructions will get you interacting with a version of the Knowledge Grid
 
 ### Prerequisites
 
-* [Java](http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html) - Must be updated to version 8
+* No Install Necessary
 
 
 ### Interacting with the Activator
@@ -28,7 +28,7 @@ If working properly, the "Number of objects on the shelf" should be 41. This is 
 A list of Clinical Pharmacogenetics Implementation Consortium (CPIC®) guidelines can be found in knowledge object form in the [Knowledge Grid Library](http://kgrid.med.umich.edu/library2/#/). This tutorial will be using two objects authored for determining Codeine reccomendations based on the CYP2D6 gene, which can be found [here](https://umich.box.com/v/CPICKnowledgeObjects).
 
 
-For MacOS users, the following cURL commands can be run directly from the command line. If you are working in a Windows or Linux environment, naviagate to https://kgrid-demos.github.io/swaggerui/ in your browser and skip to the next section of these instructions, **Web Based API Interaction Through SwaggerUI**.
+For MacOS users, the following cURL commands can be run directly from the command line. If you are working in a Windows or Linux environment, naviagate to https://kgrid-demos.github.io/swaggerui/ in your browser and skip to the next section of these instructions, [Web Based API Interaction Through SwaggerUI](https://github.com/kgrid/knowledge-objects/blob/master/activator-workshop/no_install_required.md#web-based-api-interaction-through-swaggerui).
 
 
 **Step 2** Open the command line (MacOS Users).
@@ -92,7 +92,17 @@ curl -X POST \
 
 ## Web Based API Interaction Through SwaggerUI
 
+SwaggerUI is a web-based API tool which we will be using today to interact with the remotely hosted version of the Knowledge Grid Activator without having to download any external software or use the command line. 
 
+**Step 1** Navigate to https://kgrid-demos.github.io/swaggerui/ in your web browser where we have a list of Knowledge Objects ready to be used. 
+
+* ark:/99999/fk49z9gr7p is the Knowledge Object for determining phenotype based on the genotype of the CYP2D6 gene
+* ark:/99999/fk4mc97w6m/result is the Knowledge Object for retrieving Codeine dosing recommendations based on CYP2D6 phenotype.
+
+![SwaggerUI](/activator-workshop/screenshots/swaggerhome.png?raw=true)
+
+**Step 2** Engage either of the Knowledge Objects by clicking on their green box >> "Try it out" >> Execute
+_Tip_ Chrome and other browsers may try to block this web client
 
 
 
