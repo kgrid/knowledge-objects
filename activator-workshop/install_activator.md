@@ -112,19 +112,25 @@ After successfully running this command, navigate to your shelf folder to confir
 ### Using The New Knowledge Object
 
 
-Below is a list of commands that can be used to interact with this newly authored CPIC Knowledge Object:
+Below is a list of commands that can be used to interact with this newly authored CPIC Knowledge Object. They can either be copied directly into the command line (MacOS) or the Postman Folder can be downloaded from the **CPIC Wizard** folder in [Box](https://umich.box.com/v/KnowledgeGridStarterKit).
 ```
-example command
+curl -X GET \
+  http://localhost:8080/knowledgeObject/ark:/CYP2D6B/object \
+  -H 'Accept: application/json' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Content-Type: application/json' \
+  -H 'Postman-Token: 0e43abb4-7e4e-41bc-ae45-d43631ddcd35'
 ```
 
 
 ```
-example command
-```
-
-
-```
-example command
+curl -X POST \
+  http://localhost:8080/knowledgeObject/ark:/CYP2D6B/object/result \
+  -H 'Accept: application/json' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Content-Type: application/json' \
+  -H 'Postman-Token: ca598759-f92a-48fd-8f01-3bcbcdaac8f1' \
+  -d '{"diplotype":"","allele1":"*3","allele2":"*3"}'
 ```
 
 
