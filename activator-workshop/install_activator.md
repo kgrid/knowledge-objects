@@ -135,9 +135,9 @@ example command
 **Allen Flynn** and **Jack Allan** of the Knowledge Grid Team in the Department of Learning Health Sciences, Michigan Medicine
 
 
-<img src="/activator-workshop/screenshots/kgrid.png?raw=true" width="200">
+<img src="/activator-workshop/screenshots/kgrid.png?raw=true" width="100">
+<img src="/activator-workshop/screenshots/medschool.png?raw=true" width="100">
 
-![med school logo](/activator-workshop/screenshots/medschool.png?raw=true){:height="50%" width="50%"}
 
 
 
