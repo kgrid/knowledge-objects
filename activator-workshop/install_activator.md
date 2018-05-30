@@ -43,11 +43,11 @@ java -jar activator-0.5.8-SNAPSHOT.war
 ![Command Prompt](/activator-workshop/screenshots/command_prompt.PNG?raw=true)
 
 
-**Step 4** Navigate to your browser and confirm that the Activator is live by running the following command:
+**Step 4** Navigate to your browser and confirm that the Activator is live by going to this url:
 
-```
-(http://localhost:8080/health)
-```
+
+[http://localhost:8080/health]
+
 **Tip** /health shows the status of the Activator running locally on your machine. If you properly organized the /shelf files the _"Number of objects on the shelf"_ should be **4** (the two knowledge objects that come pre-installed on the Activator, and the two CPIC objects you downloaded for this activity). 
 
 ![MacOS Health](/activator-workshop/screenshots/macos_health.png?raw=true)
