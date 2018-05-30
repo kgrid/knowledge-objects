@@ -92,10 +92,13 @@ curl -X POST \
 ![Online Result](/activator-workshop/screenshots/online_response.png?raw=true)
 
 
-
 ## Authors
 
-* **Allen Flynn**
-* **Jack Allan**
+**Allen Flynn** and **Jack Allan** of the Knowledge Grid Team in the Department of Learning Health Sciences, Michigan Medicine
+
+
+<img src="/activator-workshop/screenshots/kgrid.png?raw=true" width="100">
+<img src="/activator-workshop/screenshots/medschool.png?raw=true" width="200">
+
 
 

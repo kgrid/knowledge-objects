@@ -136,7 +136,7 @@ example command
 
 
 <img src="/activator-workshop/screenshots/kgrid.png?raw=true" width="100">
-<img src="/activator-workshop/screenshots/medschool.png?raw=true" width="100">
+<img src="/activator-workshop/screenshots/medschool.png?raw=true" width="200">
 
 
 
