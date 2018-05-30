@@ -117,7 +117,7 @@ After successfully running this command, navigate to your shelf folder to confir
 ### Using The New Knowledge Object
 
 
-Below is a list of commands that can be used to interact with this newly authored CPIC Knowledge Object. They can either be copied directly into the command line (MacOS) or the Postman Folder can be downloaded from the **CPIC Wizard** folder in [Box](https://umich.box.com/v/KnowledgeGridStarterKit).
+Below are commands that can be used to interact with this newly authored CPIC Knowledge Object. They can either be copied directly into the command line (MacOS) or the Postman Folder can be downloaded from the **CPIC Wizard** folder in [Box](https://umich.box.com/v/KnowledgeGridStarterKit).
 ```
 curl -X GET \
   http://localhost:8080/knowledgeObject/ark:/CYP2D6B/object \
