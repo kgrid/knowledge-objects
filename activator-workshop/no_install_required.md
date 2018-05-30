@@ -17,7 +17,7 @@ These instructions will get you interacting with a version of the Knowledge Grid
 http://kgrid.med.umich.edu/stack2/health
 
 
-![Remote Activator](/activator-workshop/screenshots/remote_activator.png?raw=true)
+![Remote Activator](/activator-workshop/screenshots/healthraw.png?raw=true)
 
 
 If working properly, the "Number of objects on the shelf" should be 41. This is the number of Knowledge Objects available for use.
@@ -37,10 +37,10 @@ SwaggerUI is a web-based API tool which we will be using today to interact with 
 **Step 2** Engage either of the Knowledge Objects by clicking on their green box >> "Try it out" >> Execute
 
 
-_Tip_ Chrome and other browsers may try to block this web client as a security precaution, click "Allow Scripts to Run".
+_Tip_ Chrome and other browsers may try to block this web client as a security precaution, click "Allow Scripts to Run" (as shown in the video below).
 
 
-
+![Demo](/activator-workshop/screenshots/get.mp4?raw=true)
 
 
 ## Interacting With a Knowledge Object Using the MacOS Terminal
