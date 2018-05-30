@@ -46,7 +46,7 @@ java -jar activator-0.5.8-SNAPSHOT.war
 **Step 4** Navigate to your browser and confirm that the Activator is live by running the following command:
 
 ```
-http://localhost:8082/health
+http://localhost:8080/health
 ```
 **Tip** /health shows the status of the Activator running locally on your machine. If you properly organized the /shelf files the _"Number of objects on the shelf"_ should be **4** (the two knowledge objects that come pre-installed on the Activator, and the two CPIC objects you downloaded for this activity). 
 
