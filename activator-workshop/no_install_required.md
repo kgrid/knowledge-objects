@@ -13,9 +13,9 @@ These instructions will get you interacting with a version of the Knowledge Grid
 ### Interacting with the Activator
 **Step 1** Navigate to your browser and check the status of the remotely hosted activator.
 
-```
+
 http://kgrid.med.umich.edu/stack2/health
-```
+
 
 ![Remote Activator](/activator-workshop/screenshots/remote_activator.png?raw=true)
 
@@ -88,8 +88,6 @@ curl -X POST \
 ![Reccomendation](/activator-workshop/screenshots/curl4.png?raw=true)
 
 
-*API response in browser showing the recommended dosing*
-![Online Result](/activator-workshop/screenshots/online_response.png?raw=true)
 
 
 ## Authors
