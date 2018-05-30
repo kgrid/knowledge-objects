@@ -105,7 +105,12 @@ python CPIC_GPWizard.py CYP2D6B_Diplotype_Phenotype_Table.xlsx
 ```
 
 After successfully running this command, navigate to your shelf folder to confirm that the new Knowledge Object was created. 
+ 
+
+
 ![new object](/activator-workshop/screenshots/newobject.png?raw=true)
+
+ 
 
 
 
