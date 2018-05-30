@@ -132,8 +132,10 @@ example command
 
 ## Authors
 
-* **Allen Flynn**
-* **Jack Allan**
+**Allen Flynn** and **Jack Allan** of the Knowledge Grid Team in the Department of Learning Health Sciences, Michigan Medicine
+
+![kgrid logo](/activator-workshop/screenshots/kgrid.png?raw=true)
+![med school logo](/activator-workshop/screenshots/medschool.png?raw=true)
 
 
 
