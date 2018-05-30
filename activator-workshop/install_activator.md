@@ -134,8 +134,8 @@ example command
 
 **Allen Flynn** and **Jack Allan** of the Knowledge Grid Team in the Department of Learning Health Sciences, Michigan Medicine
 
-![kgrid logo](/activator-workshop/screenshots/kgrid.png?raw=true)
-![med school logo](/activator-workshop/screenshots/medschool.png?raw=true)
+![kgrid logo](/activator-workshop/screenshots/kgrid.png?raw=true).element height="50%" width="50%"
+![med school logo](/activator-workshop/screenshots/medschool.png?raw=true).element height="50%" width="50%"
 
 
 
