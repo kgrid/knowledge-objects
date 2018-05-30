@@ -89,6 +89,47 @@ pip3 install xlrd
 ```
 
 
+### Installing
+
+
+
+**Step 1** Download “CPIC_GPWizard.py” and the “CYP2D6B_Diplotype_Phenotype_Table.xlsx” data set from https://umich.box.com/v/KnowledgeGridStarterKit .
+
+**Step 2** Open this file with a text editor and update line 49 where the KOFILE variable is set. Change this variable to match the file path to your own shelf from Step 2.
+
+![Link 49](/activator-workshop/screenshots/line49.png?raw=true)
+
+**Step 3** Navigate to your command line and run the CPIC Wizard with the following command:
+```
+python CPIC_GPWizard.py CYP2D6B_Diplotype_Phenotype_Table.xlsx
+```
+
+After successfully running this command, navigate to your shelf folder to confirm that the new Knowledge Object was created. 
+![new object](/activator-workshop/screenshots/newobject.png?raw=true)
+
+
+
+### Using The New Knowledge Object
+
+
+Below is a list of commands that can be used to interact with this newly authored CPIC Knowledge Object:
+```
+example command
+```
+
+
+```
+example command
+```
+
+
+```
+example command
+```
+
+
+
+
 ## Authors
 
 * **Allen Flynn**
