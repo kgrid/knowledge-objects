@@ -52,6 +52,16 @@ Then, when executing the Codeine recommendation object (ark:/99999/fk4mc97w6m) y
 By doing these things, you are exploring a new way of applying computable algorithms to patient data using APIs. 
 
 
+## Authors
+
+**Allen Flynn** and **Jack Allan** of the Knowledge Grid Team in the Department of Learning Health Sciences, Michigan Medicine
+
+
+<img src="/activator-workshop/screenshots/kgrid.png?raw=true" width="100">
+<img src="/activator-workshop/screenshots/medschool.png?raw=true" width="200">
+
+
+
 
 ## Interacting With a Knowledge Object Using the MacOS Terminal
 
