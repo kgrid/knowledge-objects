@@ -38,7 +38,7 @@ SwaggerUI is a web-based API tool which we will be using today to interact with 
 * Click on one of the green "Post" boxes
 * Click "Try it out"
 * The request body already contains the necessary message, so you need only click "Execute"
-  - _Tip_ Chrome and other browsers may try to block this web client as a security precaution, click "Allow Scripts to Run" (as shown in the video below).
+  - _Tip_ Chrome and other browsers may try to block this web client as a security precaution, click on the alert and then click "Allow Scripts to Run" (as shown in the video below).
 * Scroll down to the reponse and view the result given by the Knowledge Object
 
 
