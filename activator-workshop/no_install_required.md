@@ -29,19 +29,17 @@ SwaggerUI is a web-based API tool which we will be using today to interact with 
 
 **Step 1** Navigate to https://kgrid-demos.github.io/swaggerui/ in your web browser where we have a list of Knowledge Objects ready to be used. 
 
-* ark:/99999/fk49z9gr7p is the Knowledge Object for determining phenotype based on the genotype of the CYP2D6 gene
-* ark:/99999/fk4mc97w6m/result is the Knowledge Object for retrieving Codeine dosing recommendations based on CYP2D6 phenotype.
+* Knowledge Object with id = ark:/99999/fk49z9gr7p is the object for determining phenotype based on the genotype of the CYP2D6 gene.
+* Knowledge Object with id = ark:/99999/fk4mc97w6m is the object for retrieving Codeine dosing recommendations based on CYP2D6 phenotype.
 
 ![SwaggerUI](/activator-workshop/screenshots/swaggerhome.png?raw=true)
 
-**Step 2** Engage either of the Knowledge Objects (video demonstration below)
+**Step 2** Watch video demonstration below, and follow these steps as shown. 
 * Click on one of the green "Post" boxes
 * Click "Try it out"
 * The request body already contains the necessary message, so you need only click "Execute"
+  - _Tip_ Chrome and other browsers may try to block this web client as a security precaution, click "Allow Scripts to Run" (as shown in the video below).
 * Scroll down to the reponse and view the result given by the Knowledge Object
-
-
-_Tip_ Chrome and other browsers may try to block this web client as a security precaution, click "Allow Scripts to Run" (as shown in the video below).
 
 
 ![Demo](/activator-workshop/screenshots/get.gif?raw=true)
