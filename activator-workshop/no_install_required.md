@@ -63,7 +63,7 @@ By doing these things, you are exploring a new way of applying computable algori
 
 
 
-## Interacting With a Knowledge Object Using the MacOS Terminal
+## _Optional..._ Interacting With a Knowledge Object Using the MacOS Terminal
 
 A list of Clinical Pharmacogenetics Implementation Consortium (CPIC®) guidelines can be found in knowledge object form in the [Knowledge Grid Library](http://kgrid.med.umich.edu/library2/#/). This tutorial will be using two objects authored for determining Codeine reccomendations based on the CYP2D6 gene, which can be found [here](https://umich.box.com/v/CPICKnowledgeObjects).
 
