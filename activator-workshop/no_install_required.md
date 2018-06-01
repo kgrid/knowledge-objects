@@ -44,6 +44,14 @@ SwaggerUI is a web-based API tool which we will be using today to interact with 
 
 ![Demo](/activator-workshop/screenshots/get.gif?raw=true)
 
+_Here is what you're doing..._
+When you execute the genotype to phenotype Knowledge Object (ark:/99999/fk49z9gr7p) you are sending a request with a patient's genetic data and getting their phenotype as a response.
+
+Then, when executing the Codeine recommendation object (ark:/99999/fk4mc97w6m) you are sending a request containing the patient's phenotype and getting a recommendation for that patient about using Codeine.
+
+By doing these things, you are exploring a new way applying computable algorithms to patient data using APIs. 
+
+
 
 ## Interacting With a Knowledge Object Using the MacOS Terminal
 
